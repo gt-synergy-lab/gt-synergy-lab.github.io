@@ -514,7 +514,7 @@
     if (!links) return;
     links.querySelectorAll('.dropdown').forEach(dropdown => dropdown.remove());
     links.querySelectorAll('.paper-action').forEach(link => {
-      const label = cleanText(link.textContent);
+      const label = cleanText(link.textContent).replace(/^(?:📄|📑|💻|🏷️)\s*/u, '');
       const lower = label.toLowerCase();
       let icon = 'fa-external-link-alt';
       if (lower.includes('abstract')) icon = 'fa-align-left';

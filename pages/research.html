@@ -4,51 +4,203 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Research | Synergy Lab @ Georgia Tech</title>
+  <meta name="description" content="Explore Synergy Lab research in AI accelerators, distributed systems, interconnects and memory, compositional AI, and secure computing, with selected publications since 2019.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <meta name="theme-color" content="#ffffff">
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600&amp;display=swap" rel="stylesheet">
   <link href="../assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
   <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="../assets/css/theme.css" rel="stylesheet">
   <link href="../assets/css/dropdownTheme.css" rel="stylesheet">
   <link href="../assets/css/mytheme.css?v=site-refresh-20260902e" rel="stylesheet">
+  <link href="../assets/css/layout.css?v=20260920-roster" rel="stylesheet">
+  <link href="../assets/css/research.css?v=20260914-hierarchy" rel="stylesheet">
 
 </head>
 <body>
 <div data-site-header data-root=".."></div>
 
-<main class="main site-main synergy-page research-page minh-100vh">
-  <section class="gt-page-hero"><div class="gt-page-hero__content"><p class="gt-eyebrow">Research</p><h1>Computer architecture for intelligent systems.</h1><p>Synergy Lab studies how computation, communication, memory, and software should co-evolve for emerging AI workloads.</p></div></section>
+<main class="main site-main synergy-page research-page research-story minh-100vh">
+  <header class="research-intro" id="research-overview">
+    <p class="gt-eyebrow">Research · Selected work since 2019</p>
+    <h1>Efficient computing, from chips to AI systems.</h1>
+    <p class="research-intro__lead">We design computing systems around the movement of data—from reuse within an accelerator to communication across a datacenter. Our work brings together architecture, algorithms, and system software to make AI computation more efficient, scalable, and secure.</p>
+    <a class="home-section-link" href="./publication.html">Full publication archive <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </header>
 
-  <section class="gt-section research-overview" id="overview">
-    <div class="gt-section__header"><p class="gt-eyebrow">Our Approach</p><h2>Co-design across applications, systems, architecture, and implementation.</h2></div>
-    <div class="gt-two-column"><p>We build efficient and scalable platforms by treating data movement, computation, memory behavior, and programmability as one systems problem.</p><p>These directions also organize the lab's publication archive, making it possible to follow a topic from early architecture work through current AI systems research.</p></div>
-  </section>
+  <div class="research-map" aria-labelledby="research-map-title">
+    <div class="research-map__heading"><p class="gt-eyebrow">Our research agenda</p><h2 id="research-map-title">Data movement is the common thread.</h2><p>Five connected directions, co-designed across workloads, software, and hardware.</p></div>
+    <nav class="research-map__areas" aria-label="Explore five research directions">
+          <a class="research-map__area" href="#accelerators-design">
+            <span class="research-map__number">01</span><i class="fas fa-microchip research-map__icon" aria-hidden="true"></i>
+            <h2>Accelerators &amp; design</h2><p>Dataflows, flexible hardware, and learning-guided design.</p><span class="research-map__explore">Explore <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="research-map__area" href="#distributed-systems">
+            <span class="research-map__number">02</span><i class="fas fa-server research-map__icon" aria-hidden="true"></i>
+            <h2>Distributed AI systems</h2><p>Training, collectives, and compute-memory-network balance.</p><span class="research-map__explore">Explore <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="research-map__area" href="#intelligent-systems">
+            <span class="research-map__number">03</span><i class="fas fa-brain research-map__icon" aria-hidden="true"></i>
+            <h2>Efficient &amp; compositional AI</h2><p>Model inference, reasoning, and emerging intelligent workloads.</p><span class="research-map__explore">Explore <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="research-map__area" href="#secure-computing">
+            <span class="research-map__number">04</span><i class="fas fa-shield-alt research-map__icon" aria-hidden="true"></i>
+            <h2>Secure &amp; private computing</h2><p>Private inference, cryptographic acceleration, and secure systems.</p><span class="research-map__explore">Explore <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="research-map__area" href="#interconnects-memory">
+            <span class="research-map__number">05</span><i class="fas fa-project-diagram research-map__icon" aria-hidden="true"></i>
+            <h2>Interconnects &amp; memory</h2><p>Communication from on-chip networks to 3D and chiplet systems.</p><span class="research-map__explore">Explore <span aria-hidden="true">↗</span></span>
+          </a>
+    </nav>
+    <a class="research-map__foundation" href="#research-infrastructure"><span>Shared foundations</span> Modeling · Workload characterization · Open-source infrastructure <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
 
-  <section class="gt-section research-directions-section" id="directions" aria-labelledby="research-directions-title">
-    <div class="research-directions-heading">
-      <div><p class="gt-eyebrow">Research Directions</p><h2 id="research-directions-title">Explore our work</h2></div>
-      <p>Select a direction to see the related publications.</p>
-    </div>
-    <div class="research-direction-catalog">
-      <a class="research-direction-item" style="--direction-color:#0d7a6b" href="./publication.html?topic=accelerators"><span class="research-direction-item__number">01</span><span><strong>AI/ML Accelerators</strong><small>Accelerator microarchitecture, dataflows, mapping, sparse and dense GEMM, flexible interconnects, and quantization-aware hardware.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#6d4ed6" href="./publication.html?topic=compositional"><span class="research-direction-item__number">02</span><span><strong>Compositional &amp; Cognitive AI</strong><small>Neuro-symbolic, embodied and agentic, multi-model, and cognitive AI systems and their hardware.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#2563c9" href="./publication.html?topic=distributed"><span class="research-direction-item__number">03</span><span><strong>Distributed AI Systems</strong><small>Distributed training and inference platforms, collective communication, scheduling, and networks for large-model training.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#c2410c" href="./publication.html?topic=llm"><span class="research-direction-item__number">04</span><span><strong>Efficient LLM &amp; Model Inference</strong><small>LLM and vision-model serving, attention optimization, quantization, and private inference.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#b3357a" href="./publication.html?topic=ai-design"><span class="research-direction-item__number">05</span><span><strong>AI-Assisted Design</strong><small>Machine learning, reinforcement learning, and evolutionary search for mapping, architecture, and design-space optimization.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#3b4b8a" href="./publication.html?topic=noc"><span class="research-direction-item__number">06</span><span><strong>Interconnection &amp; On-Chip Networks</strong><small>Networks-on-chip, deadlock freedom, routers, single-cycle traversal, topology, and link design.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#b08400" href="./publication.html?topic=simulation"><span class="research-direction-item__number">07</span><span><strong>Simulation &amp; Benchmarking</strong><small>Architecture simulators, analytical models, workload characterization, and benchmark suites.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#2e8b57" href="./publication.html?topic=emerging"><span class="research-direction-item__number">08</span><span><strong>Emerging Tech &amp; Packaging</strong><small>Compute-in-memory, 3D and 2.5D ICs, chiplets, interposers, and wireless, photonic, and RF interconnects.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#8a5a2b" href="./publication.html?topic=memory"><span class="research-direction-item__number">09</span><span><strong>Memory &amp; Virtual-Memory Systems</strong><small>TLBs, translation coherence, caches, and 3D-stacked memory systems.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#c0392b" href="./publication.html?topic=edge"><span class="research-direction-item__number">10</span><span><strong>Edge &amp; Embodied Computing</strong><small>On-device learning, neuroevolution, edge clusters, and deployment characterization.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="research-direction-item" style="--direction-color:#475569" href="./publication.html?topic=security"><span class="research-direction-item__number">11</span><span><strong>Privacy &amp; Security</strong><small>Cryptographic acceleration, confidential computing, and secure and private computation.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  <div class="research-areas">
+    <section class="research-area" id="accelerators-design" aria-labelledby="accelerators-design-title">
+      <div class="research-area__intro">
+        <p class="research-area__eyebrow"><span>01</span> Efficient computation</p>
+        <h2 id="accelerators-design-title">AI Accelerators &amp; Automated Design</h2>
+        <div class="research-area__description">
+          <p class="research-area__lead">Efficient AI hardware depends on how data is reused, moved, and represented.</p>
+          <p>We co-design accelerator datapaths, on-chip interconnects, memory organization, and mappings so that hardware can adapt to changing layer shapes, sparsity patterns, and numerical precision.</p>
+          <p>Our work connects data-centric modeling in <strong>MAESTRO</strong> and sparse computation in <strong>SIGMA</strong> with dataflow switching in <strong>FEATHER</strong> and quantization-aware acceleration in <strong>MicroScopiQ</strong>. Learning-based methods, including <strong>ConfuciuX</strong> and <strong>AIRCHITECT</strong>, help navigate the large space of hardware configurations and workload mappings.</p>
+        </div>
+        <ul class="research-keywords" aria-label="Focus areas"><li>Dataflow &amp; reuse</li><li>Sparsity &amp; quantization</li><li>Reconfigurable hardware</li><li>Learning-based design</li></ul>
+        <div class="research-area__browse"><h3>Browse related publications</h3><nav aria-label="AI Accelerators &amp; Automated Design publication topics"><a href="./publication.html?topic=accelerators">AI/ML Accelerators <span aria-hidden="true">↗</span></a><a href="./publication.html?topic=ai-design">AI-Assisted Design <span aria-hidden="true">↗</span></a></nav></div>
+      </div>
+      <div class="research-area__publications">
+        <h3>Representative publications</h3>
+        <ul class="research-paper-list">
+            <li class="research-paper"><a href="https://arxiv.org/abs/1805.02566" target="_blank" rel="noopener noreferrer">Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach Using <strong>MAESTRO</strong></a><span class="research-paper__venue">MICRO 2019</span></li>
+            <li class="research-paper"><a href="https://doi.org/10.1109/HPCA47549.2020.00015" target="_blank" rel="noopener noreferrer"><strong>SIGMA</strong>: A Sparse and Irregular GEMM Accelerator with Flexible Interconnects for DNN Training</a><span class="research-paper__venue">HPCA 2020</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2009.02010" target="_blank" rel="noopener noreferrer"><strong>ConfuciuX</strong>: Autonomous Hardware Resource Assignment for DNN Accelerators using Reinforcement Learning</a><span class="research-paper__venue">MICRO 2020</span></li>
+            <li class="research-paper"><a href="https://dl.acm.org/doi/10.1109/ISCA59077.2024.00024" target="_blank" rel="noopener noreferrer"><strong>FEATHER</strong>: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching</a><span class="research-paper__venue">ISCA 2024</span></li>
+            <li class="research-paper"><a href="https://dl.acm.org/doi/pdf/10.1145/3695053.3730989" target="_blank" rel="noopener noreferrer"><strong>MicroScopiQ</strong>: Accelerating Foundational Models through Outlier-Aware Microscaling Quantization</a><span class="research-paper__venue">ISCA 2025</span></li>
+            <li class="research-paper"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10993035" target="_blank" rel="noopener noreferrer"><strong>AIRCHITECT v2</strong>: Learning the Hardware Accelerator Design Space Through Unified Representations</a><span class="research-paper__venue">DATE 2025</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="research-area" id="distributed-systems" aria-labelledby="distributed-systems-title">
+      <div class="research-area__intro">
+        <p class="research-area__eyebrow"><span>02</span> Scalable infrastructure</p>
+        <h2 id="distributed-systems-title">Distributed AI &amp; Datacenter Co-design</h2>
+        <div class="research-area__description">
+          <p class="research-area__lead">Scaling AI requires more than adding compute.</p>
+          <p>Parallelism, collective communication, memory capacity, and network topology must work together. We model and co-design these layers to understand where time and resources are spent in distributed training and inference.</p>
+          <p><strong>ASTRA-sim</strong> provides a foundation for system exploration; <strong>Themis</strong> and <strong>TACOS</strong> examine how communication should use the available network. <strong>FRED</strong> studies fabrics for wafer-scale training, while our datacenter roadmap and <strong>Chakra</strong> execution traces connect workload behavior to end-to-end platform design.</p>
+        </div>
+        <ul class="research-keywords" aria-label="Focus areas"><li>Distributed training &amp; inference</li><li>Collective communication</li><li>Network topology</li><li>System modeling</li></ul>
+        <div class="research-area__browse"><h3>Browse related publications</h3><nav aria-label="Distributed AI &amp; Datacenter Co-design publication topics"><a href="./publication.html?topic=distributed">Distributed AI Systems <span aria-hidden="true">↗</span></a></nav></div>
+      </div>
+      <div class="research-area__publications">
+        <h3>Representative publications</h3>
+        <ul class="research-paper-list">
+            <li class="research-paper"><a href="https://doi.org/10.1109/ISPASS48437.2020.00018" target="_blank" rel="noopener noreferrer"><strong>ASTRA-sim</strong>: Enabling SW/HW Co-Design Exploration for Distributed DL Training Platforms</a><span class="research-paper__venue">ISPASS 2020</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2110.04478" target="_blank" rel="noopener noreferrer"><strong>Themis</strong>: A Network Bandwidth-Aware Collective Scheduling Policy for Distributed Training of DL Models</a><span class="research-paper__venue">ISCA 2022</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=15651408857113340475&amp;btnI=1&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>TACOS</strong>: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning</a><span class="research-paper__venue">MICRO 2024</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=2273571354661174918&amp;btnI=1&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>FRED</strong>: A Wafer-scale Fabric for 3D Parallel DNN Training</a><span class="research-paper__venue">ISCA 2025</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=5432467094199458900&amp;btnI=1&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>Closing the Efficiency Gap</strong>: AI Datacenter Co-design Roadmap for Scalable Training of LLMs</a><span class="research-paper__venue">ICS 2026</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2605.11333" target="_blank" rel="noopener noreferrer"><strong>MLCommons Chakra</strong>: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces</a><span class="research-paper__venue">MLSys 2026</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="research-area" id="intelligent-systems" aria-labelledby="intelligent-systems-title">
+      <div class="research-area__intro">
+        <p class="research-area__eyebrow"><span>03</span> Systems for emerging intelligence</p>
+        <h2 id="intelligent-systems-title">Efficient &amp; Compositional AI Systems</h2>
+        <div class="research-area__description">
+          <p class="research-area__lead">Modern AI combines neural computation with reasoning, irregular control flow, and interactions among models and tools.</p>
+          <p>We characterize these workloads and co-design algorithms, runtimes, and architectures around their compute and memory demands.</p>
+          <p>Our research spans XR workload benchmarking, KV-cache compression in <strong>GEAR</strong> and <strong>ThinKV</strong>, and neurosymbolic cognition in <strong>CogSys</strong>. <strong>SLM-MUX</strong>, compositional AI characterization, and <strong>ThunderAgent</strong> extend this work to coordinated models and program-aware agentic inference.</p>
+        </div>
+        <ul class="research-keywords" aria-label="Focus areas"><li>Efficient model inference</li><li>KV-cache compression</li><li>Neurosymbolic reasoning</li><li>Agentic &amp; embodied workloads</li></ul>
+        <div class="research-area__browse"><h3>Browse related publications</h3><nav aria-label="Efficient &amp; Compositional AI Systems publication topics"><a href="./publication.html?topic=llm">Efficient LLM &amp; Model Inference <span aria-hidden="true">↗</span></a><a href="./publication.html?topic=compositional">Compositional &amp; Cognitive AI <span aria-hidden="true">↗</span></a><a href="./publication.html?topic=edge">Edge &amp; Embodied Computing <span aria-hidden="true">↗</span></a></nav></div>
+      </div>
+      <div class="research-area__publications">
+        <h3>Representative publications</h3>
+        <ul class="research-paper-list">
+            <li class="research-paper"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=P__ztgcAAAAJ&amp;cstart=100&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=P__ztgcAAAAJ:Z5m8FVwuT1cC" target="_blank" rel="noopener noreferrer"><strong>XRBench</strong>: An Extended Reality (XR) Machine Learning Benchmark Suite for the Metaverse</a><span class="research-paper__venue">MLSys 2023</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=8631300155055483091&amp;btnI=1&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>GEAR</strong>: An Efficient Error Reduction Framework for KV Cache Compression in LLM Inference</a><span class="research-paper__venue">NeurIPS 2024</span></li>
+            <li class="research-paper"><a href="https://ieeexplore.ieee.org/document/10946710" target="_blank" rel="noopener noreferrer"><strong>CogSys</strong>: Efficient and Scalable Neurosymbolic Cognition System via Algorithm-Hardware Co-Design</a><span class="research-paper__venue">HPCA 2025</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/pdf/2510.01290" target="_blank" rel="noopener noreferrer"><strong>ThinKV</strong>: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models</a><span class="research-paper__venue">ICLR 2026</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/pdf/2510.05077" target="_blank" rel="noopener noreferrer"><strong>SLM-MUX</strong>: Orchestrating Small Language Models for Reasoning</a><span class="research-paper__venue">ICLR 2026</span></li>
+            <li class="research-paper"><a href="https://dl.acm.org/doi/10.1145/3760250.3762235" target="_blank" rel="noopener noreferrer"><strong>Compositional AI Beyond LLMs</strong>: System Implications of Neuro-Symbolic-Probabilistic Architectures</a><span class="research-paper__venue">ASPLOS 2026</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2602.13692" target="_blank" rel="noopener noreferrer"><strong>ThunderAgent</strong>: A Simple, Fast and Program-Aware Agentic Inference System</a><span class="research-paper__venue">ICML 2026</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="research-area" id="secure-computing" aria-labelledby="secure-computing-title">
+      <div class="research-area__intro">
+        <p class="research-area__eyebrow"><span>04</span> Security as a systems constraint</p>
+        <h2 id="secure-computing-title">Secure &amp; Private Computing</h2>
+        <div class="research-area__description">
+          <p class="research-area__lead">Protecting data changes the bottlenecks of a computing system.</p>
+          <p>We study how architecture and system software can reduce the computation and communication costs of secure execution, encrypted inference, and privacy-preserving applications.</p>
+          <p>Our work connects NoC side-channel mitigation with efficient homomorphic-encryption operators and the use of AI ASICs for cryptographic computation. <strong>SCALE</strong> and <strong>PRIVATAR</strong> extend this approach to confidential distributed machine learning and secure offloading for multi-user virtual reality.</p>
+        </div>
+        <ul class="research-keywords" aria-label="Focus areas"><li>Homomorphic encryption</li><li>Confidential computing</li><li>Secure offloading</li><li>Side-channel mitigation</li></ul>
+        <div class="research-area__browse"><h3>Browse related publications</h3><nav aria-label="Secure &amp; Private Computing publication topics"><a href="./publication.html?topic=security">Privacy &amp; Security <span aria-hidden="true">↗</span></a></nav></div>
+      </div>
+      <div class="research-area__publications">
+        <h3>Representative publications</h3>
+        <ul class="research-paper-list">
+            <li class="research-paper"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=P__ztgcAAAAJ&amp;cstart=100&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=P__ztgcAAAAJ:kuK5TVdYjLIC" target="_blank" rel="noopener noreferrer">Mitigating Timing-Based <strong>NoC Side-Channel Attacks</strong> with LLC Remapping</a><span class="research-paper__venue">IEEE CAL 2023</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2404.03216" target="_blank" rel="noopener noreferrer">Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in <strong>Homomorphic Encryption</strong></a><span class="research-paper__venue">MLSys 2024</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=3706374279726660658&amp;btnI=1&amp;hl=en" target="_blank" rel="noopener noreferrer">Leveraging ASIC AI Chips for <strong>Homomorphic Encryption</strong></a><span class="research-paper__venue">HPCA 2026</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=9927071615161498524&amp;btnI=1&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>SCALE</strong>: Tackling Communication Bottlenecks in Confidential Distributed Machine Learning</a><span class="research-paper__venue">HPCA 2026</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2604.17476" target="_blank" rel="noopener noreferrer"><strong>PRIVATAR</strong>: Scalable Privacy-Preserving Multi-User VR via Secure Offloading</a><span class="research-paper__venue">MLSys 2026</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="research-area" id="interconnects-memory" aria-labelledby="interconnects-memory-title">
+      <div class="research-area__intro">
+        <p class="research-area__eyebrow"><span>05</span> Moving data across hardware</p>
+        <h2 id="interconnects-memory-title">Interconnects, Memory &amp; Chiplet Systems</h2>
+        <div class="research-area__description">
+          <p class="research-area__lead">The cost of moving data depends on both the system abstraction and the physical implementation.</p>
+          <p>We study on-chip networks, virtual-memory mechanisms, heterogeneous chiplets, and 3D integration to connect compute and memory efficiently.</p>
+          <p>This work spans deadlock resolution in <strong>SWAP</strong>, interposer topology design in <strong>Kite</strong>, and translation coherence in <strong>ecoTLB</strong>. Heterogeneous network traversal, compute-on-memory integration, and multi-chip communication extend the same questions across routers, memory systems, chips, and packages.</p>
+        </div>
+        <ul class="research-keywords" aria-label="Focus areas"><li>Networks-on-chip</li><li>Virtual memory</li><li>Chiplets &amp; interposers</li><li>3D integration</li></ul>
+        <div class="research-area__browse"><h3>Browse related publications</h3><nav aria-label="Interconnects, Memory &amp; Chiplet Systems publication topics"><a href="./publication.html?topic=noc">Interconnection &amp; On-Chip Networks <span aria-hidden="true">↗</span></a><a href="./publication.html?topic=memory">Memory &amp; Virtual-Memory Systems <span aria-hidden="true">↗</span></a><a href="./publication.html?topic=emerging">Emerging Tech &amp; Packaging <span aria-hidden="true">↗</span></a></nav></div>
+      </div>
+      <div class="research-area__publications">
+        <h3>Representative publications</h3>
+        <ul class="research-paper-list">
+            <li class="research-paper"><a href="https://www.eecg.utoronto.ca/~enright/swap2019.pdf" target="_blank" rel="noopener noreferrer"><strong>SWAP</strong>: Synchronized Weaving of Adjacent Packets for Network Deadlock Resolution</a><span class="research-paper__venue">MICRO 2019</span></li>
+            <li class="research-paper"><a href="https://jiemingyin.github.io/docs/DAC2020.pdf" target="_blank" rel="noopener noreferrer"><strong>Kite</strong>: A Family of Heterogeneous Interposer Topologies Enabled via Accurate Interconnect Modeling</a><span class="research-paper__venue">DAC 2020</span></li>
+            <li class="research-paper"><a href="https://gts3.org/assets/papers/2020/maass%3Aecotlb.pdf" target="_blank" rel="noopener noreferrer"><strong>ecoTLB</strong>: Eventually Consistent TLBs</a><span class="research-paper__venue">ACM TACO 2020</span></li>
+            <li class="research-paper"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=P__ztgcAAAAJ&amp;cstart=100&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=P__ztgcAAAAJ:b1wdh0AR-JQC" target="_blank" rel="noopener noreferrer"><strong>TNT</strong>: A Modular Approach to Traversing Physically Heterogeneous NoCs at Bare-Wire Latency</a><span class="research-paper__venue">ACM TACO 2023</span></li>
+            <li class="research-paper"><a href="https://ieeexplore.ieee.org/document/10221779" target="_blank" rel="noopener noreferrer">On Continuing DNN Accelerator Architecture Scaling Using Tightly-coupled <strong>Compute-on-Memory 3D ICs</strong></a><span class="research-paper__venue">IEEE TVLSI 2023</span></li>
+            <li class="research-paper"><a href="https://arxiv.org/abs/2505.00041" target="_blank" rel="noopener noreferrer"><strong>MCMComm</strong>: Hardware-Software Co-Optimization for End-to-End Communication in Multi-Chip-Modules</a><span class="research-paper__venue research-paper__venue--preprint">arXiv 2025</span></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="research-infrastructure" id="research-infrastructure" aria-labelledby="research-infrastructure-title">
+    <div><p class="gt-eyebrow">Across all five directions</p><h2 id="research-infrastructure-title">Build on our research.</h2></div>
+    <div class="research-infrastructure__body"><p>Simulation, cost models, workload traces, and open implementations turn individual research ideas into tools others can use. These shared foundations connect our work from accelerator dataflows to distributed AI platforms.</p>
+      <nav class="research-tool-links" aria-label="Open research tools">
+        <a href="https://maestro.ece.gatech.edu/" target="_blank" rel="noopener noreferrer">MAESTRO <span aria-hidden="true">↗</span></a>
+        <a href="https://scalesim-project.github.io/" target="_blank" rel="noopener noreferrer">SCALE-Sim <span aria-hidden="true">↗</span></a>
+        <a href="https://astra-sim.github.io/" target="_blank" rel="noopener noreferrer">ASTRA-sim <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/mlcommons/chakra" target="_blank" rel="noopener noreferrer">Chakra <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/stonne-simulator/stonne" target="_blank" rel="noopener noreferrer">STONNE <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/maeri-project/FEATHER" target="_blank" rel="noopener noreferrer">FEATHER <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="research-infrastructure__actions"><a class="home-section-link" href="./tools.html">Explore all tools <i class="fas fa-arrow-right" aria-hidden="true"></i></a><a class="home-section-link" href="./publication.html?topic=simulation">Simulation publications <i class="fas fa-arrow-right" aria-hidden="true"></i></a><a class="research-back-top" href="#research-overview">Back to top ↑</a></div>
     </div>
   </section>
 </main>
 
 <div data-site-footer data-root=".."></div>
 
-<script src="../assets/js/synergy-site.js?v=site-refresh-20260902e"></script>
+<script src="../assets/js/synergy-site.js?v=20260920-footer"></script>
 <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
 <script src="../assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>

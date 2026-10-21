@@ -6,25 +6,102 @@
   <title>News | Synergy Lab @ Georgia Tech</title>
   <link rel="icon" type="image/png" href="../favicon.png">
   <meta name="theme-color" content="#ffffff">
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600&amp;display=swap" rel="stylesheet">
   <link href="../assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
   <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="../assets/css/theme.css" rel="stylesheet">
   <link href="../assets/css/dropdownTheme.css" rel="stylesheet">
   <link href="../assets/css/mytheme.css?v=site-refresh-20260902e" rel="stylesheet">
+  <link href="../assets/css/layout.css?v=20260920-roster" rel="stylesheet">
   
 </head>
 <body>
 <div data-site-header data-root=".."></div>
 
-<main class="main site-main synergy-page minh-100vh">
-  <section class="gt-page-hero"><div class="gt-page-hero__content"><p class="gt-eyebrow">News</p><h1>Lab updates and announcements.</h1><p>This page keeps the new lab webpage structure while using Synergy-specific news placeholders.</p></div></section>
-  <section class="gt-section"><div class="gt-section__header"><p class="gt-eyebrow">Recent</p><h2>Recent news</h2></div><div class="gt-news-list"><article><time>2026</time><h2>Scholar sync added recent papers</h2><p>The publication list now includes the first batch of automatically discovered 2026 papers from Google Scholar.</p></article><article><time>2026</time><h2>Research artifacts and systems work</h2><p>Updates on simulators, tools, and infrastructure projects can be featured here as the final news list is assembled.</p></article><article><time>2025</time><h2>Selected systems and AI infrastructure work</h2><p>Use this section for accepted papers, awards, talks, internships, and lab events as the final news list is provided.</p></article></div></section>
+<main class="main site-main synergy-page news-page minh-100vh">
+  <section class="gt-page-hero"><div class="gt-page-hero__content"><p class="gt-eyebrow">Synergy Lab</p><h1>Research news</h1><p>Papers, awards, and updates from the lab.</p></div></section>
+  <section class="gt-section"><div class="lab-news-list">
+      <article class="lab-news-item">
+        <time datetime="2026-07">2026.07</time>
+        <span class="lab-news-kind lab-news-kind--award">Award</span>
+        <p><a href="https://www.sigarch.org/isca-2026-trip-report/" target="_blank" rel="noopener">Prof. Krishna receives the <strong>2026 ACM SIGARCH Maurice Wilkes Award</strong>.</a></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-07">2026.07</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>ICML 2026</strong> (Spotlight).</a><span class="lab-news-note"><span class="lab-news-paper">ThunderAgent: A simple, fast and program-aware agentic inference system</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-07">2026.07</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>ICS 2026</strong>.</a><span class="lab-news-note"><span class="lab-news-paper">Closing the Efficiency Gap: AI Datacenter Co-design Roadmap for Scalable Training of LLMs</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-05">2026.05</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">2 papers accepted to <strong>MLSys 2026</strong> (2 Orals).</a><span class="lab-news-note"><span class="lab-news-paper">PRIVATAR: Scalable Privacy-preserving Multi-user VR via Secure Offloading</span> <span class="lab-news-paper">MLCommons Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-04">2026.04</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">2 papers accepted to <strong>ICLR 2026</strong> (1 Oral).</a><span class="lab-news-note"><span class="lab-news-paper">ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models</span> <span class="lab-news-paper">SLM-MUX: Orchestrating Small Language Models for Reasoning</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-04">2026.04</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">3 papers accepted to <strong>ISPASS 2026</strong>.</a><span class="lab-news-note"><span class="lab-news-paper">MINISA: Minimal Instruction Set Architecture for Next-gen Reconfigurable Inference Accelerator</span> <span class="lab-news-paper">Towards System-2 AI: Workloads and Characterizations of Energy-Based Models</span> <span class="lab-news-paper">Evaluating Cross-Architecture Performance Modeling of Distributed ML Workloads Using StableHLO</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-03">2026.03</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>ASPLOS 2026</strong>.</a><span class="lab-news-note"><span class="lab-news-paper">Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2026-01">2026.01</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">3 papers accepted to <strong>HPCA 2026</strong>.</a><span class="lab-news-note"><span class="lab-news-paper">Leveraging ASIC AI chips for homomorphic encryption</span> <span class="lab-news-paper">REASON: Accelerating probabilistic logical reasoning for scalable neuro-symbolic intelligence</span> <span class="lab-news-paper">SCALE: Tackling Communication Bottlenecks in Confidential Distributed Machine Learning</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-12">2025.12</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>NeurIPS 2025</strong> (Spotlight).</a><span class="lab-news-note"><span class="lab-news-paper">Win fast or lose slow: Balancing speed and accuracy in latency-sensitive decisions of LLMs</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-10">2025.10</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>ICCV 2025</strong>.</a><span class="lab-news-note"><span class="lab-news-paper">OuroMamba: A Data-Free Quantization Framework for Vision Mamba</span></span></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-06">2025.06</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>ISCA 2025</strong>.</a></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-05">2025.05</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">3 papers accepted to <strong>ISPASS 2025</strong>.</a></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-04">2025.04</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>ASPLOS 2025</strong>.</a></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-03">2025.03</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">1 paper accepted to <strong>HPCA 2025</strong>.</a></p>
+      </article>
+      <article class="lab-news-item">
+        <time datetime="2025-03">2025.03</time>
+        <span class="lab-news-kind lab-news-kind--paper">Paper</span>
+        <p><a href="./publication.html">2 papers accepted to <strong>DATE 2025</strong>.</a></p>
+      </article>
+  </div></section>
 </main>
 
 <div data-site-footer data-root=".."></div>
 
-<script src="../assets/js/synergy-site.js?v=site-refresh-20260902e"></script>
+<script src="../assets/js/synergy-site.js?v=20260920-footer"></script>
 <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
 <script src="../assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>

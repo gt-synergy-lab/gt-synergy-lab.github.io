@@ -710,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
       '<footer class="footer synergy-footer"><div class="container">',
       '<div class="synergy-footer__grid"><div class="synergy-footer__brand"><img src="' + logo + '" alt="Synergy Lab"><p>Computer architecture and systems research at Georgia Tech.</p><address>Suite 3305-3306, 266 Ferst Dr NW<br>Atlanta, GA 30332</address></div>',
       '<nav class="synergy-footer__nav" aria-label="Footer navigation"><div><h2>Explore</h2><a href="' + pagePrefix + 'research.html">Research</a><a href="' + pagePrefix + 'publication.html">Publications</a><a href="' + pagePrefix + 'tools.html">Released Tools</a></div>',
-      '<div><h2>Lab</h2><a href="' + pagePrefix + 'team.html">Team</a><a href="https://tushar-krishna.github.io/" target="_blank" rel="noopener">Faculty Homepage</a><a href="mailto:tushar@ece.gatech.edu">Contact</a></div></nav></div>',
+      '<div><h2>Lab</h2><a href="' + pagePrefix + 'team.html">Team</a><a href="https://tushar-krishna.github.io/" target="_blank" rel="noopener">Faculty Homepage</a><a href="' + pagePrefix + 'contact.html">Contact</a><a href="' + pagePrefix + 'sponsors.html">Sponsors</a></div></nav></div>',
       '<div class="synergy-footer__bottom"><span>&copy; 2026 Synergy Lab at Georgia Tech.</span><span>Atlanta, Georgia</span></div></div></footer>'
     ].join("");
   }
