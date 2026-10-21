@@ -7,76 +7,56 @@
   <link rel="icon" type="image/png" href="./favicon.png">
   <meta name="theme-color" content="#ffffff">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,72,600;1,72,500&amp;display=swap" rel="stylesheet">
   <link href="./assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
   <link href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="./assets/css/theme.css" rel="stylesheet">
   <link href="./assets/css/dropdownTheme.css" rel="stylesheet">
   <link href="./assets/css/mytheme.css?v=site-refresh-20260902e" rel="stylesheet">
   <link href="./assets/css/layout.css?v=20260920-type-hero" rel="stylesheet">
-  <link href="./assets/css/home.css?v=20261021" rel="stylesheet">
+  <link href="./assets/css/home.css?v=20261021-wordmark" rel="stylesheet">
 
 </head>
 <body class="home-page">
 <div data-site-header data-root="."></div>
 
 <main class="main site-main synergy-page minh-100vh">
-  <section class="gt-hero">
-    <div class="home-hero-grid">
-      <div class="gt-hero__content">
+  <section class="gt-hero" aria-labelledby="home-title">
+    <div class="home-intro" id="overview">
+      <div class="home-intro__identity">
         <p class="gt-eyebrow">Georgia Institute of Technology</p>
-        <h1>Synergy <span>Lab</span></h1>
+        <h1 id="home-title">Synergy <span>Lab</span></h1>
+        <div class="home-intro__actions">
+          <a class="gt-button gt-button--primary" href="./pages/publication.html">Publications <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="gt-button gt-button--secondary" href="./pages/team.html">Meet the team</a>
+        </div>
       </div>
-      <div class="gt-hero__summary">
-        <p class="gt-hero__descriptor">Computer architecture and systems research for the next generation of AI.</p>
-        <p class="gt-lead">We build efficient, scalable computing platforms by co-designing accelerators, interconnects, distributed systems, and software around the movement of data.</p>
+      <div class="home-intro__summary">
+        <h2>Computer architecture <br>&amp; AI systems</h2>
+        <p class="home-intro__lead">We co-design accelerators, interconnects, and system software to make AI computing more efficient, scalable, and secure. Our research connects hardware and software through a shared focus on the movement of data.</p>
+        <p class="home-intro__affiliation">Led by <a href="https://tushar-krishna.github.io/" target="_blank" rel="noopener">Prof. Tushar Krishna</a><br>School of Electrical and Computer Engineering</p>
       </div>
-      <div class="gt-actions">
-        <a class="gt-button gt-button--primary" href="./pages/publication.html">Publications <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a class="gt-button gt-button--secondary" href="./pages/team.html">People <i class="fas fa-users" aria-hidden="true"></i></a>
-      </div>
-      <nav class="home-hero-topics" aria-label="Featured research areas">
-        <a href="./pages/research.html#accelerators-design">Chips <span aria-hidden="true">↗</span></a>
-        <a href="./pages/research.html#intelligent-systems">AI Systems <span aria-hidden="true">↗</span></a>
-        <a href="./pages/research.html#interconnects-memory">Interconnects <span aria-hidden="true">↗</span></a>
-        <a href="./pages/research.html#secure-computing">Security <span aria-hidden="true">↗</span></a>
-      </nav>
     </div>
   </section>
 
-  <section class="gt-section home-overview" id="overview">
-    <div class="gt-section__header">
-      <p class="gt-eyebrow">Computer Architecture &amp; Systems</p>
-      <h2>Rethinking how modern computing platforms move and process data.</h2>
+  <section class="gt-section home-research-hub" aria-labelledby="home-directions-title">
+    <div class="home-research-heading">
+      <div><p class="gt-eyebrow">Areas of focus</p><h2 id="home-directions-title">Research directions</h2></div>
+      <a class="home-section-link" href="./pages/research.html">Research overview <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
-    <div class="gt-two-column">
-      <p>Led by <a href="https://tushar-krishna.github.io/" target="_blank" rel="noopener">Prof. Tushar Krishna</a>, Synergy Lab studies computer architecture, interconnection networks, networks-on-chip, and AI/ML systems at Georgia Tech.</p>
-      <p>Our work connects applications, system software, architecture, CAD, and circuits, with an emphasis on practical tools and cross-layer decisions that reduce the cost of data movement.</p>
-    </div>
-  </section>
-
-  <section class="gt-section home-focus home-research-hub" aria-labelledby="home-directions-title">
-    <div class="home-directions">
-        <div class="home-research-heading">
-          <div>
-            <p class="gt-eyebrow">Research Directions</p>
-            <h2 id="home-directions-title">What we work on</h2>
-          </div>
-          <a class="home-section-link" href="./pages/research.html">Explore research <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <div class="home-research-list">
+          <a class="home-research-item" href="./pages/publication.html?topic=accelerators"><span class="home-direction__number">01</span><span><strong>AI/ML Accelerators</strong><small>Microarchitecture, dataflows, mapping, sparsity, and quantization-aware hardware.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=compositional"><span class="home-direction__number">02</span><span><strong>Compositional &amp; Cognitive AI</strong><small>Neuro-symbolic, agentic, multi-model, and cognitive AI systems.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=distributed"><span class="home-direction__number">03</span><span><strong>Distributed AI Systems</strong><small>Training and inference platforms, collectives, scheduling, and networks.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=llm"><span class="home-direction__number">04</span><span><strong>Efficient LLM &amp; Model Inference</strong><small>Serving, attention optimization, quantization, and private inference.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=ai-design"><span class="home-direction__number">05</span><span><strong>AI-Assisted Design</strong><small>Learning-guided mapping, architecture search, and design optimization.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=noc"><span class="home-direction__number">06</span><span><strong>Interconnection &amp; On-Chip Networks</strong><small>NoCs, routers, topologies, deadlock freedom, and link design.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=simulation"><span class="home-direction__number">07</span><span><strong>Simulation &amp; Benchmarking</strong><small>Simulators, analytical models, workload characterization, and benchmarks.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=emerging"><span class="home-direction__number">08</span><span><strong>Emerging Tech &amp; Packaging</strong><small>Compute-in-memory, chiplets, 3D integration, and novel interconnects.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=memory"><span class="home-direction__number">09</span><span><strong>Memory &amp; Virtual-Memory Systems</strong><small>TLBs, translation coherence, caches, and stacked memory systems.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=edge"><span class="home-direction__number">10</span><span><strong>Edge &amp; Embodied Computing</strong><small>On-device learning, edge deployment, neuroevolution, and autonomy.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="home-research-item" href="./pages/publication.html?topic=security"><span class="home-direction__number">11</span><span><strong>Privacy &amp; Security</strong><small>Cryptographic acceleration, confidential computing, and secure inference.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
-        <div class="home-direction-list">
-          <a class="home-direction" href="./pages/publication.html?topic=accelerators"><span class="home-direction__number">01</span><span><strong>AI/ML Accelerators</strong><small>Microarchitecture, dataflows, mapping, sparsity, and quantization-aware hardware.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=compositional"><span class="home-direction__number">02</span><span><strong>Compositional &amp; Cognitive AI</strong><small>Neuro-symbolic, agentic, multi-model, and cognitive AI systems.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=distributed"><span class="home-direction__number">03</span><span><strong>Distributed AI Systems</strong><small>Training and inference platforms, collectives, scheduling, and networks.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=llm"><span class="home-direction__number">04</span><span><strong>Efficient LLM &amp; Model Inference</strong><small>Serving, attention optimization, quantization, and private inference.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=ai-design"><span class="home-direction__number">05</span><span><strong>AI-Assisted Design</strong><small>Learning-guided mapping, architecture search, and design optimization.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=noc"><span class="home-direction__number">06</span><span><strong>Interconnection &amp; On-Chip Networks</strong><small>NoCs, routers, topologies, deadlock freedom, and link design.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=simulation"><span class="home-direction__number">07</span><span><strong>Simulation &amp; Benchmarking</strong><small>Simulators, analytical models, workload characterization, and benchmarks.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=emerging"><span class="home-direction__number">08</span><span><strong>Emerging Tech &amp; Packaging</strong><small>Compute-in-memory, chiplets, 3D integration, and novel interconnects.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=memory"><span class="home-direction__number">09</span><span><strong>Memory &amp; Virtual-Memory Systems</strong><small>TLBs, translation coherence, caches, and stacked memory systems.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=edge"><span class="home-direction__number">10</span><span><strong>Edge &amp; Embodied Computing</strong><small>On-device learning, edge deployment, neuroevolution, and autonomy.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          <a class="home-direction" href="./pages/publication.html?topic=security"><span class="home-direction__number">11</span><span><strong>Privacy &amp; Security</strong><small>Cryptographic acceleration, confidential computing, and secure inference.</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-    </div>
   </section>
 
   <section class="gt-section home-news-section" aria-labelledby="home-news-title">
