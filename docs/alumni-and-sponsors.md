@@ -23,6 +23,12 @@ updates in this repository.
 
 ## Publication update — October 29, 2026
 
+The lab explicitly confirmed that its MLSys 2026 papers, MLCommons Chakra and
+PRIVATAR, have **no Oral designation**. Remove the inherited Oral badges and
+the “2 Orals” news claim. This correction overrides the `note: "Oral"` entries
+in the faculty publication data fetched earlier that day; do not reintroduce
+those labels during future synchronization.
+
 The publication archive was checked against the faculty publication list at
 <https://tushar-krishna.github.io/publications.html> and Google Scholar profile
 `P__ztgcAAAAJ`. Eight missing records were added: CoCoSys, ACE, DynamoServe, LLMET,

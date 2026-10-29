@@ -123,8 +123,9 @@
     { pattern: /closing the efficiency gap/i, venue: 'ICS 2026' },
     { pattern: /thunderagent/i, venue: 'ICML 2026', note: 'Spotlight' },
     { pattern: /^quarch:/i, venue: 'ICML 2026' },
-    { pattern: /mlcommons chakra/i, venue: 'MLSys 2026', note: 'Oral' },
-    { pattern: /privatar/i, venue: 'MLSys 2026', note: 'Oral' },
+    // Lab correction (2026-10-29): these MLSys papers have no Oral designation.
+    { pattern: /mlcommons chakra/i, venue: 'MLSys 2026' },
+    { pattern: /privatar/i, venue: 'MLSys 2026' },
     { pattern: /slm-mux/i, venue: 'ICLR 2026' },
     { pattern: /thinn?kv/i, venue: 'ICLR 2026', note: 'Oral' },
     { pattern: /minisa/i, venue: 'ISPASS 2026', note: 'Distinguished Artifact Honorable Mention' },
