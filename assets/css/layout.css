@@ -306,7 +306,10 @@ h1, h2, h3, h4, h5, h6,
 .sponsor-roster__grid--industry img[src$="intel.png"] { width: 72px; height: 72px; }
 .sponsor-roster__grid--industry img[src$="qualcomm.png"] { width: 128px; height: 128px; }
 .sponsor-roster__name { color: var(--synergy-navy); font-size: 1.875rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
-.sponsor-roster__name--company { font-size: 1.5rem; font-weight: 600; }
+/* Official assets keep their aspect ratios; Meta includes built-in clear space. */
+.sponsor-roster__grid--industry img.sponsor-roster__logo { width: 100px; height: auto; max-height: 48px; }
+.sponsor-roster__grid--industry img.sponsor-roster__logo--meta { width: 156px; max-width: none; max-height: none; flex-shrink: 0; }
+.sponsor-roster__grid--industry img.sponsor-roster__logo--tsmc { width: 64px; }
 .sponsor-roster__grid p { max-width: 200px; margin: 10px auto 0; color: var(--synergy-copy); font-size: 0.6875rem; line-height: 1.6; }
 
 @media (max-width: 1000px) {

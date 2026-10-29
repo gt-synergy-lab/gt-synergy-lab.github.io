@@ -55,8 +55,18 @@ the date this site reports the confirmed acceptances, not a claimed decision dat
 ## Sponsor roster
 
 Keep the `.sponsor-roster` lists in `index.html` and `pages/sponsors.html` in sync.
-Agencies/programs and industry are separate groups. Existing local logo files are
-retained; newly added organizations use typeset names, not invented logos.
+Agencies/programs and industry are separate groups. DARPA and SRC use typeset
+names. Company logos use local image assets; do not substitute ordinary text.
+
+Google, Meta, and TSMC logos were refreshed on October 29, 2026 using these
+first-party sources, preserving the original artwork and colors:
+
+- `google.webp`: [Google Brand Resource Center](https://about.google/brand-resource-center/guidance/), the 2x Google wordmark used in its header.
+- `meta.svg`: [Meta Brand Resource Center](https://www.meta.com/brand/resources/meta/company-brand/), `Meta_Company-Lockup.zip` → `1 Positive Primary/RGB/Meta_lockup_positive primary_RGB.svg`.
+- `tsmc.png`: [TSMC's website](https://www.tsmc.com/english), the header logo at `/themes/custom/bootstrap_sass/images/logo.png`.
+
+Keep the aspect ratios and brand colors intact. Meta's SVG contains generous
+clear space, so its image box is larger to align the visible mark with its peers.
 
 The lab explicitly confirmed on September 20, 2026 that it does not receive
 IARPA or DOE funding. Neither organization belongs in this website's sponsor
