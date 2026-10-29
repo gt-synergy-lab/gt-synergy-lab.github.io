@@ -671,12 +671,12 @@ h1, h2, h3, h4, h5, h6 {
     target.innerHTML = [
       '<header class="spyre-navbar synergy-navbar navbar navbar-expand-lg bg-secondary navbar-dark fixed-top align-items-center" data-text-color="#ffffff">',
       '  <div class="container ml-neg-1">',
-      '    <a class="navbar-brand synergy-brand mr-lg-4" href="' + homePrefix + 'index.html">',
+      '    <a class="navbar-brand synergy-brand mr-lg-4" href="' + homePrefix + '">',
       '      <img src="' + logo + '" alt="Synergy Lab" />',
       "    </a>",
       '    <div class="collapse navbar-collapse" id="navbarSupportedContent">',
       '      <ul class="navbar-nav ml-auto">',
-      '        <li class="nav-item navbar-text"><a href="' + homePrefix + 'index.html" class="nav-link">Home</a></li>',
+      '        <li class="nav-item navbar-text"><a href="' + homePrefix + '" class="nav-link">Home</a></li>',
       '        <li class="nav-item navbar-text"><a href="' + pagePrefix + 'research.html" class="nav-link">Research</a></li>',
       '        <li class="nav-item navbar-text"><a href="' + pagePrefix + 'publication.html" class="nav-link">Publications</a></li>',
       '        <li class="nav-item navbar-text"><a href="' + pagePrefix + 'team.html" class="nav-link">Team</a></li>',
@@ -686,7 +686,7 @@ h1, h2, h3, h4, h5, h6 {
       '    <div class="menu-toggle d-block d-lg-none"><div class="hamburger"><span></span><span></span><span></span></div><div class="cross"><span></span><span></span></div></div>',
       "  </div>",
       '  <div class="spyre-navbar-overlay overlay-slide"><div class="container"><div class="row"><div class="spyre-navbar-nav-container mt-neg-7 col-md-6 col-lg-5 col-xl-4 bg-white ext-l"><nav class="spyre-navbar-nav"><ul class="spyre-nav">',
-      '    <li class="spyre-nav-item"><a href="' + homePrefix + 'index.html" class="spyre-nav-link">Home</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'research.html" class="spyre-nav-link">Research</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'publication.html" class="spyre-nav-link">Publications</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'team.html" class="spyre-nav-link">Team</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'tools.html" class="spyre-nav-link">Tools</a></li>',
+      '    <li class="spyre-nav-item"><a href="' + homePrefix + '" class="spyre-nav-link">Home</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'research.html" class="spyre-nav-link">Research</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'publication.html" class="spyre-nav-link">Publications</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'team.html" class="spyre-nav-link">Team</a></li><li class="spyre-nav-item"><a href="' + pagePrefix + 'tools.html" class="spyre-nav-link">Tools</a></li>',
       '  </ul></nav></div><div class="col-lg-7 col-xl-8 d-none d-md-block"><div class="synergy-overlay-copy"><p>Synergy Lab @ Georgia Tech</p><strong>Architecture, systems, software, and intelligent computing.</strong></div></div></div></div></div>',
       "</header>"
     ].join("");
