@@ -1,10 +1,26 @@
 [
   {
+    "title": "CoCoSys: The Co-Design of Cognitive AI from Algorithms to Systems",
+    "year": "2026"
+  },
+  {
+    "title": "The ACE Center for Evolvable Computing",
+    "year": "2026"
+  },
+  {
+    "title": "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving",
+    "year": "2026"
+  },
+  {
     "title": "LLMET: Enabling Cross-Layer Evaluation of Emerging M3D Memories for Energy-Efficient LLM Serving",
     "year": "2026"
   },
   {
-    "title": "TRACE-ROUTER: Task-Consistent and Adaptive Online Routing for Agentic AI",
+    "title": "Enabling ai asics for zero knowledge proof",
+    "year": "2026"
+  },
+  {
+    "title": "ORACLE: Agentic AI Orchestrator Routing Via Adaptive Verifier Calibration Feedback",
     "year": "2026"
   },
   {
@@ -16,7 +32,15 @@
     "year": "2026"
   },
   {
-    "title": "A Workflow-Aware Serving Layer for Agentic Applications",
+    "title": "SCALE-Sim EVA: Design Principles for an Extensible, Visualizable, and Adaptable Accelerator Simulation Framework",
+    "year": "2026"
+  },
+  {
+    "title": "Serving Agentic Workflows with a Physical-Plan Compiler and Adaptive Runtime",
+    "year": "2026"
+  },
+  {
+    "title": "Scalable synthesis of distributed llm workloads through symbolic tensor graphs",
     "year": "2026"
   },
   {
@@ -76,10 +100,6 @@
     "year": "2026"
   },
   {
-    "title": "Enabling ai asics for zero knowledge proof",
-    "year": "2026"
-  },
-  {
     "title": "Slm-mux: Orchestrating small language models for reasoning",
     "year": "2026"
   },
@@ -100,11 +120,11 @@
     "year": "2026"
   },
   {
-    "title": "Demystifying the cost versus benefits of sparse LLM acceleration",
+    "title": "Demystifying the Cost Versus Benefits of Sparse Large Language Model Acceleration",
     "year": "2026"
   },
   {
-    "title": "Thunderagent: A simple, fast and program-aware agentic inference system",
+    "title": "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System",
     "year": "2026"
   },
   {
@@ -128,10 +148,6 @@
     "year": "2026"
   },
   {
-    "title": "Scalable Synthesis of distributed LLM workloads through Symbolic Tensor Graphs",
-    "year": "2025"
-  },
-  {
     "title": "Ockbench: Measuring the efficiency of llm reasoning",
     "year": "2025"
   },
@@ -140,16 +156,12 @@
     "year": "2025"
   },
   {
-    "title": "STAGE: A Symbolic Tensor grAph GEnerator for distributed AI system co-design",
-    "year": "2025"
-  },
-  {
     "title": "A cpu-centric perspective on agentic ai",
     "year": "2025"
   },
   {
     "title": "Quarch: A benchmark for evaluating llm reasoning in computer architecture",
-    "year": "2025"
+    "year": "2026"
   },
   {
     "title": "Squareloop: Explore optimal authentication block strategy for ml",
@@ -241,11 +253,7 @@
   },
   {
     "title": "MIST: A Co-Design Framework for Heterogeneous, Multi-Stage LLM Inference",
-    "year": "2025"
-  },
-  {
-    "title": "Understanding and Optimizing Multi-Stage AI Inference Pipelines",
-    "year": "2025"
+    "year": "2026"
   },
   {
     "title": "Airchitect v2: Learning the hardware accelerator design space through unified representations",
@@ -324,10 +332,6 @@
     "year": "2024"
   },
   {
-    "title": "Potato leaf disease detection using CNN",
-    "year": "2024"
-  },
-  {
     "title": "Feather: A reconfigurable accelerator with data reordering support for low-cost on-chip dataflow switching",
     "year": "2024"
   },
@@ -349,7 +353,7 @@
   },
   {
     "title": "Demystifying AI platform design for distributed inference of next-generation LLM models",
-    "year": "2024"
+    "year": "2026"
   },
   {
     "title": "Accurate low-degree polynomial approximation of non-polynomial operators for fast private inference in homomorphic encryption",
@@ -377,6 +381,10 @@
   },
   {
     "title": "Gear: An efficient kv cache compression recipe for near-lossless generative inference of llm",
+    "year": "2024"
+  },
+  {
+    "title": "Potato leaf disease detection using CNN",
     "year": "2024"
   },
   {

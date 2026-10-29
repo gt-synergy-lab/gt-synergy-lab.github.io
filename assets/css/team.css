@@ -1,0 +1,4 @@
+/* Alumni subgroups share the compact roster layout. */
+#visiting-students { grid-column: 1 / -1; scroll-margin-top: 110px; }
+.synergy-visit-dates { display: inline-block; margin-left: 8px; color: #736332; font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.synergy-alumni-dates { display: inline-block; margin-left: 8px; color: #736332; font-size: 0.8125rem; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=site-refresh-20260902e';
+  const VERSION_SUFFIX = '?v=publications-20261029';
 
   const TOPICS = [
     {
@@ -112,6 +112,12 @@
   };
 
   const VERIFIED_META = [
+    { pattern: /^polestar: drift-aware/i, venue: 'NeurIPS 2026' },
+    { pattern: /^mist:/i, venue: 'SC 2026' },
+    { pattern: /^dynamoserve:/i, venue: 'SIGCOMM 2026' },
+    { pattern: /^scalable synthesis of distributed llm workloads/i, venue: 'ISCA 2026' },
+    { pattern: /^scale-sim tpu:/i, venue: 'IEEE CAL 2026' },
+    { pattern: /^cross-layer design of vector-symbolic computing/i, venue: 'ACM TECS 2026' },
     { pattern: /demystifying ai platform design for distributed inference/i, venue: 'ICCAD 2026' },
     { pattern: /enabling ai asics for zero knowledge proof/i, venue: 'DAC 2026' },
     { pattern: /closing the efficiency gap/i, venue: 'ICS 2026' },
@@ -132,7 +138,7 @@
     { pattern: /^scale: tackling communication/i, venue: 'HPCA 2026' },
     { pattern: /boosting scalability and performance: macro placement/i, venue: 'ASP-DAC 2026' },
     { pattern: /40-nm programmable heterogeneous soc/i, venue: 'IEEE JSSC 2026' },
-    { pattern: /demystifying the cost versus benefits of sparse llm acceleration/i, venue: 'IEEE Micro 2026' },
+    { pattern: /demystifying the cost versus benefits of sparse (llm|large language model) acceleration/i, venue: 'IEEE Micro 2026' },
     { pattern: /win fast or lose slow/i, venue: 'NeurIPS 2025', note: 'Spotlight' }
   ];
 
@@ -306,7 +312,9 @@
       : normalizeVenueText(rawVenue, date.year, isArxiv, isPreprint);
     const venueYearMatch = venue.match(/\b(20\d{2})\b/);
     const venueYear = venueYearMatch ? Number(venueYearMatch[1]) : 0;
-    const publicationYear = (scholarMeta && scholarMeta.year)
+    // Accepted papers belong to their venue year, even if Scholar still dates the preprint.
+    const publicationYear = (verified && venueYear >= 2015 ? String(venueYear) : '')
+      || (scholarMeta && scholarMeta.year)
       || date.year
       || (venueYear >= 2015 ? String(venueYear) : '');
     const publicationMonth = date.key ? date.key % 100 : 1;
@@ -316,7 +324,10 @@
     const rawTagIds = Array.from(element.querySelectorAll('paper-link.anchor[id]'))
       .map(anchor => anchor.id.trim().toLowerCase())
       .filter(id => !/^\d{4}-\d{2}$/.test(id));
-    const topics = inferTopics(rawTagIds, `${title} ${authors} ${venue}`);
+    const curatedTopicIds = (element.dataset.topicIds || '').split(/\s+/).filter(Boolean);
+    const topics = curatedTopicIds.length
+      ? TOPICS.filter(topic => curatedTopicIds.includes(topic.id))
+      : inferTopics(rawTagIds, `${title} ${authors} ${venue}`);
 
     titleElement.textContent = title;
     authorsElement.textContent = authors;
@@ -366,7 +377,7 @@
       venueRow.insertAdjacentElement('afterend', tagRow);
     }
 
-    const searchText = normalizeSearchText(`${title} ${authors} ${venue} ${topics.map(topic => topic.label).join(' ')}`);
+    const searchText = normalizeSearchText(`${title} ${element.dataset.searchAliases || ''} ${authors} ${venue} ${topics.map(topic => topic.label).join(' ')}`);
     const quality = (isPreprint ? 0 : 4)
       + (paperLink ? 2 : 0)
       + (element.querySelector('.abstract-text') ? 1 : 0)
@@ -517,7 +528,7 @@
       const label = cleanText(link.textContent).replace(/^(?:📄|📑|💻|🏷️)\s*/u, '');
       const lower = label.toLowerCase();
       let icon = 'fa-external-link-alt';
-      if (lower.includes('abstract')) icon = 'fa-align-left';
+      if (lower.includes('abstract') || lower.includes('summary')) icon = 'fa-align-left';
       if (lower.includes('paper') || lower.includes('pdf')) icon = 'fa-file-alt';
       if (lower.includes('code')) icon = 'fa-code';
       link.replaceChildren();
