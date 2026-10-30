@@ -63,3 +63,29 @@ After the lab website has been reviewed and Georgia Tech approves the hosting ch
 - `assets/scripts/pub_list/`: Publications data loaded at runtime.
 - `assets/vendor/`: only the third-party browser files used by the pages.
 - `.nojekyll`: prevents Jekyll processing of static asset paths.
+
+## Refresh publication metadata
+
+```bash
+python3 scripts/refresh_publications.py
+```
+
+This uses Python's standard library to refresh `scholar_order.json` from the
+faculty Google Scholar profile and `faculty_publications.json` from the faculty
+publication page. It parses data literals without executing remote JavaScript.
+Incomplete fetches fail before replacing the data. Newly discovered faculty
+titles are reported for review; adding a paper still requires updating its HTML
+fragment, `papers.json`, and `papers.bundle.html` together.
+
+The archive includes both published papers and preprints, with no publication
+status filter. Multiple topics are combined with AND. Topics and search can be
+combined and shared through the URL. Ordering is fixed to newest first.
+
+Year groups and ordering follow Google Scholar's newest-first list; citations
+retain the actual venue year. Papers not found on Scholar use their local dates.
+Full venue names and available authors/months come from the faculty metadata.
+Award labels remain locally reviewed: the lab's MLSys no-Oral correction must
+not be overwritten by a crawl.
+Venue names are bold in the citation, with a colored short venue/year badge
+beside the paper title. The badge uses the venue year, independently of Scholar's
+year grouping; preprints have neutral badges.

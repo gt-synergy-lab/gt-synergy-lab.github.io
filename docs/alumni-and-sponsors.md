@@ -40,7 +40,7 @@ STAGE (`2511.10480`) and MIST (`2504.09775`) replace their earlier preprint entr
 they are not additional papers. The faculty list confirms ISCA 2026 for STAGE,
 SC 2026 for MIST, NeurIPS 2026 for Polestar, IEEE CAL 2026 for SCALE-Sim TPU, and
 ACM TECS 2026 for Cross-Layer Design of Vector-Symbolic Computing. Confirmed venue
-years take precedence over a preprint's older Scholar year. Stable fragment
+years are displayed in citations. Stable fragment
 filenames may therefore retain an earlier year. New or replaced records label
 their editorial descriptions as “Summary”; full abstracts are available via
 their Paper links. Keep `papers.json`, `papers.bundle.html`, and the individual
@@ -51,6 +51,26 @@ with NoC routing, or symbolic tensor graphs with neuro-symbolic AI. Renamed
 entries retain old names in `data-search-aliases`. Homepage news keeps the latest
 eight items; older items remain in `pages/news.html`. The October news item is
 the date this site reports the confirmed acceptances, not a claimed decision date.
+
+### October 30, 2026 follow-up
+
+The lab requested chronological Google Scholar ordering, including its year
+groups, instead of reordering by conference month or acceptance status. The
+archive supports intersecting topic selections. At the lab's request, the
+publication-status controls were removed; published papers and preprints are
+both included, and old status-filter URLs no longer hide preprints.
+
+The refreshed faculty list contains 176 records from 2015 onward; all 27 of its
+2026 papers already exist in the archive, including MIST (SC, November) and
+Polestar (NeurIPS, December). No duplicate entries were added. The Scholar crawl
+contains 337 rows, including undated duplicates and non-paper artifacts; these
+are an ordering reference, not 337 distinct papers to import.
+
+Four older faculty entries remain unmatched and require editorial review before
+adding: SmartPAF (MLSys 2024), Application Benchmarking (IRDS chapter, 2020), the
+SysML 2018 MAERI workshop variant, and On-Chip Networks, Second Edition (2017).
+`scripts/refresh_publications.py` reports these rather than conflating them with
+similarly titled records. The live archive still contains 248 deduplicated items.
 
 ## Sponsor roster
 

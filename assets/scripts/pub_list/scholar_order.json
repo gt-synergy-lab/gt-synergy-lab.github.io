@@ -20,7 +20,7 @@
     "year": "2026"
   },
   {
-    "title": "ORACLE: Agentic AI Orchestrator Routing Via Adaptive Verifier Calibration Feedback",
+    "title": "TRACE-Router: Task-consistent and adaptive online routing for agentic AI",
     "year": "2026"
   },
   {
@@ -36,7 +36,7 @@
     "year": "2026"
   },
   {
-    "title": "Serving Agentic Workflows with a Physical-Plan Compiler and Adaptive Runtime",
+    "title": "A Workflow-Aware Serving Layer for Agentic Applications",
     "year": "2026"
   },
   {
@@ -120,11 +120,11 @@
     "year": "2026"
   },
   {
-    "title": "Demystifying the Cost Versus Benefits of Sparse Large Language Model Acceleration",
+    "title": "Demystifying the cost versus benefits of sparse LLM acceleration",
     "year": "2026"
   },
   {
-    "title": "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System",
+    "title": "Thunderagent: A simple, fast and program-aware agentic inference system",
     "year": "2026"
   },
   {
@@ -156,12 +156,16 @@
     "year": "2025"
   },
   {
+    "title": "STAGE: A Symbolic Tensor grAph GEnerator for distributed AI system co-design",
+    "year": "2025"
+  },
+  {
     "title": "A cpu-centric perspective on agentic ai",
     "year": "2025"
   },
   {
     "title": "Quarch: A benchmark for evaluating llm reasoning in computer architecture",
-    "year": "2026"
+    "year": "2025"
   },
   {
     "title": "Squareloop: Explore optimal authentication block strategy for ml",
@@ -253,7 +257,15 @@
   },
   {
     "title": "MIST: A Co-Design Framework for Heterogeneous, Multi-Stage LLM Inference",
-    "year": "2026"
+    "year": "2025"
+  },
+  {
+    "title": "Understanding and Optimizing Multi-Stage AI Inference Pipelines",
+    "year": "2025"
+  },
+  {
+    "title": "Understanding and optimizing multi-stage ai inference pipelines",
+    "year": "2025"
   },
   {
     "title": "Airchitect v2: Learning the hardware accelerator design space through unified representations",
@@ -285,6 +297,10 @@
   },
   {
     "title": "Recap: Training-free compensation for coarse activation channel pruning in compressed llms",
+    "year": "2025"
+  },
+  {
+    "title": "Axon: A novel systolic array architecture for improved run time and energy efficient GeMM and Conv operation with on-chip im2col",
     "year": "2025"
   },
   {
@@ -353,7 +369,7 @@
   },
   {
     "title": "Demystifying AI platform design for distributed inference of next-generation LLM models",
-    "year": "2026"
+    "year": "2024"
   },
   {
     "title": "Accurate low-degree polynomial approximation of non-polynomial operators for fast private inference in homomorphic encryption",
@@ -384,15 +400,15 @@
     "year": "2024"
   },
   {
-    "title": "Potato leaf disease detection using CNN",
-    "year": "2024"
-  },
-  {
     "title": "Abstracting sparse DNN acceleration via structured sparse tensor decomposition",
     "year": "2024"
   },
   {
     "title": "Progressive gradient flow for robust N: M sparsity training in transformers",
+    "year": "2024"
+  },
+  {
+    "title": "Progressive Gradient Flow for Robust N: M Sparsity Training in Transformers",
     "year": "2024"
   },
   {
@@ -656,6 +672,10 @@
     "year": "2022"
   },
   {
+    "title": "Training Recipe for N: M Structured Sparsity with Decaying Pruning Mask",
+    "year": "2022"
+  },
+  {
     "title": "A review on bioflocculation using microalgae for nutrient removal from wastewater",
     "year": "2022"
   },
@@ -793,6 +813,14 @@
   },
   {
     "title": "Breaking barriers: Maximizing array utilization for compute in-memory fabrics",
+    "year": "2020"
+  },
+  {
+    "title": "CNS Core: Small: Edge Platform for Enabling Situation Awareness Applications",
+    "year": "2020"
+  },
+  {
+    "title": "Collaborative Research: PPoSS: Planning: Integrated Scalable Platform for Privacy-aware Collaborative Learning and Inference",
     "year": "2020"
   },
   {
@@ -950,6 +978,10 @@
   {
     "title": "An edge-centric scalable intelligent framework to collaboratively execute dnn",
     "year": "2019"
+  },
+  {
+    "title": "A communication-centric approach for designing flexible DNN accelerators",
+    "year": "2018"
   },
   {
     "title": "Merge network for a non-von Neumann accumulate accelerator in a 3D chip",
@@ -1186,5 +1218,133 @@
   {
     "title": "Express virtual channels with capacitively driven global links",
     "year": "2009"
+  },
+  {
+    "title": "GARNET: A detailed on-chip network model inside a full-system simulator",
+    "year": "2009"
+  },
+  {
+    "title": "Texture Filter Memory—a power-efficient and scalable texture memory architecture for mobile graphics processors",
+    "year": "2008"
+  },
+  {
+    "title": "NoC with near-ideal express virtual channels using global-line communication",
+    "year": "2008"
+  },
+  {
+    "title": "PRIVATAR: ENABLING PRIVACY-PRESERVING REAL-TIME MULTI-USER VR THROUGH SECURE OFFLOADING",
+    "year": ""
+  },
+  {
+    "title": "Sparsify the Weights but Let the Gradients Flow!",
+    "year": ""
+  },
+  {
+    "title": "𝑆2 Loop: Explore Optimal Authentication Block Strategy for ML",
+    "year": ""
+  },
+  {
+    "title": "Flexagon: a multi-dataflow sparse-sparse matrix multiplication accelerator for efficient DNN processing",
+    "year": ""
+  },
+  {
+    "title": "Dyserve: Dynamic Strategy Generation for Agent Serving",
+    "year": ""
+  },
+  {
+    "title": "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System",
+    "year": ""
+  },
+  {
+    "title": "Session 1A: Energy Efficient Computing and Storage",
+    "year": ""
+  },
+  {
+    "title": "OckBench: Tokens are Not to Be Multiplied without Necessity",
+    "year": ""
+  },
+  {
+    "title": "DAC Awards and Scholarships",
+    "year": ""
+  },
+  {
+    "title": "External Review Committee",
+    "year": ""
+  },
+  {
+    "title": "Predicting Computing’s Co-Designed Future: The Applications Benchmarking and Systems & Architectures Chapters of the IRDS",
+    "year": ""
+  },
+  {
+    "title": "CLAMP-ViT: Contrastive Data-Free Learning for Adaptive Post-Training Quantization of ViTs (Supplementary Material)",
+    "year": ""
+  },
+  {
+    "title": "HOTI 2024",
+    "year": ""
+  },
+  {
+    "title": "External Review Committee",
+    "year": ""
+  },
+  {
+    "title": "Xin, Yao 21 Xu, Yang 21",
+    "year": ""
+  },
+  {
+    "title": "2021 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)| 978-1-6654-4278-7/21/$31.00© 2021 IEEE| DOI: 10.1109/PACT52795. 2021.00033",
+    "year": ""
+  },
+  {
+    "title": "ISPASS 2021",
+    "year": ""
+  },
+  {
+    "title": "Murali Annavaram (Chair), University of Southern California Nael Abu-Ghazaleh, University of California, Riverside Alaa R. Alameldeen, Intel Hari Angepat, Microsoft Azure",
+    "year": ""
+  },
+  {
+    "title": "Workshop Organization–AI4S 2020",
+    "year": ""
+  },
+  {
+    "title": "PACT 2019",
+    "year": ""
+  },
+  {
+    "title": "Scaling the Cascades",
+    "year": ""
+  },
+  {
+    "title": "Efficient Mapping Space Exploration for a Reconfigurable Neural Accelerator",
+    "year": ""
+  },
+  {
+    "title": "Synchronized Progress in Interconnection Networks",
+    "year": ""
+  },
+  {
+    "title": "ISSCC 2016/SESSION 14/NEXT-GENERATION PROCESSING/14.5",
+    "year": ""
+  },
+  {
+    "title": "Tor Aamodt, University of British Columbia Murali Annavaram, University of Southern California Rajeev Balasubramonian, University of Utah Yungang Bao, Institute of Computing …",
+    "year": ""
+  },
+  {
+    "title": "Technical Program Committee Members",
+    "year": ""
+  },
+  {
+    "title": "MICRO-49 program committee",
+    "year": ""
+  },
+  {
+    "title": "Enright Jerger, Natalie, 41, 80 Ernst, Rolf, 33 Escamilla, José V., 159 Fankem Tatenguem, Hervé, 72 Fettweis, Gerhard, 57",
+    "year": ""
+  },
+  {
+    "title": "SCORPIO: 36-Core Shared-Memory Processor Demonstrating Snoopy Coherence on a Mesh Interconnect",
+    "year": ""
   }
 ]

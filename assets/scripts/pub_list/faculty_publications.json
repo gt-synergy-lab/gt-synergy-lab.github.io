@@ -1,0 +1,2029 @@
+{
+  "source": "https://tushar-krishna.github.io/publications.html",
+  "checkedOn": "2026-10-30",
+  "venueNames": {
+    "SIGCOMM": "ACM SIGCOMM Conference",
+    "ACM TECS": "ACM Transactions on Embedded Computing Systems",
+    "FPGA": "ACM/SIGDA International Symposium on Field-Programmable Gate Arrays",
+    "ACSMD@ISCA": "Architecture, Compiler, and System Support for Multi-model DNN Workloads Workshop at ISCA",
+    "ISCA": "International Symposium on Computer Architecture",
+    "MICRO": "IEEE/ACM International Symposium on Microarchitecture",
+    "HPCA": "IEEE International Symposium on High-Performance Computer Architecture",
+    "ASPLOS": "ACM International Conference on Architectural Support for Programming Languages and Operating Systems",
+    "DAC": "ACM/IEEE Design Automation Conference",
+    "ASP-DAC": "Asia and South Pacific Design Automation Conference",
+    "DATE": "Design, Automation & Test in Europe Conference",
+    "ISPASS": "IEEE International Symposium on Performance Analysis of Systems and Software",
+    "MLSys": "Conference on Machine Learning and Systems",
+    "IPDPS": "IEEE International Parallel & Distributed Processing Symposium",
+    "ISCAS": "IEEE International Symposium on Circuits and Systems",
+    "ISLPED": "IEEE/ACM International Symposium on Low Power Electronics and Design",
+    "NOCS": "IEEE/ACM International Symposium on Networks-on-Chip",
+    "ICCAD": "IEEE/ACM International Conference on Computer-Aided Design",
+    "ICCD": "IEEE International Conference on Computer Design",
+    "PACT": "International Conference on Parallel Architectures and Compilation Techniques",
+    "SC": "International Conference for High Performance Computing, Networking, Storage and Analysis",
+    "HotI": "IEEE Symposium on High-Performance Interconnects",
+    "Hot Chips": "IEEE Hot Chips Symposium",
+    "IISWC": "IEEE International Symposium on Workload Characterization",
+    "FPL": "International Conference on Field-Programmable Logic and Applications",
+    "ISQED": "International Symposium on Quality Electronic Design",
+    "SIGMETRICS": "ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems",
+    "ICS": "ACM International Conference on Supercomputing",
+    "ICML": "International Conference on Machine Learning",
+    "ICLR": "International Conference on Learning Representations",
+    "NeurIPS": "Conference on Neural Information Processing Systems",
+    "ICCV": "IEEE/CVF International Conference on Computer Vision",
+    "ECCV": "European Conference on Computer Vision",
+    "AAAI": "AAAI Conference on Artificial Intelligence",
+    "ISSCC": "IEEE International Solid-State Circuits Conference",
+    "Middleware": "ACM/IFIP International Middleware Conference",
+    "VLSI-SoC": "IFIP/IEEE International Conference on Very Large Scale Integration",
+    "NANOCOM": "ACM International Conference on Nanoscale Computing and Communication",
+    "CPAL": "Conference on Parsimony and Learning",
+    "HASP@MICRO": "International Workshop on Hardware and Architectural Support for Security and Privacy",
+    "ENLSP@NeurIPS": "NeurIPS Workshop on Efficient Natural Language and Speech Processing",
+    "IA³ @ SC": "Workshop on Irregular Applications: Architectures and Algorithms",
+    "NocArc": "International Workshop on Network on Chip Architectures",
+    "AISTECS": "International Workshop on Advanced Interconnect Solutions and Technologies for Emerging Computing Systems",
+    "SysML": "Conference on Systems and Machine Learning",
+    "NeuS": "Annual Conference on Neuro-Symbolic Learning and Reasoning",
+    "ICRC": "IEEE International Conference on Rebooting Computing",
+    "ICECS": "IEEE International Conference on Electronics, Circuits and Systems",
+    "IMS": "IEEE MTT-S International Microwave Symposium",
+    "RadarConf": "IEEE Radar Conference",
+    "IEEE SENSORS": "IEEE Sensors Conference",
+    "DAE-BRNS": "DAE-BRNS Theme Meeting on Materials Modeling",
+    "IEEE Micro": "IEEE Micro",
+    "IEEE JSSC": "IEEE Journal of Solid-State Circuits",
+    "IEEE TVLSI": "IEEE Transactions on Very Large Scale Integration (VLSI) Systems",
+    "IEEE TC": "IEEE Transactions on Computers",
+    "IEEE TPDS": "IEEE Transactions on Parallel and Distributed Systems",
+    "IEEE CAL": "IEEE Computer Architecture Letters",
+    "IEEE TCASAI": "IEEE Transactions on Circuits and Systems for Artificial Intelligence",
+    "IEEE T-Radar": "IEEE Transactions on Radar Systems",
+    "IEEE Computer": "IEEE Computer",
+    "ACM TACO": "ACM Transactions on Architecture and Code Optimization",
+    "ACM TOCS": "ACM Transactions on Computer Systems",
+    "ACM JETC": "ACM Journal on Emerging Technologies in Computing Systems",
+    "ACM SIGARCH CAN": "ACM SIGARCH Computer Architecture News",
+    "Synthesis Lectures": "Synthesis Lectures on Computer Architecture, Morgan & Claypool",
+    "Springer (chapter)": "Network-on-Chip Security and Privacy (Springer)",
+    "IRDS (chapter)": "IEEE International Roadmap for Devices and Systems",
+    "US Patent": "US Patent"
+  },
+  "papers": [
+    {
+      "title": "Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs",
+      "matchTitles": [
+        "Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs"
+      ],
+      "authors": "Mingyu Lee, Akshat Ramachandran, Souvik Kundu, Tushar Krishna",
+      "year": 2026,
+      "venue": "NeurIPS",
+      "type": "conf",
+      "month": 12
+    },
+    {
+      "title": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
+      "matchTitles": [
+        "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models"
+      ],
+      "authors": "Abhimanyu Bambhaniya, Ritik Raj, Geonhwa Jeong, Souvik Kundu, Sudarshan Srinivasan, Suvinay Subramanian, Midhilesh Elavazhagan, Madhu Kumar, Tushar Krishna",
+      "year": 2026,
+      "venue": "ICCAD",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "MIST: A Co-Design Framework for Heterogeneous, Multi-Stage LLM Inference",
+      "matchTitles": [
+        "MIST: A Co-Design Framework for Heterogeneous, Multi-Stage LLM Inference"
+      ],
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Hanjiang Wu, Suvinay Subramanian, Sudarshan Srinivasan, Souvik Kundu, Amir Yazdanbakhsh, Midhilesh Elavazhagan, Madhu Kumar, Minlan Yu, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2026,
+      "venue": "SC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving",
+      "matchTitles": [
+        "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving"
+      ],
+      "authors": "Diman Zad Tootaghaj, Khaled Diab, Bob Lantz, Hanjiang Wu, K. K. Ramakrishnan, Md Ashfaqur Rahaman, Ryan Stutsman, Puneet Sharma, Tushar Krishna",
+      "year": 2026,
+      "venue": "SIGCOMM",
+      "type": "conf",
+      "month": 8
+    },
+    {
+      "title": "Enabling AI ASICs for Zero Knowledge Proof",
+      "matchTitles": [
+        "Enabling AI ASICs for Zero Knowledge Proof"
+      ],
+      "authors": "Jianming Tong, Jingtian Dang, Simon Langowski, Tianhao Huang, Asra Ali, Jeremy Kun, Jevin Jiang, Srinivas Devadas, Tushar Krishna",
+      "year": 2026,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 7
+    },
+    {
+      "title": "Closing the Efficiency Gap: AI Datacenter Co-design Roadmap for Scalable Training of LLMs",
+      "matchTitles": [
+        "Closing the Efficiency Gap: AI Datacenter Co-design Roadmap for Scalable Training of LLMs"
+      ],
+      "authors": "Jesmin Jahan Tithi, Hanjiang Wu, Joongun Park, Avishaii Abuhatzera, Fabrizio Petrini, Tushar Krishna",
+      "year": 2026,
+      "venue": "ICS",
+      "type": "conf",
+      "month": 7
+    },
+    {
+      "title": "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System",
+      "matchTitles": [
+        "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System"
+      ],
+      "authors": "Hao Kang, Ziyang Li, Xinyu Yang, Weili Xu, Yinfang Chen, Junxiong Wang, Beidi Chen, Tushar Krishna, Chenfeng Xu, Simran Arora",
+      "year": 2026,
+      "venue": "ICML",
+      "type": "conf",
+      "month": 7
+    },
+    {
+      "title": "QuArch: A Benchmark for Evaluating LLM Reasoning in Computer Architecture",
+      "matchTitles": [
+        "QuArch: A Benchmark for Evaluating LLM Reasoning in Computer Architecture"
+      ],
+      "authors": "Shvetank Prakash, Andrew Cheng, Arya Tschand, Mark Mazumder, Varun Gohil, Jeffrey Ma, Jason Yik, Zishen Wan, Jessica A. Quaye, Elisavet Alvanaki, Avinash Kumar, Chandrashis Mazumdar, Tuhin Khare, Alexander Ingare, Ikechukwu Uchendu, Radhika Ghosal, Abhishek Tyagi, Chenyu Wang, Andrea Mattia Garavagno, Sarah Gu, Alice Guo, Grace Hur, Luca Carloni, Tushar Krishna, Ankita Nayak, Amir Yazdanbakhsh, Vijay Janapa Reddi",
+      "year": 2026,
+      "venue": "ICML",
+      "type": "conf",
+      "month": 7
+    },
+    {
+      "title": "MLCommons Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces",
+      "matchTitles": [
+        "MLCommons Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces"
+      ],
+      "authors": "Srinivas Sridharan, Theodor-Adrian Badea, Andy Balogh, Bradford M. Beckmann, Brian Coutinho, Louis Feng, Sheng Fu, Sanshan Gao, Mehryar Garakani, Taekyung Heo, David Kanter, Josh Ladd, Ziwei Li, Winston Liu, Changhai Man, Dan Mihailescu, Spandan More, Joongun Park, Ashwin Ramachandran, Vinay Ramakrishnaiah, Saeed Rashidi, Vijay Janapa Reddi, Puneet Sharma, Phio Tian, William Won, Hanjiang Wu, Huan Xu, Jinsun Yoo, Tushar Krishna",
+      "year": 2026,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Privatar: Scalable Privacy-preserving Multi-user VR via Secure Offloading",
+      "matchTitles": [
+        "Privatar: Scalable Privacy-preserving Multi-user VR via Secure Offloading"
+      ],
+      "authors": "Jianming Tong, Hanshen Xiao, Krishna Nair, Hao Kang, Ashish Sirasao, Ziqi Zhang, G. Edward Suh, Tushar Krishna",
+      "year": 2026,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "SLM-MUX: Orchestrating Small Language Models for Reasoning",
+      "matchTitles": [
+        "SLM-MUX: Orchestrating Small Language Models for Reasoning"
+      ],
+      "authors": "Chenyu Wang, Zishen Wan, Hao Kang, Emma Chen, Zhiqiang Xie, Tushar Krishna, Vijay Janapa Reddi, Yilun Du",
+      "year": 2026,
+      "venue": "ICLR",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models",
+      "matchTitles": [
+        "ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models"
+      ],
+      "authors": "Akshat Ramachandran, Marina Neseem, Charbel Sakr, Rangharajan Venkatesan, Brucek Khailany, Tushar Krishna",
+      "year": 2026,
+      "venue": "ICLR",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "MINISA: Minimal Instruction Set Architecture for Next-gen Reconfigurable Inference Accelerator",
+      "matchTitles": [
+        "MINISA: Minimal Instruction Set Architecture for Next-gen Reconfigurable Inference Accelerator"
+      ],
+      "authors": "Jianming Tong, Devansh Jain, Yujie Li, Charith Mendis, Tushar Krishna",
+      "year": 2026,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures",
+      "matchTitles": [
+        "Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures"
+      ],
+      "authors": "Zishen Wan, Hanchen Yang, Jiayi Qian, Ritik Raj, Joongun Park, Chenyu Wang, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2026,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "REASON: Accelerating Probabilistic Logical Reasoning for Scalable Neuro-Symbolic Intelligence",
+      "matchTitles": [
+        "REASON: Accelerating Probabilistic Logical Reasoning for Scalable Neuro-Symbolic Intelligence"
+      ],
+      "authors": "Zishen Wan, Che-Kai Liu, Jiayi Qian, Hanchen Yang, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2026,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Leveraging ASIC AI Chips for Homomorphic Encryption",
+      "matchTitles": [
+        "Leveraging ASIC AI Chips for Homomorphic Encryption"
+      ],
+      "authors": "Jianming Tong, Tianhao Huang, Jingtian Dang, Leo de Castro, Anirudh Itagi, Anupam Golder, Asra Ali, Jeremy Kun, Jevin Jiang, Arvind, G. Edward Suh, Tushar Krishna",
+      "year": 2026,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "SCALE: Tackling Communication Bottlenecks in Confidential Distributed Machine Learning",
+      "matchTitles": [
+        "SCALE: Tackling Communication Bottlenecks in Confidential Distributed Machine Learning"
+      ],
+      "authors": "Joongun Park, Yongqin Wang, Huan Xu, Hanjiang Wu, Mengyuan Li, Tushar Krishna",
+      "year": 2026,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Boosting Scalability and Performance: Macro Placement for Flexible 3D-Stacked ML Accelerators",
+      "matchTitles": [
+        "Boosting Scalability and Performance: Macro Placement for Flexible 3D-Stacked ML Accelerators"
+      ],
+      "authors": "Jiawei Hu, Canlin Zhang, Pruek Vanna-Iampikul, Tushar Krishna, Sung Kyu Lim",
+      "year": 2026,
+      "venue": "ASP-DAC",
+      "type": "conf",
+      "month": 1
+    },
+    {
+      "title": "Evaluating Cross-Architecture Performance Modeling of Distributed ML Workloads Using StableHLO",
+      "matchTitles": [
+        "Evaluating Cross-Architecture Performance Modeling of Distributed ML Workloads Using StableHLO"
+      ],
+      "authors": "Jonas Svedas, Nathan Laubeuf, Ryan Harvey, Arjun Singh, Changhai Man, Abubakr Nada, Tushar Krishna, James Myers, Debjyoti Bhattacharjee",
+      "year": 2026,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "Towards System-2 AI: Workloads and Characterizations of Energy-Based Models",
+      "matchTitles": [
+        "Towards System-2 AI: Workloads and Characterizations of Energy-Based Models"
+      ],
+      "authors": "Hanchen Yang, Jiayi Qian, Zishen Wan, Jingtian Dang, Ziwei Li, Yilun Du, Tushar Krishna",
+      "year": 2026,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "FortiSky: Enhancing Adversarial and Bit-Error Robustness for Efficient and Secure Autonomous Systems",
+      "matchTitles": [
+        "FortiSky: Enhancing Adversarial and Bit-Error Robustness for Efficient and Secure Autonomous Systems"
+      ],
+      "authors": "Zishen Wan, Karthik Swaminathan, Nandhini Chandramoorthy, Pin-Yu Chen, Tushar Krishna, Vijay Janapa Reddi, Arijit Raychowdhury",
+      "year": 2026,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "Scalable Synthesis of Distributed LLM Workloads Through Symbolic Tensor Graphs",
+      "matchTitles": [
+        "Scalable Synthesis of Distributed LLM Workloads Through Symbolic Tensor Graphs"
+      ],
+      "authors": "Changhai Man, Joongun Park, Hanjiang Wu, Huan Xu, Srinivas Sridharan, Tushar Krishna",
+      "year": 2026,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "SCALE-Sim TPU: Validating and Extending SCALE-Sim for TPUs",
+      "matchTitles": [
+        "SCALE-Sim TPU: Validating and Extending SCALE-Sim for TPUs"
+      ],
+      "authors": "Jingtian Dang, Ritik Raj, Changhai Man, Jianming Tong, Tushar Krishna",
+      "year": 2026,
+      "venue": "IEEE CAL",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "A 40-nm Programmable Heterogeneous SoC With 5.625/0.85 MB RRAM/SRAM for Accelerating Neuro-Symbolic AI Models",
+      "matchTitles": [
+        "A 40-nm Programmable Heterogeneous SoC With 5.625/0.85 MB RRAM/SRAM for Accelerating Neuro-Symbolic AI Models"
+      ],
+      "authors": "Che-Kai Liu, Zishen Wan, Yi-Sheng Noh, Mohamed Ibrahim, Samuel Spetalnick, Tushar Krishna, Win-San Khwa, Ashwin S. Lele, Yu-Der Chih, Meng-Fan Chang, Arijit Raychowdhury",
+      "year": 2026,
+      "venue": "IEEE JSSC",
+      "type": "journal",
+      "month": 1
+    },
+    {
+      "title": "Demystifying the Cost Versus Benefits of Sparse Large Language Model Acceleration",
+      "matchTitles": [
+        "Demystifying the Cost Versus Benefits of Sparse Large Language Model Acceleration"
+      ],
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Sheng-Chun Kao, Geonhwa Jeong, Suvinay Subramanian, Amir Yazdanbakhsh, Tushar Krishna",
+      "year": 2026,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "Algorithm-Hardware Co-Design of Digital Compute-in-Memory Architecture Supporting Flexible and Temporal N:M Sparsity",
+      "matchTitles": [
+        "Algorithm-Hardware Co-Design of Digital Compute-in-Memory Architecture Supporting Flexible and Temporal N:M Sparsity"
+      ],
+      "authors": "Akshat Ramachandran, Souvik Kundu, Arnab Raha, Shamik Kundu, Deepak A. Mathaikutty, Tushar Krishna",
+      "year": 2026,
+      "venue": "IEEE TVLSI",
+      "type": "journal",
+      "month": 4
+    },
+    {
+      "title": "Cross-Layer Design of Vector-Symbolic Computing: Bridging Cognition and Brain-Inspired Hardware Acceleration",
+      "matchTitles": [
+        "Cross-Layer Design of Vector-Symbolic Computing: Bridging Cognition and Brain-Inspired Hardware Acceleration"
+      ],
+      "authors": "Shuting Du, Mohamed Ibrahim, Zishen Wan, Luqi Zheng, Boheng Zhao, Zhenkun Fan, Che-Kai Liu, Tushar Krishna, Arijit Raychowdhury, Haitong Li",
+      "year": 2026,
+      "venue": "ACM TECS",
+      "type": "journal",
+      "month": 0
+    },
+    {
+      "title": "Win Fast or Lose Slow: Balancing Speed and Accuracy in Latency-Sensitive Decisions of LLMs",
+      "matchTitles": [
+        "Win Fast or Lose Slow: Balancing Speed and Accuracy in Latency-Sensitive Decisions of LLMs"
+      ],
+      "authors": "Hao Kang, Qingru Zhang, Han Cai, Weiyuan Xu, Tushar Krishna, Yilun Du, Tsachy Weissman",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "type": "conf",
+      "month": 12
+    },
+    {
+      "title": "Ouromamba: A Data-Free Quantization Framework for Vision Mamba",
+      "matchTitles": [
+        "Ouromamba: A Data-Free Quantization Framework for Vision Mamba"
+      ],
+      "authors": "Akshat Ramachandran, Mingyu Lee, Huan Xu, Souvik Kundu, Tushar Krishna",
+      "year": 2025,
+      "venue": "ICCV",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Characterizing the Efficiency of Distributed Training: A Power, Performance, and Thermal Perspective",
+      "matchTitles": [
+        "Characterizing the Efficiency of Distributed Training: A Power, Performance, and Thermal Perspective"
+      ],
+      "authors": "Seokjin Go, Joongun Park, Spandan More, Hanjiang Wu, Irene Wang, Aaron Jezghani, Tushar Krishna, Divya Mahajan",
+      "year": 2025,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Progressive Gradient Flow for Robust N:M Sparsity Training in Transformers",
+      "matchTitles": [
+        "Progressive Gradient Flow for Robust N:M Sparsity Training in Transformers"
+      ],
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Amir Yazdanbakhsh, Suvinay Subramanian, Sheng-Chun Kao, Shivani Agrawal, Utku Evci, Tushar Krishna",
+      "year": 2025,
+      "venue": "CPAL",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "SquareLoop: Explore Optimal Authentication Block Strategy for ML",
+      "matchTitles": [
+        "SquareLoop: Explore Optimal Authentication Block Strategy for ML"
+      ],
+      "authors": "Jan Strzeszynski, Jianming Tong, Kyungmi Lee, Nathan Xiong, Angshuman Parashar, Joel S. Emer, Tushar Krishna, Mengjia Yan",
+      "year": 2025,
+      "venue": "HASP@MICRO",
+      "type": "workshop",
+      "month": 10
+    },
+    {
+      "title": "Efficient Processing of Neuro-Symbolic AI: A Tutorial and Cross-Layer Co-Design Case Study",
+      "matchTitles": [
+        "Efficient Processing of Neuro-Symbolic AI: A Tutorial and Cross-Layer Co-Design Case Study"
+      ],
+      "authors": "Zishen Wan, Che-Kai Liu, Hanchen Yang, Ritik Raj, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2025,
+      "venue": "NeuS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Accelerating LLM Inference with Flexible N:M Sparsity via A Fully Digital Compute-in-Memory Accelerator",
+      "matchTitles": [
+        "Accelerating LLM Inference with Flexible N:M Sparsity via A Fully Digital Compute-in-Memory Accelerator"
+      ],
+      "authors": "Akshat Ramachandran, Souvik Kundu, Arnab Raha, Shamik Kundu, Deepak K. Mathaikutty, Tushar Krishna",
+      "year": 2025,
+      "venue": "ISLPED",
+      "type": "conf",
+      "month": 8
+    },
+    {
+      "title": "NSFlow: An End-to-End FPGA Framework with Scalable Dataflow Architecture for NeuroSymbolic AI",
+      "matchTitles": [
+        "NSFlow: An End-to-End FPGA Framework with Scalable Dataflow Architecture for NeuroSymbolic AI",
+        "Nsflow: an end-to-end fpga framework with scalable dataflow architecture for neuro-symbolic AI"
+      ],
+      "authors": "Hanchen Yang, Zishen Wan, Ritik Raj, Joongun Park, Ziwei Li, Ananda Samajdar, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2025,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "FRED: A Wafer-scale Fabric for 3D Parallel DNN Training",
+      "matchTitles": [
+        "FRED: A Wafer-scale Fabric for 3D Parallel DNN Training"
+      ],
+      "authors": "Saeed Rashidi, William Won, Sudarshan Srinivasan, Puneet Gupta, Tushar Krishna",
+      "year": 2025,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "MicroScopiQ: Accelerating Foundational Models through Outlier-Aware Microscaling Quantization",
+      "matchTitles": [
+        "MicroScopiQ: Accelerating Foundational Models through Outlier-Aware Microscaling Quantization"
+      ],
+      "authors": "Akshat Ramachandran, Souvik Kundu, Tushar Krishna",
+      "year": 2025,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "CELLO: Co-designing Schedule and Hybrid Implicit/Explicit Buffer for Complex Tensor Reuse",
+      "matchTitles": [
+        "CELLO: Co-designing Schedule and Hybrid Implicit/Explicit Buffer for Complex Tensor Reuse"
+      ],
+      "authors": "Raveesh Garg, Michael Pellauer, Sivasankaran Rajamanickam, Tushar Krishna",
+      "year": 2025,
+      "venue": "IPDPS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Optimizing Sparse/Dense VEGETA Accelerator Performance with Microscaling Quantization",
+      "matchTitles": [
+        "Optimizing Sparse/Dense VEGETA Accelerator Performance with Microscaling Quantization"
+      ],
+      "authors": "Kazi Barria Nine, Connor Talley, Ajay Sharma Mandadi, Tushar Krishna, Arijit Raychowdhury",
+      "year": 2025,
+      "venue": "ISCAS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Enabling Unstructured Sparse Acceleration on Structured Sparse Accelerators",
+      "matchTitles": [
+        "Enabling Unstructured Sparse Acceleration on Structured Sparse Accelerators"
+      ],
+      "authors": "Geonhwa Jeong, Po-An Tsai, Abhimanyu Rajeshkumar Bambhaniya, Stephen W. Keckler, Tushar Krishna",
+      "year": 2025,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "TurboAttention: Efficient Attention Approximation for High-Throughput LLMs",
+      "matchTitles": [
+        "TurboAttention: Efficient Attention Approximation for High-Throughput LLMs",
+        "TurboAttention: Efficient attention approximation for high throughputs llm"
+      ],
+      "authors": "Hao Kang, Srikant Bharadwaj, James Hensman, Tushar Krishna, Victor Rühle, Saravan Rajmohan",
+      "year": 2025,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "FlexInfer: Flexible LLM Inference with CPU Computations",
+      "matchTitles": [
+        "FlexInfer: Flexible LLM Inference with CPU Computations"
+      ],
+      "authors": "Seonjin Na, Geonhwa Jeong, Byung Hoon Ahn, Aaron Jezghani, Jeffrey Young, Christopher J. Hughes, Tushar Krishna, Hyesoon Kim",
+      "year": 2025,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "AI Metropolis: Scaling Large Language Model-based Multi-Agent Simulation with Out-of-order Execution",
+      "matchTitles": [
+        "AI Metropolis: Scaling Large Language Model-based Multi-Agent Simulation with Out-of-order Execution"
+      ],
+      "authors": "Zhiqiang Xie, Hao Kang, Ying Sheng, Tushar Krishna, Kayvon Fatahalian, Christos Kozyrakis",
+      "year": 2025,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "SCALE-Sim V3: a Modular Cycle-Accurate Systolic Accelerator Simulator for End-To-End System Analysis",
+      "matchTitles": [
+        "SCALE-Sim V3: a Modular Cycle-Accurate Systolic Accelerator Simulator for End-To-End System Analysis"
+      ],
+      "authors": "Ritik Raj, Sarbartha Banerjee, Nikhil Chandra, Zishen Wan, Jianming Tong, Ananda Samajdar, Tushar Krishna",
+      "year": 2025,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability",
+      "matchTitles": [
+        "Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability"
+      ],
+      "authors": "Zishen Wan, Jiayi Qian, Yuhang Du, Jason Jabbour, Yilun Du, Yang Zhao, Arijit Raychowdhury, Tushar Krishna, Vijay Janapa Reddi",
+      "year": 2025,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Exploring Constrained Dataflow Accelerators for Real-Time Multi-Task Multi-Model ML Workloads",
+      "matchTitles": [
+        "Exploring Constrained Dataflow Accelerators for Real-Time Multi-Task Multi-Model ML Workloads"
+      ],
+      "authors": "Jamin Seo, Jianming Tong, Tushar Krishna, Hyoukjun Kwon",
+      "year": 2025,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "LayerDAG: A Layerwise Autoregressive Diffusion Model for Directed Acyclic Graph Generation",
+      "matchTitles": [
+        "LayerDAG: A Layerwise Autoregressive Diffusion Model for Directed Acyclic Graph Generation"
+      ],
+      "authors": "Mufei Li, Viraj Shitole, Eli Chien, Changhai Man, Zhaodong Wang, Srinivas Sridharan, Ying Zhang, Tushar Krishna, Pan Li",
+      "year": 2025,
+      "venue": "ICLR",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents",
+      "matchTitles": [
+        "ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents"
+      ],
+      "authors": "Zishen Wan, Yuhang Du, Mohamed Ibrahim, Jiayi Qian, Jason Jabbour, Yang (Katie) Zhao, Tushar Krishna, Arijit Raychowdhury, Vijay Janapa Reddi",
+      "year": 2025,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "AIrchitect v2: Learning the Hardware Accelerator Design Space through Unified Representations",
+      "matchTitles": [
+        "AIrchitect v2: Learning the Hardware Accelerator Design Space through Unified Representations"
+      ],
+      "authors": "Jamin Seo*, Akshat Ramachandran*, Yu-Chuan Chuang, Anirudh Itagi, Tushar Krishna",
+      "year": 2025,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "Axon: A Novel Systolic Array Architecture for Improved Energy-Efficient GeMM and Conv Operation with On-Chip im2col",
+      "matchTitles": [
+        "Axon: A Novel Systolic Array Architecture for Improved Energy-Efficient GeMM and Conv Operation with On-Chip im2col",
+        "Axon: A Novel Systolic Array Architecture For Improved Run Time And Energy Efficient GeMM And Conv Operation With On-chip Im2col"
+      ],
+      "authors": "Md Mizanur Rahaman Nayan, Ritik Raj, Shaik Gouse Basha, Tushar Krishna, Azad J. Naeemi",
+      "year": 2025,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "CogSys: Efficient and Scalable Neurosymbolic Cognition System via Algorithm-Hardware Co-Design",
+      "matchTitles": [
+        "CogSys: Efficient and Scalable Neurosymbolic Cognition System via Algorithm-Hardware Co-Design"
+      ],
+      "authors": "Zishen Wan*, Hanchen Yang*, Ritik Raj*, Chaojian Li, Ananda Samajdar, Yingyan (Celine) Lin, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2025,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Toward a Standardized Representation for Deep Learning Collective Algorithms",
+      "matchTitles": [
+        "Toward a Standardized Representation for Deep Learning Collective Algorithms"
+      ],
+      "authors": "Jinsun Yoo, William Won, Meghan Cowan, Nan Jiang, Benjamin Klenk, Srinivas Sridharan, Tushar Krishna",
+      "year": 2025,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "GEAR: An Efficient Error Reduction Framework for KV Cache Compression in LLM Inference",
+      "matchTitles": [
+        "GEAR: An Efficient Error Reduction Framework for KV Cache Compression in LLM Inference"
+      ],
+      "authors": "Hao Kang, Qingru Zhang, Souvik Kundu, Geonhwa Jeong, Zaoxing Liu, Tushar Krishna, Tuo Zhao",
+      "year": 2024,
+      "venue": "ENLSP@NeurIPS",
+      "type": "workshop",
+      "month": 12
+    },
+    {
+      "title": "Leveraging Memory Expansion to Accelerate Large-Scale DL Training",
+      "matchTitles": [
+        "Leveraging Memory Expansion to Accelerate Large-Scale DL Training"
+      ],
+      "authors": "Divya Kiran Kadiyala, Saeed Rashidi, Taekyung Heo, Abhimanyu Bambhaniya, Tushar Krishna, Alexandros Daglis",
+      "year": 2024,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Thinking and Moving: An Efficient Computing Approach for Integrated Task and Motion Planning in Cooperative Embodied AI Systems",
+      "matchTitles": [
+        "Thinking and Moving: An Efficient Computing Approach for Integrated Task and Motion Planning in Cooperative Embodied AI Systems"
+      ],
+      "authors": "Zishen Wan, Yuhang Du, Mohamed Ibrahim, Yang (Katie) Zhao, Tushar Krishna, Arijit Raychowdhury",
+      "year": 2024,
+      "venue": "ICCAD",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "Enhancing Scalability and Performance in Influence Maximization with Optimized Parallel Processing",
+      "matchTitles": [
+        "Enhancing Scalability and Performance in Influence Maximization with Optimized Parallel Processing"
+      ],
+      "authors": "Hanjiang Wu, Huan Xu, Joongun Park, Jesmin Jahan Tithi, Fabio Checconi, Jordi Wolfson-Pou, Fabrizio Petrini, Tushar Krishna",
+      "year": 2024,
+      "venue": "IA³ @ SC",
+      "type": "workshop",
+      "month": 11
+    },
+    {
+      "title": "TACOS: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning",
+      "matchTitles": [
+        "TACOS: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning"
+      ],
+      "authors": "William Won, Midhilesh Elavazhagan, Sudarshan Srinivasan, Swati Gupta, Tushar Krishna",
+      "year": 2024,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Understanding Performance Implications of LLM Inference on CPUs",
+      "matchTitles": [
+        "Understanding Performance Implications of LLM Inference on CPUs"
+      ],
+      "authors": "Seonjin Na, Geonhwa Jeong, Byunghoon Ahn, Jeffrey Young, Tushar Krishna, Hyesoon Kim",
+      "year": 2024,
+      "venue": "IISWC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "CLAMP-ViT: Contrastive Data-Free Learning for Adaptive Post-Training Quantization of ViTs",
+      "matchTitles": [
+        "CLAMP-ViT: Contrastive Data-Free Learning for Adaptive Post-Training Quantization of ViTs"
+      ],
+      "authors": "Akshat Ramachandran, Souvik Kundu, Tushar Krishna",
+      "year": 2024,
+      "venue": "ECCV",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Towards a Standardized Representation for Deep Learning Collective Algorithms",
+      "matchTitles": [
+        "Towards a Standardized Representation for Deep Learning Collective Algorithms"
+      ],
+      "authors": "Jinsun Yoo, William Won, Meghan Cowan, Nan Jiang, Benjamin Klenk, Srinivas Sridharan, Tushar Krishna",
+      "year": 2024,
+      "venue": "HotI",
+      "type": "conf",
+      "month": 8
+    },
+    {
+      "title": "FEATHER: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching",
+      "matchTitles": [
+        "FEATHER: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching"
+      ],
+      "authors": "Jianming Tong, Anirudh Itagi, Prasanth Chatarasi, Tushar Krishna",
+      "year": 2024,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Algorithm-Hardware Co-Design of Distribution-Aware Logarithmic-Posit Encodings for Efficient DNN Inference",
+      "matchTitles": [
+        "Algorithm-Hardware Co-Design of Distribution-Aware Logarithmic-Posit Encodings for Efficient DNN Inference"
+      ],
+      "authors": "Akshat Ramachandran, Zishen Wan, Geonhwa Jeong, John Gustafson, Tushar Krishna",
+      "year": 2024,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "SmartPAF: Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption",
+      "matchTitles": [
+        "SmartPAF: Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption"
+      ],
+      "authors": "Jianming Tong*, Jingtian Dang*, Anupam Golder, Cong Hao, Arijit Raychowdhury, Tushar Krishna",
+      "year": 2024,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "LIBRA: Enabling Workload-aware Multi-dimensional Network Topology Optimization for Distributed Training of Large AI Models",
+      "matchTitles": [
+        "LIBRA: Enabling Workload-aware Multi-dimensional Network Topology Optimization for Distributed Training of Large AI Models"
+      ],
+      "authors": "William Won, Saeed Rashidi, Sudarshan Srinivasan, Tushar Krishna",
+      "year": 2024,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Towards Cognitive AI Systems: Workload and Characterization of Neuro-Symbolic AI",
+      "matchTitles": [
+        "Towards Cognitive AI Systems: Workload and Characterization of Neuro-Symbolic AI"
+      ],
+      "authors": "Zishen Wan, Che-Kai Liu, Hanchen Yang, Ritik Raj, Chaojian Li, Haoran You, Yonggan Fu, Cheng Wan, Ananda Samajdar, Yingyan (Celine) Lin, Tushar Krishna, Arijit Raychowdhury",
+      "year": 2024,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "H3DFact: Heterogeneous 3D Integrated CIM for Factorization with Holographic Perceptual Representations",
+      "matchTitles": [
+        "H3DFact: Heterogeneous 3D Integrated CIM for Factorization with Holographic Perceptual Representations"
+      ],
+      "authors": "Zishen Wan*, Che-Kai Liu*, Mohamed Ibrahim, Hanchen Yang, Samuel Spetalnick, Tushar Krishna, Arijit Raychowdhury",
+      "year": 2024,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "Real-time Digital RF Emulation – II: A Near-Memory Custom Accelerator",
+      "matchTitles": [
+        "Real-time Digital RF Emulation – II: A Near-Memory Custom Accelerator"
+      ],
+      "authors": "Xiangyu Mao, M. Mukherjee, N. Mizanur Rahman, C. DeLude, J. Driscoll, S. Sharma, P. Behnam, U. Kamal, J. Woo, D. Kim, S. Khan, Jianming Tong, J. Seo, P. Sinha, M. Swaminathan, Tushar Krishna, S. Pande, J. Romberg, S. Mukhopadhyay",
+      "year": 2024,
+      "venue": "IEEE T-Radar",
+      "type": "journal",
+      "month": 9
+    },
+    {
+      "title": "Towards Efficient Neuro-Symbolic AI: From Workload Characterization to Hardware Architecture",
+      "matchTitles": [
+        "Towards Efficient Neuro-Symbolic AI: From Workload Characterization to Hardware Architecture"
+      ],
+      "authors": "Zishen Wan, Che-Kai Liu, Hanchen Yang, Ritik Raj, Chaojian Li, Haoran You, Yonggan Fu, Cheng Wan, Sixu Li, Youbin Kim, Ananda Samajdar, Yingyan (Celine) Lin, Mohamed Ibrahim, Jan M. Rabaey, Tushar Krishna, Arijit Raychowdhury",
+      "year": 2024,
+      "venue": "IEEE TCASAI",
+      "type": "journal",
+      "month": 9
+    },
+    {
+      "title": "Mitigating Timing-Based NoC Side-Channel Attacks With LLC Remapping",
+      "matchTitles": [
+        "Mitigating Timing-Based NoC Side-Channel Attacks With LLC Remapping"
+      ],
+      "authors": "Anurag Kar, Xueyang Liu, Yonghae Kim, Gururaj Saileshwar, Hyesoon Kim, Tushar Krishna",
+      "year": 2023,
+      "venue": "IEEE CAL",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "STIFT: A Spatio-Temporal Integrated Folding Tree for Efficient Reductions in Flexible DNN Accelerators",
+      "matchTitles": [
+        "STIFT: A Spatio-Temporal Integrated Folding Tree for Efficient Reductions in Flexible DNN Accelerators"
+      ],
+      "authors": "Francisco Muñoz-Martínez, José L. Abellán, Manuel E. Acacio, Tushar Krishna",
+      "year": 2023,
+      "venue": "ACM JETC",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "On Continuing DNN Accelerator Architecture Scaling Using Tightly Coupled Compute-on-Memory 3-D ICs",
+      "matchTitles": [
+        "On Continuing DNN Accelerator Architecture Scaling Using Tightly Coupled Compute-on-Memory 3-D ICs"
+      ],
+      "authors": "Gauthaman Murali, Aditya Iyer, Lingjun Zhu, Jianming Tong, Francisco Muñoz-Martínez, Srivatsa Rangachar Srinivasa, Tanay Karnik, Tushar Krishna, Sung Kyu Lim",
+      "year": 2023,
+      "venue": "IEEE TVLSI",
+      "type": "journal",
+      "month": 4
+    },
+    {
+      "title": "SNATCH: Stealing Neural Network Architecture from ML Accelerator in Intelligent Sensors",
+      "matchTitles": [
+        "SNATCH: Stealing Neural Network Architecture from ML Accelerator in Intelligent Sensors"
+      ],
+      "authors": "Sudarshan Sharma, Uday Kamal, Jianming Tong, Tushar Krishna, Saibal Mukhopadhyay",
+      "year": 2023,
+      "venue": "IEEE SENSORS",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Characterization of Data Compression in Datacenters",
+      "matchTitles": [
+        "Characterization of Data Compression in Datacenters"
+      ],
+      "authors": "Geonhwa Jeong, Bikash Sharma, Nick Terrell, Abhishek Dhanotia, Zhiwei Zhao, Niket Agarwal, Arun Kejariwal, Tushar Krishna",
+      "year": 2023,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "ASTRA-sim2.0: Modeling Hierarchical Networks and Disaggregated Systems for Large-model Training at Scale",
+      "matchTitles": [
+        "ASTRA-sim2.0: Modeling Hierarchical Networks and Disaggregated Systems for Large-model Training at Scale"
+      ],
+      "authors": "William Won, Taekyung Heo, Saeed Rashidi, Srinivas Sridharan, Sudarshan Srinivasan, Tushar Krishna",
+      "year": 2023,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "SPOCK: Reverse Packet Traversal for Deadlock Recovery",
+      "matchTitles": [
+        "SPOCK: Reverse Packet Traversal for Deadlock Recovery"
+      ],
+      "authors": "Zeyu Chen, Ankur Bindal, Vaidehi Garg, Tushar Krishna",
+      "year": 2023,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "XRBench: An Extended Reality (XR) Machine Learning Benchmark Suite for the Metaverse",
+      "matchTitles": [
+        "XRBench: An Extended Reality (XR) Machine Learning Benchmark Suite for the Metaverse"
+      ],
+      "authors": "Hyoukjun Kwon, Krishnakumar Nair, Jamin Seo, Jason Yik, Debabrata Mohapatra, Dongyuan Zhan, Jinook Song, Peter Capak, Peizhao Zhang, Peter Vajda, Colby Banbury, Mark Mazumder, Liangzhen Lai, Ashish Sirasao, Tushar Krishna, Harshit Khaitan, Vikas Chandra, Vijay Janapa Reddi",
+      "year": 2023,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Subgraph-Stationary Hardware-Software Inference Co-Design",
+      "matchTitles": [
+        "Subgraph-Stationary Hardware-Software Inference Co-Design"
+      ],
+      "authors": "Payman Behnam, Jianming Tong, Alind Khare, Yangyu Chen, Yue Pan, Pranav Gadikar, Abhimanyu Rajeshkumar Bambhaniya, Tushar Krishna, Alexey Tumanov",
+      "year": 2023,
+      "venue": "MLSys",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "FPGA-Based High-Performance Real-Time Emulation of Radar System using Direct Path Compute Model",
+      "matchTitles": [
+        "FPGA-Based High-Performance Real-Time Emulation of Radar System using Direct Path Compute Model"
+      ],
+      "authors": "X. Mao, M. Mukherjee, N. M. Rahman, U. Kamal, S. Sharma, P. Behnam, J. Tong, J. Woo, C. DeLude, J. Driscoll, J. Seo, S. Pande, T. Krishna, J. Romberg, M. Swaminathan, S. Mukhopadhyay",
+      "year": 2023,
+      "venue": "IMS",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "A High Performance Computing Architecture for Real-Time Digital Emulation of RF Interactions",
+      "matchTitles": [
+        "A High Performance Computing Architecture for Real-Time Digital Emulation of RF Interactions"
+      ],
+      "authors": "M. Mukherjee, N. M. Rahman, C. DeLude, J. Driscoll, U. Kamal, J. Woo, J. Seo, S. Sharma, X. Mao, P. Behnam, S. Khan, D. Kim, J. Tong, P. Sinha, S. Pande, T. Krishna, J. Romberg, M. Swaminathan, S. Mukhopadhyay",
+      "year": 2023,
+      "venue": "RadarConf",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Proteus: HLS-based NoC Generator and Simulator",
+      "matchTitles": [
+        "Proteus: HLS-based NoC Generator and Simulator"
+      ],
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Yangyu Chen, Anshuman, Rohan Banerjee, Tushar Krishna",
+      "year": 2023,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "AIRCHITECT: Automating Hardware Architecture and Mapping Optimization",
+      "matchTitles": [
+        "AIRCHITECT: Automating Hardware Architecture and Mapping Optimization"
+      ],
+      "authors": "Ananda Samajdar, Jan Moritz Joseph, Tushar Krishna",
+      "year": 2023,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "Flexagon: A Multi-Dataflow Sparse-Sparse Matrix Multiplication Accelerator for Efficient DNN Processing",
+      "matchTitles": [
+        "Flexagon: A Multi-Dataflow Sparse-Sparse Matrix Multiplication Accelerator for Efficient DNN Processing"
+      ],
+      "authors": "Francisco Muñoz-Martinez, Raveesh Garg, Michael Pellauer, Jose L. Abellan, Manuel E. Acacio, Tushar Krishna",
+      "year": 2023,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks",
+      "matchTitles": [
+        "FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks"
+      ],
+      "authors": "Sheng-Chun Kao, Suvinay Subramanian, Gaurav Agrawal, Amir Yazdanbakhsh, Tushar Krishna",
+      "year": 2023,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "VEGETA: Vertically-Integrated Extensions for Sparse/Dense GEMM Tile Acceleration on CPUs",
+      "matchTitles": [
+        "VEGETA: Vertically-Integrated Extensions for Sparse/Dense GEMM Tile Acceleration on CPUs"
+      ],
+      "authors": "Geonhwa Jeong, Sana Damani, Abhimanyu Bambhaniya, Eric Qin, Christopher J. Hughes, Sreenivas Subramoney, Hyesoon Kim, Tushar Krishna",
+      "year": 2023,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Efficient Distributed Inference of Deep Neural Networks via Restructuring and Pruning",
+      "matchTitles": [
+        "Efficient Distributed Inference of Deep Neural Networks via Restructuring and Pruning"
+      ],
+      "authors": "Afshin Abdi, Saeed Rashidi, Tushar Krishna, Faramarz Fekri",
+      "year": 2023,
+      "venue": "AAAI",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Hardware-Software Co-Design for Real-Time Latency-Accuracy Navigation in Tiny Machine Learning Applications",
+      "matchTitles": [
+        "Hardware-Software Co-Design for Real-Time Latency-Accuracy Navigation in Tiny Machine Learning Applications"
+      ],
+      "authors": "Payman Behnam, Jianming Tong, Alind Khare, Yangyu Chen, Yue Pan, Pranav Gadikar, Abhimanyu Bambhaniya, Tushar Krishna, Alexey Tumanov",
+      "year": 2023,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "TNT: A Modular Approach to Traversing Physically Heterogeneous NoCs at Bare-wire Latency",
+      "matchTitles": [
+        "TNT: A Modular Approach to Traversing Physically Heterogeneous NoCs at Bare-wire Latency"
+      ],
+      "authors": "Gokul Subramanian Ravi, Tushar Krishna, Mikko Lipasti",
+      "year": 2023,
+      "venue": "ACM TACO",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "Understanding Data Compression in Warehouse-Scale Datacenter Services",
+      "matchTitles": [
+        "Understanding Data Compression in Warehouse-Scale Datacenter Services"
+      ],
+      "authors": "Geonhwa Jeong, Bikash Sharma, Nick Terrell, Abhishek Dhanotia, Zhiwei Zhao, Niket Agarwal, Arun Kejariwal, Tushar Krishna",
+      "year": 2022,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Demystifying Map Space Exploration for NPUs",
+      "matchTitles": [
+        "Demystifying Map Space Exploration for NPUs"
+      ],
+      "authors": "Sheng-Chun Kao, Angshuman Parashar, Po-An Tsai, Tushar Krishna",
+      "year": 2022,
+      "venue": "IISWC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "MicroEdge: A Low-Cost Edge Cluster System Architecture for Scalable Camera Processing",
+      "matchTitles": [
+        "MicroEdge: A Low-Cost Edge Cluster System Architecture for Scalable Camera Processing",
+        "MicroEdge: A Multi-Tenant Edge Cluster System Architecture for Scalable Camera Processing"
+      ],
+      "authors": "Difei Cao*, Jinsun Yoo*, Zhuangdi Xu, Enrique Saurez, Harshit Gupta, Tushar Krishna, Umakishore Ramachandran",
+      "year": 2022,
+      "venue": "Middleware",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "Impact of RoCE Congestion Control Policies on Distributed Training of DNNs",
+      "matchTitles": [
+        "Impact of RoCE Congestion Control Policies on Distributed Training of DNNs"
+      ],
+      "authors": "Tarannum Khan, Saeed Rashidi, Pallavi Shurpali, Aditya Akella, Tushar Krishna, Srinivas Sridharan",
+      "year": 2022,
+      "venue": "HotI",
+      "type": "conf",
+      "month": 8
+    },
+    {
+      "title": "Self Adaptive Reconfigurable Arrays (SARA): Learning Flexible GEMM Accelerator Configuration and Mapping-space using ML",
+      "matchTitles": [
+        "Self Adaptive Reconfigurable Arrays (SARA): Learning Flexible GEMM Accelerator Configuration and Mapping-space using ML"
+      ],
+      "authors": "Ananda Samajdar, Eric Qin, Michael Pellauer, Tushar Krishna",
+      "year": 2022,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Themis: A Network Bandwidth-Aware Collective Scheduling Policy for Distributed Training of DL Models",
+      "matchTitles": [
+        "Themis: A Network Bandwidth-Aware Collective Scheduling Policy for Distributed Training of DL Models"
+      ],
+      "authors": "Saeed Rashidi, William Won, Sudarshan Srinivasan, Srinivas Sridharan, Tushar Krishna",
+      "year": 2022,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "A Formalism of DNN Accelerator Flexibility",
+      "matchTitles": [
+        "A Formalism of DNN Accelerator Flexibility"
+      ],
+      "authors": "Sheng-Chun Kao, Hyoukjun Kwon, Michael Pellauer, Angshuman Parashar, Tushar Krishna",
+      "year": 2022,
+      "venue": "SIGMETRICS",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Understanding the Design-Space of Sparse/Dense Multiphase GNN Dataflows on Spatial Accelerators",
+      "matchTitles": [
+        "Understanding the Design-Space of Sparse/Dense Multiphase GNN Dataflows on Spatial Accelerators"
+      ],
+      "authors": "Raveesh Garg, Eric Qin, Francisco Muñoz-Martínez, Robert Guirado, Akshay Jain, Sergi Abadal, José L. Abellán, Manuel E. Acacio, Eduard Alarcón, Sivasankaran Rajamanickam, Tushar Krishna",
+      "year": 2022,
+      "venue": "IPDPS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "DiGamma: A Domain-aware Genetic Algorithm for HW-Mapping Co-optimization for DNN Accelerators",
+      "matchTitles": [
+        "DiGamma: A Domain-aware Genetic Algorithm for HW-Mapping Co-optimization for DNN Accelerators",
+        "Digamma: Domain-aware genetic algorithm for hw-mapping co-optimization for dnn accelerators"
+      ],
+      "authors": "Sheng-Chun Kao, Michael Pellauer, Angshuman Parashar, Tushar Krishna",
+      "year": 2022,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "MAGMA: An Optimization Framework for Mapping Multiple DNNs on Multiple Accelerator Cores",
+      "matchTitles": [
+        "MAGMA: An Optimization Framework for Mapping Multiple DNNs on Multiple Accelerator Cores"
+      ],
+      "authors": "Sheng-Chun Kao, Tushar Krishna",
+      "year": 2022,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Stay in your Lane: A NoC with Low-overhead Multi-packet Bypassing",
+      "matchTitles": [
+        "Stay in your Lane: A NoC with Low-overhead Multi-packet Bypassing"
+      ],
+      "authors": "Hossein Farrokhbakht, Paul Gratz, Tushar Krishna, Joshua San Miguel, Natalie Enright Jerger",
+      "year": 2022,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Efficiently Solving Partial Differential Equations in a Partially Reconfigurable Specialized Hardware",
+      "matchTitles": [
+        "Efficiently Solving Partial Differential Equations in a Partially Reconfigurable Specialized Hardware"
+      ],
+      "authors": "Bahar Asgari, Ramyad Hadidi, Tushar Krishna, Hyesoon Kim, Sudhakar Yalamanchili",
+      "year": 2021,
+      "venue": "IEEE TC",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "Technology-aware Router Architectures for On-Chip-Networks in Heterogeneous Technologies",
+      "matchTitles": [
+        "Technology-aware Router Architectures for On-Chip-Networks in Heterogeneous Technologies"
+      ],
+      "authors": "Lennart Bamberg, Tushar Krishna, Jan Moritz Joseph",
+      "year": 2021,
+      "venue": "NANOCOM",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "RASA: Efficient Register-Aware Systolic Array Matrix Engine for CPU",
+      "matchTitles": [
+        "RASA: Efficient Register-Aware Systolic Array Matrix Engine for CPU"
+      ],
+      "authors": "Geonhwa Jeong, Eric Qin, Ananda Samajdar, Christopher Hughes, Sreenivas Subramoney, Hyesoon Kim, Tushar Krishna",
+      "year": 2021,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "STONNE: Enabling Cycle-Level Microarchitectural Simulation for DNN Inference Accelerators",
+      "matchTitles": [
+        "STONNE: Enabling Cycle-Level Microarchitectural Simulation for DNN Inference Accelerators"
+      ],
+      "authors": "Francisco Muñoz-Martinez, Jose L. Abellan, Manuel E. Acacio, Tushar Krishna",
+      "year": 2021,
+      "venue": "IISWC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "A Novel Network Fabric for Efficient Spatio-Temporal Reduction in Flexible DNN Accelerators",
+      "matchTitles": [
+        "A Novel Network Fabric for Efficient Spatio-Temporal Reduction in Flexible DNN Accelerators"
+      ],
+      "authors": "Francisco Muñoz-Martinez, Jose L. Abellan, Manuel E. Acacio, Tushar Krishna",
+      "year": 2021,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "DUB: Dynamic Underclocking and Bypassing in Network-on-Chip for Heterogeneous GPU Workloads",
+      "matchTitles": [
+        "DUB: Dynamic Underclocking and Bypassing in Network-on-Chip for Heterogeneous GPU Workloads",
+        "Dub: Dynamic underclocking and bypassing in nocs for heterogeneous gpu workloads"
+      ],
+      "authors": "Srikant Bharadwaj, Shomit Das, Yasuko Eckert, Mark Oskin, Tushar Krishna",
+      "year": 2021,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "SEEC: Stochastic Escape Express Channel",
+      "matchTitles": [
+        "SEEC: Stochastic Escape Express Channel"
+      ],
+      "authors": "Mayank Parasar, Natalie Enright Jerger, Paul Gratz, Joshua San Miguel, Tushar Krishna",
+      "year": 2021,
+      "venue": "SC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "Union: A Unified HW-SW Co-Design Ecosystem in MLIR for Evaluating Tensor Operators on Spatial Accelerators",
+      "matchTitles": [
+        "Union: A Unified HW-SW Co-Design Ecosystem in MLIR for Evaluating Tensor Operators on Spatial Accelerators",
+        "Union: A unified HW-SW co-design ecosystem in MLIR for evaluating tensor operations on spatial accelerators"
+      ],
+      "authors": "Geonhwa Jeong, Gokcen Kestor, Prasanth Chatarasi, Angshuman Parashar, Po-An Tsai, Siva Rajamanickam, Roberto Gioiosa, Tushar Krishna",
+      "year": 2021,
+      "venue": "PACT",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "A Configurable Architecture for Efficient Sparse FIR Computation in Real-time Radio Frequency Systems",
+      "matchTitles": [
+        "A Configurable Architecture for Efficient Sparse FIR Computation in Real-time Radio Frequency Systems"
+      ],
+      "authors": "Jamin Seo, Mandovi Mukherjee, Nael Mizanur Rahman*, Jianming Tong, Coleman DeLude, Tushar Krishna, Justin Romberg, Saibal Mukhopadhyay",
+      "year": 2021,
+      "venue": "IMS",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Enabling Compute-Communication Overlap in Distributed Training Platforms",
+      "matchTitles": [
+        "Enabling Compute-Communication Overlap in Distributed Training Platforms",
+        "Enabling compute-communication overlap in distributed deep learning training platforms"
+      ],
+      "authors": "Saeed Rashidi, Srinivas Sridharan, Sudarshan Srinivasan, Matthew Denton, Amoghavarsha Suresh, Jade Nie, Tushar Krishna",
+      "year": 2021,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Extending Sparse Tensor Accelerators to Support Multiple Compression Formats",
+      "matchTitles": [
+        "Extending Sparse Tensor Accelerators to Support Multiple Compression Formats"
+      ],
+      "authors": "Eric Qin, Geonhwa Jeong, William Won, Sheng-Chun Kao, Hyoukjun Kwon, Sudarshan Srinivasan, Dipankar Das, Gordon E. Moon, Sivasankaran Rajamanickam, Tushar Krishna",
+      "year": 2021,
+      "venue": "IPDPS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Architecture, Dataflow and Physical Design Implications of 3D-ICs for DNN-Accelerators",
+      "matchTitles": [
+        "Architecture, Dataflow and Physical Design Implications of 3D-ICs for DNN-Accelerators"
+      ],
+      "authors": "Jan Moritz Joseph, Ananda Samajdar, Lingjun Zhu, Rainer Leupers, Sung Kyu Lim, Thilo Pionteck, Tushar Krishna",
+      "year": 2021,
+      "venue": "ISQED",
+      "type": "conf",
+      "month": 4
+    },
+    {
+      "title": "E3: A HW/SW Co-design Neuroevolution Platform for Autonomous Learning in Edge Devices",
+      "matchTitles": [
+        "E3: A HW/SW Co-design Neuroevolution Platform for Autonomous Learning in Edge Devices",
+        "E3: A hw/sw co-design neuroevolution platform for autonomous learning in edge device"
+      ],
+      "authors": "Sheng-Chun Kao, Tushar Krishna",
+      "year": 2021,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Pitstop: Enabling a Virtual Network Free Network-on-Chip",
+      "matchTitles": [
+        "Pitstop: Enabling a Virtual Network Free Network-on-Chip"
+      ],
+      "authors": "Hossein Farrokhbakht, Henry Kao, Kamran Hasan, Paul Gratz, Tushar Krishna, Joshua San Miguel, Natalie Enright Jerger",
+      "year": 2021,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Heterogeneous Dataflow Accelerators for Multi-DNN Workloads",
+      "matchTitles": [
+        "Heterogeneous Dataflow Accelerators for Multi-DNN Workloads"
+      ],
+      "authors": "Hyoukjun Kwon, Liangzhen Lai, Michael Pellauer, Yu-Hsin Chen, Tushar Krishna, Vikas Chandra",
+      "year": 2021,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Dataflow-Architecture Co-Design for 2.5D DNN Accelerators using Wireless Network-on-Package",
+      "matchTitles": [
+        "Dataflow-Architecture Co-Design for 2.5D DNN Accelerators using Wireless Network-on-Package"
+      ],
+      "authors": "Robert Guirado, Hyoukjun Kwon, Sergi Abadal, Eduard Alarcon, Tushar Krishna",
+      "year": 2021,
+      "venue": "ASP-DAC",
+      "type": "conf",
+      "month": 1
+    },
+    {
+      "title": "Bridging the Frequency Gap in Heterogeneous 3D SoCs through Technology-Specific NoC Router Architecture",
+      "matchTitles": [
+        "Bridging the Frequency Gap in Heterogeneous 3D SoCs through Technology-Specific NoC Router Architecture",
+        "Bridging the Frequency Gap in Heterogeneous 3D SoCs through Technology-Specific NoC Router Architectures"
+      ],
+      "authors": "Jan Moritz Joseph, Lennart Bamberg, Geonhwa Jeong, Ruei-Ting Chien, Rainer Leupers, Alberto Garcia-Ortiz, Tushar Krishna, Thilo Pionteck",
+      "year": 2021,
+      "venue": "ASP-DAC",
+      "type": "conf",
+      "month": 1
+    },
+    {
+      "title": "Marvel: A Data-Centric Approach for Mapping Deep Learning Operators on Spatial Accelerators",
+      "matchTitles": [
+        "Marvel: A Data-Centric Approach for Mapping Deep Learning Operators on Spatial Accelerators"
+      ],
+      "authors": "Prasanth Chatarasi, Hyoukjun Kwon, Angshuman Parashar, Michael Pellauer, Tushar Krishna, Vivek Sarkar",
+      "year": 2021,
+      "venue": "ACM TACO",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "STONNE: Enabling Cycle-Level Microarchitectural Simulation for DNN Inference Accelerators",
+      "matchTitles": [
+        "STONNE: Enabling Cycle-Level Microarchitectural Simulation for DNN Inference Accelerators"
+      ],
+      "authors": "Francisco Muñoz-Martinez, Jose L. Abellan, Manuel E. Acacio, Tushar Krishna",
+      "year": 2021,
+      "venue": "IEEE CAL",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "Evaluating Spatial Accelerator Architectures with Tiled Matrix-Matrix Multiplication",
+      "matchTitles": [
+        "Evaluating Spatial Accelerator Architectures with Tiled Matrix-Matrix Multiplication"
+      ],
+      "authors": "Gordon E. Moon, Hyoukjun Kwon, Geonhwa Jeong, Prasanth Chatarasi, Sivasankaran Rajamanickam, Tushar Krishna",
+      "year": 2021,
+      "venue": "IEEE TPDS",
+      "type": "journal",
+      "month": 4
+    },
+    {
+      "title": "Clock Delivery Network Design and Analysis for Interposer-Based 2.5-D Heterogeneous Systems",
+      "matchTitles": [
+        "Clock Delivery Network Design and Analysis for Interposer-Based 2.5-D Heterogeneous Systems"
+      ],
+      "authors": "Gauthaman Murali, Heechun Park, Eric Qin, Hakki Mert Torun, Majid Ahadi Dolatsara, Madhavan Swaminathan, Tushar Krishna, Sung Kyu Lim",
+      "year": 2021,
+      "venue": "IEEE TVLSI",
+      "type": "journal",
+      "month": 4
+    },
+    {
+      "title": "Flexion: A Quantitative Metric for Flexibility in DNN Accelerators",
+      "matchTitles": [
+        "Flexion: A Quantitative Metric for Flexibility in DNN Accelerators"
+      ],
+      "authors": "Hyoukjun Kwon, Michael Pellauer, Angshuman Parashar, Tushar Krishna",
+      "year": 2021,
+      "venue": "IEEE CAL",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "Interconnect Modeling for Homogeneous and Heterogeneous Multiprocessors",
+      "matchTitles": [
+        "Interconnect Modeling for Homogeneous and Heterogeneous Multiprocessors"
+      ],
+      "authors": "Srikant Bharadwaj, Tushar Krishna",
+      "year": 2021,
+      "venue": "Springer (chapter)",
+      "type": "chapter",
+      "month": 6
+    },
+    {
+      "title": "Statistical Array Allocation and Partitioning for Compute In-Memory Fabrics",
+      "matchTitles": [
+        "Statistical Array Allocation and Partitioning for Compute In-Memory Fabrics"
+      ],
+      "authors": "Brian Crafton, Samuel Spetalnick, Gauthaman Murali, Tushar Krishna, Sung Kyu Lim, Arijit Raychowdhury",
+      "year": 2020,
+      "venue": "VLSI-SoC",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "GAMMA: Automating the HW Mapping of DNN Models on Accelerators via Genetic Algorithm",
+      "matchTitles": [
+        "GAMMA: Automating the HW Mapping of DNN Models on Accelerators via Genetic Algorithm"
+      ],
+      "authors": "Sheng-Chun Kao, Tushar Krishna",
+      "year": 2020,
+      "venue": "ICCAD",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "ConfuciuX: Autonomous Hardware Resource Assignment for DNN Accelerators using Reinforcement Learning",
+      "matchTitles": [
+        "ConfuciuX: Autonomous Hardware Resource Assignment for DNN Accelerators using Reinforcement Learning"
+      ],
+      "authors": "Sheng-Chun Kao, Geonhwa Jeong, Tushar Krishna",
+      "year": 2020,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Breaking Barriers: Maximizing Array Utilization for Compute In-Memory Fabrics",
+      "matchTitles": [
+        "Breaking Barriers: Maximizing Array Utilization for Compute In-Memory Fabrics"
+      ],
+      "authors": "Brian Crafton, Samuel Spetalnick, Gauthaman Murali, Tushar Krishna, Sung-Kyu Lim, Arijit Raychowdhury",
+      "year": 2020,
+      "venue": "VLSI-SoC",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Scalable Distributed Training of Recommendation Models: An ASTRA-SIM + NS3 case-study with TCP/IP transport",
+      "matchTitles": [
+        "Scalable Distributed Training of Recommendation Models: An ASTRA-SIM + NS3 case-study with TCP/IP transport"
+      ],
+      "authors": "Saeed Rashidi, Pallavi Shurpali, Srinivas Sridharan, Naader Hassani, Dheevatsa Mudigere, Krishnakumar Nair, Misha Smelyanski, Tushar Krishna",
+      "year": 2020,
+      "venue": "HotI",
+      "type": "conf",
+      "month": 8
+    },
+    {
+      "title": "ASTRA-SIM: Enabling SW/HW Co-Design Exploration for Distributed DL Training Platforms",
+      "matchTitles": [
+        "ASTRA-SIM: Enabling SW/HW Co-Design Exploration for Distributed DL Training Platforms"
+      ],
+      "authors": "Saeed Rashidi, Srinivas Sridharan, Sudarshan Srinivasan, Tushar Krishna",
+      "year": 2020,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "A Systematic Methodology for Characterizing Scalability of DNN Accelerators using SCALE-Sim",
+      "matchTitles": [
+        "A Systematic Methodology for Characterizing Scalability of DNN Accelerators using SCALE-Sim"
+      ],
+      "authors": "Ananda Samajdar, Jan Moritz Joseph, Yuhao Zhu, Paul Whatmough, Matthew Mattina, Tushar Krishna",
+      "year": 2020,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "CLAN: Continuous Learning using Asynchronous NeuroEvolution on Commodity Edge Devices",
+      "matchTitles": [
+        "CLAN: Continuous Learning using Asynchronous NeuroEvolution on Commodity Edge Devices"
+      ],
+      "authors": "Parth Mannan, Ananda Samajdar, Tushar Krishna",
+      "year": 2020,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Kite: A Family of Heterogeneous Interposer Topologies Enabled via Accurate Interconnect Modeling",
+      "matchTitles": [
+        "Kite: A Family of Heterogeneous Interposer Topologies Enabled via Accurate Interconnect Modeling"
+      ],
+      "authors": "Srikant Bharadwaj, Jieming Yin, Bradford M. Beckmann, Tushar Krishna",
+      "year": 2020,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Co-Exploration of Neural Architectures and Heterogeneous ASIC Accelerator Designs Targeting Multiple Tasks",
+      "matchTitles": [
+        "Co-Exploration of Neural Architectures and Heterogeneous ASIC Accelerator Designs Targeting Multiple Tasks"
+      ],
+      "authors": "Lei Yang, Zheyu Yan, Meng Li, Hyoukjun Kwon, Liangzhen Lai, Tushar Krishna, Vikas Chandra, Weiwen Jiang, Yiyu Shi",
+      "year": 2020,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "SIGMA: A Sparse and Irregular GEMM Accelerator with Flexible Interconnects for DNN Training",
+      "matchTitles": [
+        "SIGMA: A Sparse and Irregular GEMM Accelerator with Flexible Interconnects for DNN Training"
+      ],
+      "authors": "Eric Qin, Ananda Samajdar, Hyoukjun Kwon, Vineet Nadella, Sudarshan Srinivasan, Dipankar Das, Bharat Kaul, Tushar Krishna",
+      "year": 2020,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "DRAIN: Deadlock Removal for Arbitrary Irregular Networks",
+      "matchTitles": [
+        "DRAIN: Deadlock Removal for Arbitrary Irregular Networks"
+      ],
+      "authors": "Mayank Parasar, Hossein Farrokhbakht, Natalie Enright Jerger, Paul Gratz, Tushar Krishna, Joshua San Miguel",
+      "year": 2020,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "ALRESCHA: A Lightweight Reconfigurable Sparse-Computation Accelerator",
+      "matchTitles": [
+        "ALRESCHA: A Lightweight Reconfigurable Sparse-Computation Accelerator"
+      ],
+      "authors": "Bahar Asgari, Ramyad Hadidi, Tushar Krishna, Hyesoon Kim, Sudhakar Yalamanchili",
+      "year": 2020,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Architecture, Chip, and Package Co-design Flow for 2.5D IC Design Enabling Heterogeneous IP Reuse",
+      "matchTitles": [
+        "Architecture, Chip, and Package Co-design Flow for 2.5D IC Design Enabling Heterogeneous IP Reuse"
+      ],
+      "authors": "Jinwoo Kim, Gauthaman Murali, Heechun Park, Eric Qin, Hyoukjun Kwon, Venkata Chaitanya Krishna Chekuri, Nael Mizanur Rahman, Nihar Dasari, Arvind Singh, Minah Lee, Hakki Mert Torun, Kallol Roy, Madhavan Swaminathan, Saibal Mukhopadhyay, Tushar Krishna, Sung Kyu Lim",
+      "year": 2020,
+      "venue": "IEEE TVLSI",
+      "type": "journal",
+      "month": 4
+    },
+    {
+      "title": "EcoTLB: Eventually Consistent TLBs",
+      "matchTitles": [
+        "EcoTLB: Eventually Consistent TLBs"
+      ],
+      "authors": "Steffen Maass, Mohan Kumar, Taesoo Kim, Tushar Krishna, Abhishek Bhattacharjee",
+      "year": 2020,
+      "venue": "ACM TACO",
+      "type": "journal",
+      "month": 6
+    },
+    {
+      "title": "MAESTRO: A Data-Centric Approach to Understand Reuse, Performance, and Hardware Cost of DNN Mappings",
+      "matchTitles": [
+        "MAESTRO: A Data-Centric Approach to Understand Reuse, Performance, and Hardware Cost of DNN Mappings"
+      ],
+      "authors": "Hyoukjun Kwon, Prasanth Chatarasi, Michael Pellauer, Angshuman Parashar, Vivek Sarkar, Tushar Krishna",
+      "year": 2020,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6,
+      "specialIssue": "Special Issue: Top Picks from the Computer Architecture Conferences"
+    },
+    {
+      "title": "Data Orchestration in Deep Learning Accelerators",
+      "matchTitles": [
+        "Data Orchestration in Deep Learning Accelerators"
+      ],
+      "authors": "Tushar Krishna, Michael Pellauer, Angshuman Parashar, Hyoukjun Kwon, Ananda Samajdar",
+      "year": 2020,
+      "venue": "Synthesis Lectures",
+      "type": "book",
+      "month": 6
+    },
+    {
+      "title": "Application Benchmarking",
+      "matchTitles": [
+        "Application Benchmarking"
+      ],
+      "authors": "Geoffrey Burr, Tom Conte, Paolo Gargini, Vladimir Getov, Yoshihiro Hayashi, Takeshi Iwashita, Vijay Janapa Reddi, Masaaki Kondo, Tushar Krishna, Peter M. Kogge, Anoop Nair, Dam Sunwoo, Josep Torrellas, Peter Torelli",
+      "year": 2020,
+      "venue": "IRDS (chapter)",
+      "type": "chapter",
+      "month": 12
+    },
+    {
+      "title": "Reinforcement Learning Based Interconnection Routing for Adaptive Traffic Optimization",
+      "matchTitles": [
+        "Reinforcement Learning Based Interconnection Routing for Adaptive Traffic Optimization"
+      ],
+      "authors": "Sheng-Chun Kao, Chao-Han Huck Yang, Pin-Yu Chen, Xiaoli Ma, Tushar Krishna",
+      "year": 2019,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Understanding the Impact of On-chip Communication on DNN Accelerator Performance",
+      "matchTitles": [
+        "Understanding the Impact of On-chip Communication on DNN Accelerator Performance"
+      ],
+      "authors": "Robert Guirado, Hyoukjun Kwon, Eduard Alarcon, Sergi Abadal, Tushar Krishna",
+      "year": 2019,
+      "venue": "ICECS",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "Characterizing the Deployment of Deep Neural Networks on Commercial Edge Devices",
+      "matchTitles": [
+        "Characterizing the Deployment of Deep Neural Networks on Commercial Edge Devices"
+      ],
+      "authors": "Ramyad Hadidi, Jiashen Cao, Yilun Xie, Bahar Asgari, Tushar Krishna, Hyesoon Kim",
+      "year": 2019,
+      "venue": "IISWC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach",
+      "matchTitles": [
+        "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach",
+        "Understanding reuse, performance, and hardware cost of dnn dataflow: A data-centric approach"
+      ],
+      "authors": "Hyoukjun Kwon, Prasanth Chatarasi, Michael Pellauer, Angshuman Parashar, Vivek Sarkar, Tushar Krishna",
+      "year": 2019,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "SWAP: Synchronized Weaving of Adjacent Packets for Network Deadlock Resolution",
+      "matchTitles": [
+        "SWAP: Synchronized Weaving of Adjacent Packets for Network Deadlock Resolution"
+      ],
+      "authors": "Mayank Parasar, Natalie Enright Jerger, Paul Gratz, Joshua San Miguel, Tushar Krishna",
+      "year": 2019,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "BINDU: Deadlock-Freedom with One Bubble in the Network",
+      "matchTitles": [
+        "BINDU: Deadlock-Freedom with One Bubble in the Network"
+      ],
+      "authors": "Mayank Parasar, Tushar Krishna",
+      "year": 2019,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Scaling the Cascades: Interconnect-aware Mapping Strategies for FPGA Implementation of Machine Learning Problems",
+      "matchTitles": [
+        "Scaling the Cascades: Interconnect-aware Mapping Strategies for FPGA Implementation of Machine Learning Problems",
+        "Scaling the cascades: Interconnect-aware FPGA implementation of machine learning problems"
+      ],
+      "authors": "Ananda Samajdar, Tushar Garg, Tushar Krishna, Nachiket Kapre",
+      "year": 2019,
+      "venue": "FPL",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Architecture, Chip, and Package Co-design Flow for 2.5D IC Design Enabling Heterogeneous IP Reuse",
+      "matchTitles": [
+        "Architecture, Chip, and Package Co-design Flow for 2.5D IC Design Enabling Heterogeneous IP Reuse"
+      ],
+      "authors": "Jinwoo Kim, Gauthaman Murali, Heechun Park, Eric Qin, Hyoukjun Kwon, Venkata Chaitanya Krishna Chekuri, Nihar Dasari, Arvind Singh, Minah Lee, Hakki Mert Torun, Kallol Roy, Madhavan Swaminathan, Saibal Mukhopadhyay, Tushar Krishna, Sung Kyu Lim",
+      "year": 2019,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "mRNA: Enabling Efficient Mapping Space Exploration on a Reconfigurable Neural Accelerator",
+      "matchTitles": [
+        "mRNA: Enabling Efficient Mapping Space Exploration on a Reconfigurable Neural Accelerator",
+        "mrna: Enabling efficient mapping space exploration for a reconfiguration neural accelerator"
+      ],
+      "authors": "Zhongyuan Zhao, Hyoukjun Kwon, Sachit Kuhar, Weiguang Sheng, Zhigang Mao, Tushar Krishna",
+      "year": 2019,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "McMahon: Minimum-cycle Maximum-hop Network",
+      "matchTitles": [
+        "McMahon: Minimum-cycle Maximum-hop Network"
+      ],
+      "authors": "Gokul Subramanian Ravi, Tushar Krishna, Mikko Lipasti",
+      "year": 2019,
+      "venue": "AISTECS",
+      "type": "workshop",
+      "month": 1
+    },
+    {
+      "title": "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom",
+      "matchTitles": [
+        "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom"
+      ],
+      "authors": "Aniruddh Ramrakhyani, Paul Gratz, Tushar Krishna",
+      "year": 2019,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6,
+      "specialIssue": "Special Issue: Top Picks from the Computer Architecture Conferences"
+    },
+    {
+      "title": "Optimizing the Data Placement and Transformation for Multi-bank CGRA Computing System",
+      "matchTitles": [
+        "Optimizing the Data Placement and Transformation for Multi-bank CGRA Computing System"
+      ],
+      "authors": "Zhongyuan Zhao, Yantao Liu, Weiguang Sheng, Tushar Krishna, Qin Wang, Zhigang Mao",
+      "year": 2018,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "Architecting a Secure Wireless Network-on-Chip",
+      "matchTitles": [
+        "Architecting a Secure Wireless Network-on-Chip"
+      ],
+      "authors": "Brian Lebiednik, Sergi Abadal, Hyoukjun Kwon, Tushar Krishna",
+      "year": 2018,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Merge Network for a Non-von Neumann Accumulate Accelerator in a 3D Chip",
+      "matchTitles": [
+        "Merge Network for a Non-von Neumann Accumulate Accelerator in a 3D Chip"
+      ],
+      "authors": "Anirudh Jain, Sriseshan Srikanth, Erik Debenedictis, Tushar Krishna",
+      "year": 2018,
+      "venue": "ICRC",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "GeneSys: Enabling Continuous Learning through Neural Network Evolution in Hardware",
+      "matchTitles": [
+        "GeneSys: Enabling Continuous Learning through Neural Network Evolution in Hardware"
+      ],
+      "authors": "Ananda Samajdar, Parth Mannan, Kartikay Garg, Tushar Krishna",
+      "year": 2018,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Scalable Distributed Last-Level TLBs Using Low-Latency Interconnects",
+      "matchTitles": [
+        "Scalable Distributed Last-Level TLBs Using Low-Latency Interconnects"
+      ],
+      "authors": "Srikant Bharadwaj, Guilherme Cox, Tushar Krishna, Abhishek Bhattacharjee",
+      "year": 2018,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10
+    },
+    {
+      "title": "Brownian Bubble Router: Enabling Deadlock Freedom via Guaranteed Forward Progress",
+      "matchTitles": [
+        "Brownian Bubble Router: Enabling Deadlock Freedom via Guaranteed Forward Progress"
+      ],
+      "authors": "Mayank Parasar, Ankit Sinha, Tushar Krishna",
+      "year": 2018,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom",
+      "matchTitles": [
+        "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom"
+      ],
+      "authors": "Aniruddh Ramrakhyani, Paul Gratz, Tushar Krishna",
+      "year": 2018,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "FastTrack: Leveraging Heterogeneous FPGA Wires to Design Low-cost High-performance Soft NoCs",
+      "matchTitles": [
+        "FastTrack: Leveraging Heterogeneous FPGA Wires to Design Low-cost High-performance Soft NoCs"
+      ],
+      "authors": "Nachiket Kapre, Tushar Krishna",
+      "year": 2018,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "SEESAW: Using Superpages to Improve VIPT Caches",
+      "matchTitles": [
+        "SEESAW: Using Superpages to Improve VIPT Caches"
+      ],
+      "authors": "Mayank Parasar, Abhishek Bhattacharjee, Tushar Krishna",
+      "year": 2018,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6
+    },
+    {
+      "title": "Performance Implications of NoCs on 3D-Stacked Memories: Insights from the Hybrid Memory Cube",
+      "matchTitles": [
+        "Performance Implications of NoCs on 3D-Stacked Memories: Insights from the Hybrid Memory Cube"
+      ],
+      "authors": "Ramyad Hadidi, Bahar Asgari, Jeffrey Young, Burhan Ahmad Mudassar, Kartikay Garg, Tushar Krishna, Hyesoon Kim",
+      "year": 2018,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Reconfigurable Interconnects",
+      "matchTitles": [
+        "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Reconfigurable Interconnects"
+      ],
+      "authors": "Hyoukjun Kwon, Ananda Samajdar, Tushar Krishna",
+      "year": 2018,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "LATR: Lazy Translation Coherence",
+      "matchTitles": [
+        "LATR: Lazy Translation Coherence"
+      ],
+      "authors": "Mohan Kumar, Steffen Maass, Sanidhya Kashyap, Jan Vesely, Zi Yan, Taesoo Kim, Abhishek Bhattacharjee, Tushar Krishna",
+      "year": 2018,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Programmable Interconnects",
+      "matchTitles": [
+        "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Programmable Interconnects"
+      ],
+      "authors": "Hyoukjun Kwon, Ananda Samajdar, Tushar Krishna",
+      "year": 2018,
+      "venue": "SysML",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Spoofing Prevention via RF Power Profiling in Wireless Network-on-Chip",
+      "matchTitles": [
+        "Spoofing Prevention via RF Power Profiling in Wireless Network-on-Chip"
+      ],
+      "authors": "Brian Lebiednik, Sergi Abadal, Hyouk Jun Kwon, Tushar Krishna",
+      "year": 2018,
+      "venue": "AISTECS",
+      "type": "workshop",
+      "month": 1
+    },
+    {
+      "title": "A Communication-Centric Approach for Designing Flexible DNN Accelerators",
+      "matchTitles": [
+        "A Communication-Centric Approach for Designing Flexible DNN Accelerators"
+      ],
+      "authors": "Hyoukjun Kwon, Ananda Samajdar, Tushar Krishna",
+      "year": 2018,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6,
+      "specialIssue": "Special Issue on Hardware Acceleration"
+    },
+    {
+      "title": "A Case for Low Frequency Single Cycle Multi Hop NoCs for Energy Efficiency and High Performance",
+      "matchTitles": [
+        "A Case for Low Frequency Single Cycle Multi Hop NoCs for Energy Efficiency and High Performance"
+      ],
+      "authors": "Monodeep Kar, Tushar Krishna",
+      "year": 2017,
+      "venue": "ICCAD",
+      "type": "conf",
+      "month": 11
+    },
+    {
+      "title": "Lightweight Emulation of Virtual Channels using Swaps",
+      "matchTitles": [
+        "Lightweight Emulation of Virtual Channels using Swaps"
+      ],
+      "authors": "Mayank Parasar, Tushar Krishna",
+      "year": 2017,
+      "venue": "NocArc",
+      "type": "workshop",
+      "month": 10
+    },
+    {
+      "title": "Rethinking NoCs for Spatial Neural Network Accelerators",
+      "matchTitles": [
+        "Rethinking NoCs for Spatial Neural Network Accelerators"
+      ],
+      "authors": "Hyoukjun Kwon, Ananda Samajdar, Tushar Krishna",
+      "year": 2017,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "Adaptive Manycore Architectures for Big Data Computing",
+      "matchTitles": [
+        "Adaptive Manycore Architectures for Big Data Computing"
+      ],
+      "authors": "Janardhan Rao Doppa, Ryan Gary Kim, Mihailo Isakov, Michel A. Kinsy, Hyoukjun Kwon, Tushar Krishna",
+      "year": 2017,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9
+    },
+    {
+      "title": "OpenSMART: Single-Cycle Multi-hop NoC Generator in BSV and Chisel",
+      "matchTitles": [
+        "OpenSMART: Single-Cycle Multi-hop NoC Generator in BSV and Chisel"
+      ],
+      "authors": "Hyoukjun Kwon, Tushar Krishna",
+      "year": 2017,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5
+    },
+    {
+      "title": "Automatic Place-and-Route of Emerging LED-driven Wires within a Monolithically-integrated CMOS+III-V Process",
+      "matchTitles": [
+        "Automatic Place-and-Route of Emerging LED-driven Wires within a Monolithically-integrated CMOS+III-V Process"
+      ],
+      "authors": "Tushar Krishna, Arya Balachandran, Siau Ben Chiah, Li Zhang, Bing Wang, Cong Wang, Kenneth Lee Eng Kian, Jurgen Michel, Li-Shiuan Peh",
+      "year": 2017,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3
+    },
+    {
+      "title": "Static Bubble: A Framework for Deadlock-free Irregular On-chip Topologies",
+      "matchTitles": [
+        "Static Bubble: A Framework for Deadlock-free Irregular On-chip Topologies"
+      ],
+      "authors": "Aniruddh Ramrakhyani, Tushar Krishna",
+      "year": 2017,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+      "matchTitles": [
+        "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks"
+      ],
+      "authors": "Yu-Hsin Chen, Tushar Krishna, Joel Emer, Vivienne Sze",
+      "year": 2017,
+      "venue": "IEEE JSSC",
+      "type": "journal",
+      "month": 1
+    },
+    {
+      "title": "On-Chip Networks, Second Edition",
+      "matchTitles": [
+        "On-Chip Networks, Second Edition"
+      ],
+      "authors": "Natalie Enright Jerger, Tushar Krishna, Li-Shiuan Peh",
+      "year": 2017,
+      "venue": "Synthesis Lectures",
+      "type": "book",
+      "month": 6
+    },
+    {
+      "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+      "matchTitles": [
+        "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks"
+      ],
+      "authors": "Yu-Hsin Chen, Tushar Krishna, Joel Emer, Vivienne Sze",
+      "year": 2016,
+      "venue": "ISSCC",
+      "type": "conf",
+      "month": 2
+    },
+    {
+      "title": "Efficient Control and Communication Paradigms for Coarse-Grained Spatial Architectures",
+      "matchTitles": [
+        "Efficient Control and Communication Paradigms for Coarse-Grained Spatial Architectures"
+      ],
+      "authors": "M. Pellauer, A. Parashar, M. Adler, B. Ahsan, R. Allmon, N. Crago, K. Fleming, M. Gambhir, A. Jaleel, T. Krishna, D. Lustig, S. Maresh, V. Pavlov, R. Rayess, A. Zhai, J. Emer",
+      "year": 2015,
+      "venue": "ACM TOCS",
+      "type": "journal",
+      "month": 9
+    }
+  ]
+}
