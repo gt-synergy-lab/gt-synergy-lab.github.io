@@ -72,7 +72,18 @@ python3 scripts/refresh_publications.py
 
 This uses Python's standard library to refresh `scholar_order.json` from the
 faculty Google Scholar profile and `faculty_publications.json` from the faculty
-publication page. It parses data literals without executing remote JavaScript.
+publication page. It also refreshes `paper_abstracts.json` from the arXiv API,
+matching exact normalized titles and preserving the original text and versioned
+source link. It supplements these with OpenAlex indexed abstracts matched by
+title, year and author, with both the index and publisher DOI linked. Only
+unambiguous matches are displayed; other abstract buttons are hidden. An arXiv
+abstract may differ from the final published version. Existing fragment summaries
+are not used. Manually verified publisher abstracts are retained in
+`reviewed_publisher_abstracts.json` and reapplied on refresh. Reviewed links for
+papers whose source title or online year differs are recorded in
+`reviewed_abstract_links.json` with their stable identifiers; the source title
+and identifier must still match on each refresh.
+The script parses data literals without executing remote JavaScript.
 Incomplete fetches fail before replacing the data. Newly discovered faculty
 titles are reported for review; adding a paper still requires updating its HTML
 fragment, `papers.json`, and `papers.bundle.html` together.

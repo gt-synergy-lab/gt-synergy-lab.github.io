@@ -11,6 +11,9 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import time
+import xml.etree.ElementTree as ET
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -18,6 +21,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'assets/scripts/pub_list'
 FACULTY_URL = 'https://tushar-krishna.github.io/publications.html'
 SCHOLAR_URL = 'https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en&sortby=pubdate&pagesize=100'
+ARXIV_API = 'https://export.arxiv.org/api/query?'
+OPENALEX_API = 'https://api.openalex.org/works?'
+OPENALEX_AUTHOR = 'A5034089074'  # ORCID 0000-0001-5738-6942 (Tushar Krishna)
+ATOM = {'a': 'http://www.w3.org/2005/Atom', 'o': 'http://a9.com/-/spec/opensearch/1.1/'}
 
 # Names absent from the faculty page's abbreviation map. Official sources:
 # https://conferences.sigcomm.org/sigcomm/2026/
@@ -143,8 +150,11 @@ def read_local_papers(data_dir):
             continue
         alias = re.search(r'data-search-aliases="([^"]*)"', source)
         venue = field('paper-conference')
+        authors = field('paper-authors')
+        date = re.search(r'id=[\'"]((?:19|20)\d{2})-\d{2}[\'"]', source)
         hrefs = re.findall(r'href=[\'"]([^\'"]+)', source)
         papers.append({'filename': path.name, 'title': title,
+                       'authors': authors, 'year': int(date[1]) if date else 0,
                        'alias': unescape(alias[1]) if alias else '',
                        'ids': work_ids([venue, *hrefs]),
                        'preprint': not venue or bool(re.search(r'\barxiv\b|^corr\b|\bpreprint\b', venue, re.I))})
@@ -272,19 +282,173 @@ def refresh_scholar(first_page=None):
     return entries
 
 
+def parse_arxiv_feed(source):
+    """Keep only source-provided abstracts with an explicit, versioned arXiv URL."""
+    root = ET.fromstring(source)
+    if root.tag != '{http://www.w3.org/2005/Atom}feed':
+        raise ValueError('Invalid arXiv feed')
+    records = []
+    for entry in root.findall('a:entry', ATOM):
+        url = (entry.findtext('a:id', default='', namespaces=ATOM)).strip()
+        match = re.fullmatch(r'https?://arxiv\.org/abs/(\d{4}\.\d{4,5}v\d+)', url)
+        title = ' '.join(entry.findtext('a:title', default='', namespaces=ATOM).split())
+        abstract = ' '.join(entry.findtext('a:summary', default='', namespaces=ATOM).split())
+        if match and title and abstract and not abstract.lower().startswith('withdrawn'):
+            records.append({'title': title, 'text': abstract,
+                            'source': 'https://arxiv.org/abs/' + match.group(1)})
+    return records
+
+
+def refresh_abstracts(faculty, data_dir=DATA, feeds=None):
+    """Match exact titles only; ambiguous records stay hidden for manual review."""
+    local = read_local_papers(data_dir)
+    titles = {title_key(p['title']) for p in local} | {title_key(p['title']) for p in faculty['papers']}
+    alias_path = data_dir / 'reviewed_abstract_links.json'
+    reviewed = json.loads(alias_path.read_text()) if alias_path.exists() else []
+    titles.update(title_key(item['sourceTitle']) for item in reviewed if item['kind'] == 'arxiv')
+    if feeds is None:
+        query = urlencode({'search_query': 'au:"Tushar Krishna"', 'start': 0, 'max_results': 1000})
+        author_feed = fetch(ARXIV_API + query)
+        root = ET.fromstring(author_feed)
+        total = int(root.findtext('o:totalResults', default='-1', namespaces=ATOM))
+        if total < 1 or total > 1000 or len(root.findall('a:entry', ATOM)) != total:
+            raise ValueError('Incomplete arXiv author feed; existing abstracts preserved')
+        ids = sorted({identity[6:] for paper in local for identity in paper['ids'] if identity.startswith('arxiv:')}
+                     | {identity[6:] for paper in faculty['papers'] for identity in paper.get('identityKeys', []) if identity.startswith('arxiv:')})
+        ids = sorted(set(ids) | {item['id'] for item in reviewed if item['kind'] == 'arxiv'})
+        feeds = [author_feed]
+        for offset in range(0, len(ids), 100):
+            time.sleep(3)  # arXiv API request pacing
+            feeds.append(fetch(ARXIV_API + urlencode({'id_list': ','.join(ids[offset:offset+100]), 'max_results': 100})))
+    candidates = {}
+    for feed in feeds:
+        for record in parse_arxiv_feed(feed):
+            key = title_key(record['title'])
+            if key in titles:
+                candidates.setdefault(key, {})[record['source'].rsplit('v', 1)[0]] = record
+    # Multiple distinct arXiv works with the same title are not safe to assign.
+    records = [next(iter(items.values())) for items in candidates.values() if len(items) == 1]
+    return {'source': 'arXiv API', 'papers': sorted(records, key=lambda item: title_key(item['title']))}
+
+
+def parse_openalex_abstract(inverted):
+    """Reconstruct complete text only when every word position is present once."""
+    positions = {}
+    if not isinstance(inverted, dict):
+        return ''
+    for word, indexes in inverted.items():
+        if not isinstance(word, str) or not isinstance(indexes, list):
+            return ''
+        for pos in indexes:
+            if not isinstance(pos, int) or pos < 0 or pos in positions:
+                return ''
+            positions[pos] = word
+    if not positions or set(positions) != set(range(len(positions))):
+        return ''
+    return ' '.join(positions[i] for i in range(len(positions)))
+
+
+def refresh_openalex(faculty, arxiv, works, data_dir=DATA):
+    """Supplement arXiv with uniquely matched published works in OpenAlex."""
+    local = read_local_papers(data_dir)
+    faculty_titles = {title_key(p['title']) for p in faculty['papers']}
+    targets = [(p['title'], p['year'], p['authors']) for p in faculty['papers']]
+    targets += [(p['title'], p['year'], p['authors']) for p in local
+                if not p['preprint'] and title_key(p['title']) not in faculty_titles]
+    existing = {title_key(p['title']) for p in arxiv['papers']}
+    candidates = {}
+    for work in works:
+        title = work.get('title') or ''
+        key = title_key(title)
+        if key in existing or work.get('type') not in ('article', 'conference-paper', 'book-chapter'):
+            continue
+        identifier, doi = work.get('id') or '', work.get('doi') or ''
+        text = parse_openalex_abstract(work.get('abstract_inverted_index'))
+        if not re.fullmatch(r'https://openalex\.org/W\d+', identifier) or not re.fullmatch(r'https://doi\.org/10\.\d{4,9}/[^\s]+', doi, re.I) or not text:
+            continue
+        names = [a.get('author', {}).get('display_name', '') for a in work.get('authorships', [])]
+        matches = [t for t in targets if title_key(t[0]) == key and t[1] == work.get('publication_year')
+                   and any(len(name.split()) > 1 and name.split()[-1].casefold() in t[2].casefold() for name in names)]
+        if not matches:
+            continue
+        candidates.setdefault(key, {})[doi.lower()] = {'title': matches[0][0], 'text': text,
+                                                       'source': identifier, 'publisher': doi}
+    records = [next(iter(group.values())) for group in candidates.values() if len(group) == 1]
+    combined = {title_key(p['title']): p for p in arxiv['papers'] + records}
+    alias_path = data_dir / 'reviewed_abstract_links.json'
+    reviewed = json.loads(alias_path.read_text()) if alias_path.exists() else []
+    by_work_id = {work.get('id'): work for work in works}
+    for item in reviewed:
+        key = title_key(item['title'])
+        if item['kind'] == 'arxiv':
+            matches = [p for p in arxiv['papers'] if title_key(p['title']) == title_key(item['sourceTitle'])
+                       and re.fullmatch(r'https://arxiv\.org/abs/' + re.escape(item['id']) + r'v\d+', p['source'])]
+            if len(matches) == 1:
+                combined[key] = {**matches[0], 'title': item['title']}
+        elif item['kind'] == 'openalex':
+            work = by_work_id.get('https://openalex.org/' + item['id'])
+            if not work or title_key(work.get('title') or '') != title_key(item['sourceTitle']) or (work.get('doi') or '').lower() != item['doi'].lower():
+                continue
+            text = parse_openalex_abstract(work.get('abstract_inverted_index'))
+            if text and re.fullmatch(r'https://doi\.org/10\.\d{4,9}/[^\s]+', item['doi'], re.I):
+                combined[key] = {'title': item['title'], 'text': text, 'source': work['id'], 'publisher': item['doi']}
+    reviewed_path = data_dir / 'reviewed_publisher_abstracts.json'
+    if reviewed_path.exists():
+        for item in json.loads(reviewed_path.read_text()):
+            key = title_key(item.get('title', ''))
+            source = item.get('source', '')
+            valid_source = (re.fullmatch(r'https://ieeexplore\.ieee\.org/document/\d+', source)
+                            or re.fullmatch(r'https://proceedings\.mlsys\.org/paper_files/paper/\d{4}/hash/[a-f0-9]+-Abstract-Conference\.html', source)
+                            or source == 'https://anands09.github.io/papers/maeri_asplos2018.pdf')
+            if key in {title_key(t[0]) for t in targets} and item.get('text') and valid_source:
+                combined[key] = item
+    return {'source': 'arXiv, OpenAlex and reviewed publisher pages',
+            'papers': sorted(combined.values(), key=lambda item: title_key(item['title']))}
+
+
+def fetch_openalex(data_dir=DATA):
+    works = []
+    for page in range(1, 11):
+        query = urlencode({'filter': f'authorships.author.id:{OPENALEX_AUTHOR},from_publication_date:2015-01-01',
+                           'per-page': 100, 'page': page})
+        payload = json.loads(fetch(OPENALEX_API + query))
+        batch = payload['results']
+        works.extend(batch)
+        if len(works) >= payload['meta']['count']:
+            alias_path = data_dir / 'reviewed_abstract_links.json'
+            reviewed = json.loads(alias_path.read_text()) if alias_path.exists() else []
+            ids = [item['id'] for item in reviewed if item['kind'] == 'openalex']
+            if ids:
+                time.sleep(1)
+                extra = json.loads(fetch(OPENALEX_API + urlencode({'filter': 'openalex_id:' + '|'.join(ids), 'per-page': 100})))
+                works.extend(extra['results'])
+            return works
+        if len(batch) != 100:
+            break
+        time.sleep(1)
+    raise ValueError('Incomplete OpenAlex results; existing abstracts preserved')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--faculty-html', type=Path, help='Use a saved first-party page for a reproducible refresh')
     parser.add_argument('--scholar-html', type=Path, help='Use a saved first page; remaining pages are fetched')
     parser.add_argument('--skip-scholar', action='store_true')
+    parser.add_argument('--arxiv-feed', type=Path, action='append', help='Use saved arXiv Atom feed(s) for a reproducible refresh')
+    parser.add_argument('--openalex-json', type=Path, help='Use saved OpenAlex results for a reproducible refresh')
     args = parser.parse_args()
     source = args.faculty_html.read_text() if args.faculty_html else fetch(FACULTY_URL)
     faculty, unmatched = refresh_faculty(source)
     scholar = None if args.skip_scholar else refresh_scholar(args.scholar_html.read_text() if args.scholar_html else None)
+    abstracts = refresh_abstracts(faculty, feeds=[path.read_text() for path in args.arxiv_feed] if args.arxiv_feed else None)
+    works = json.loads(args.openalex_json.read_text()) if args.openalex_json else fetch_openalex()
+    abstracts = refresh_openalex(faculty, abstracts, works)
     (DATA / 'faculty_publications.json').write_text(json.dumps(faculty, ensure_ascii=False, indent=2) + '\n')
+    (DATA / 'paper_abstracts.json').write_text(json.dumps(abstracts, ensure_ascii=False, indent=2) + '\n')
     if scholar is not None:
         (DATA / 'scholar_order.json').write_text(json.dumps(scholar, ensure_ascii=False, indent=2) + '\n')
     print(f"Faculty: {len(faculty['papers'])} records; {len(unmatched)} unmatched titles require review")
+    print(f"Verified matches: {len(abstracts['papers'])} abstracts from arXiv and OpenAlex")
     for title in unmatched:
         print('Unmatched:', title)
     if scholar is not None:

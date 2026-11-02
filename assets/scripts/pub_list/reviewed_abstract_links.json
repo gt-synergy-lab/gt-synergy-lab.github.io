@@ -1,0 +1,112 @@
+[
+  {
+    "title": "NSFlow: An End-to-End FPGA Framework with Scalable Dataflow Architecture for NeuroSymbolic AI",
+    "kind": "arxiv",
+    "id": "2504.19323",
+    "sourceTitle": "NSFlow: An End-to-End FPGA Framework with Scalable Dataflow Architecture for Neuro-Symbolic AI"
+  },
+  {
+    "title": "GEAR: An Efficient Error Reduction Framework for KV Cache Compression in LLM Inference",
+    "kind": "arxiv",
+    "id": "2403.05527",
+    "sourceTitle": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM"
+  },
+  {
+    "title": "SmartPAF: Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption",
+    "kind": "arxiv",
+    "id": "2404.03216",
+    "sourceTitle": "Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption"
+  },
+  {
+    "title": "Self Adaptive Reconfigurable Arrays (SARA): Learning Flexible GEMM Accelerator Configuration and Mapping-space using ML",
+    "kind": "arxiv",
+    "id": "2101.04799",
+    "sourceTitle": "Self-Adaptive Reconfigurable Arrays (SARA): Using ML to Assist Scaling GEMM Acceleration"
+  },
+  {
+    "title": "Union: A Unified HW-SW Co-Design Ecosystem in MLIR for Evaluating Tensor Operators on Spatial Accelerators",
+    "kind": "arxiv",
+    "id": "2109.07419",
+    "sourceTitle": "Union: A Unified HW-SW Co-Design Ecosystem in MLIR for Evaluating Tensor Operations on Spatial Accelerators"
+  },
+  {
+    "title": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach",
+    "kind": "arxiv",
+    "id": "1805.02566",
+    "sourceTitle": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach Using MAESTRO"
+  },
+  {
+    "title": "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System",
+    "kind": "arxiv",
+    "id": "2602.13692",
+    "sourceTitle": "ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System"
+  },
+  {
+    "title": "A CPU-Centric Perspective on Agentic AI",
+    "kind": "arxiv",
+    "id": "2511.00739",
+    "sourceTitle": "Towards Understanding, Analyzing, and Optimizing Agentic AI Execution: A CPU-Centric Perspective"
+  },
+  {
+    "title": "TurboAttention: Efficient Attention Approximation for High-Throughput LLMs",
+    "kind": "arxiv",
+    "id": "2412.08585",
+    "sourceTitle": "TurboAttention: Efficient Attention Approximation For High Throughputs LLMs"
+  },
+  {
+    "title": "Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures",
+    "kind": "openalex",
+    "id": "W4417243407",
+    "sourceTitle": "Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures",
+    "doi": "https://doi.org/10.1145/3760250.3762235"
+  },
+  {
+    "title": "Axon: A Novel Systolic Array Architecture for Improved Energy-Efficient GeMM and Conv Operation with On-Chip im2col",
+    "kind": "openalex",
+    "id": "W4410583693",
+    "sourceTitle": "Axon: A Novel Systolic Array Architecture for Improved Run Time and Energy Efficient GeMM and Conv Operation with On-Chip im2col",
+    "doi": "https://doi.org/10.23919/date64628.2025.10992860"
+  },
+  {
+    "title": "STIFT: A Spatio-Temporal Integrated Folding Tree for Efficient Reductions in Flexible DNN Accelerators",
+    "kind": "openalex",
+    "id": "W4225287131",
+    "sourceTitle": "STIFT: A Spatio-Temporal Integrated Folding Tree for Efficient Reductions in Flexible DNN Accelerators",
+    "doi": "https://doi.org/10.1145/3531011"
+  },
+  {
+    "title": "PAF-FHE: Low-Cost Accurate Non-Polynomial Operator Polynomial Approximation in Fully Homomorphic Encryption Based ML Inference",
+    "kind": "openalex",
+    "id": "W4376140593",
+    "sourceTitle": "PAF-FHE: Low-Cost Accurate Non-Polynomial Operator Polynomial Approximation in Fully Homomorphic Encryption Based ML Inference",
+    "doi": "https://doi.org/10.21203/rs.3.rs-2910088/v1"
+  },
+  {
+    "title": "DiGamma: A Domain-aware Genetic Algorithm for HW-Mapping Co-optimization for DNN Accelerators",
+    "kind": "openalex",
+    "id": "W4226323948",
+    "sourceTitle": "DiGamma: Domain-aware Genetic Algorithm for HW-Mapping Co-optimization for DNN Accelerators",
+    "doi": "https://doi.org/10.23919/date54114.2022.9774568"
+  },
+  {
+    "title": "Flexion: A Quantitative Metric for Flexibility in DNN Accelerators",
+    "kind": "openalex",
+    "id": "W3113081963",
+    "sourceTitle": "Flexion: A Quantitative Metric for Flexibility in DNN Accelerators",
+    "doi": "https://doi.org/10.1109/lca.2020.3044607"
+  },
+  {
+    "title": "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom",
+    "kind": "openalex",
+    "id": "W2884810594",
+    "sourceTitle": "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom",
+    "doi": "https://doi.org/10.1109/isca.2018.00064"
+  },
+  {
+    "title": "A Case for Low Frequency Single Cycle Multi Hop NoCs for Energy Efficiency and High Performance",
+    "kind": "openalex",
+    "id": "W4238935249",
+    "sourceTitle": "A case for low frequency single cycle multi hop NoCs for energy efficiency and high performance",
+    "doi": "https://doi.org/10.1109/iccad.2017.8203851"
+  }
+]

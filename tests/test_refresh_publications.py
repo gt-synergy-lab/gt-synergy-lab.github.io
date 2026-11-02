@@ -1,6 +1,9 @@
 import importlib.util
 from pathlib import Path
+import json
+import tempfile
 import unittest
+from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location('refresh', Path(__file__).resolve().parents[1] / 'scripts/refresh_publications.py')
 refresh = importlib.util.module_from_spec(spec)
@@ -8,6 +11,58 @@ spec.loader.exec_module(refresh)
 
 
 class PublicationRefreshTest(unittest.TestCase):
+    def test_reviewed_abstract_alias_requires_exact_source_and_survives_refresh(self):
+        faculty = {'papers': [{'title': 'Conference name', 'year': 2025, 'authors': 'Alice Smith'}]}
+        arxiv = {'papers': [{'title': 'Earlier name', 'text': 'Original text',
+                             'source': 'https://arxiv.org/abs/2504.09775v3'}]}
+        alias = {'title': 'Conference name', 'sourceTitle': 'Earlier name',
+                 'kind': 'arxiv', 'id': '2504.09775'}
+        with tempfile.TemporaryDirectory() as folder, patch.object(refresh, 'read_local_papers', return_value=[]):
+            path = Path(folder) / 'reviewed_abstract_links.json'
+            path.write_text(json.dumps([alias]))
+            output = refresh.refresh_openalex(faculty, arxiv, [], Path(folder))['papers']
+            self.assertIn('Conference name', [paper['title'] for paper in output])
+            alias['id'] = '2504.99999'
+            path.write_text(json.dumps([alias]))
+            output = refresh.refresh_openalex(faculty, arxiv, [], Path(folder))['papers']
+            self.assertNotIn('Conference name', [paper['title'] for paper in output])
+
+    def test_openalex_reconstructs_only_complete_positions(self):
+        self.assertEqual(refresh.parse_openalex_abstract({'words': [1], 'Original': [0]}), 'Original words')
+        self.assertEqual(refresh.parse_openalex_abstract({'Original': [0], 'words': [2]}), '')
+        self.assertEqual(refresh.parse_openalex_abstract({'Original': [0], 'words': [0]}), '')
+
+    def test_openalex_requires_matching_title_year_and_author(self):
+        faculty = {'papers': [{'title': 'A Paper', 'year': 2024, 'authors': 'Alice Smith'}]}
+        work = {'title': 'A Paper', 'publication_year': 2024, 'type': 'article',
+                'id': 'https://openalex.org/W123', 'doi': 'https://doi.org/10.1234/test',
+                'abstract_inverted_index': {'Original': [0], 'words': [1]},
+                'authorships': [{'author': {'display_name': 'Alice Smith'}}]}
+        with patch.object(refresh, 'read_local_papers', return_value=[]):
+            result = refresh.refresh_openalex(faculty, {'papers': []}, [work])['papers']
+            self.assertEqual(len(result), 1)
+            self.assertEqual(result[0]['text'], 'Original words')
+            self.assertEqual(refresh.refresh_openalex(faculty, {'papers': []},
+                [{**work, 'publication_year': 2023}])['papers'], [])
+            self.assertEqual(refresh.refresh_openalex(faculty, {'papers': []},
+                [{**work, 'authorships': [{'author': {'display_name': 'Bob Jones'}}]}])['papers'], [])
+
+    def test_arxiv_feed_preserves_source_text_and_version(self):
+        xml = '''<feed xmlns="http://www.w3.org/2005/Atom"><entry>
+          <id>http://arxiv.org/abs/2504.09775v6</id><title>A Paper</title>
+          <summary>Original text &amp; details.\n Second sentence.</summary></entry></feed>'''
+        self.assertEqual(refresh.parse_arxiv_feed(xml), [{'title': 'A Paper',
+            'text': 'Original text & details. Second sentence.',
+            'source': 'https://arxiv.org/abs/2504.09775v6'}])
+
+    def test_arxiv_error_and_unversioned_ids_are_not_abstracts(self):
+        xml = '''<feed xmlns="http://www.w3.org/2005/Atom"><entry>
+          <id>https://arxiv.org/abs/2504.09775</id><title>A Paper</title>
+          <summary>Original text.</summary></entry></feed>'''
+        self.assertEqual(refresh.parse_arxiv_feed(xml), [])
+        with self.assertRaises(ValueError):
+            refresh.parse_arxiv_feed('<html/>')
+
     def test_aliases_do_not_leak_between_journal_and_conference_editions(self):
         previous = [{'title': 'Same title', 'venue': 'IISWC',
                      'matchTitles': ['Same title', 'Preprint title'], 'identityKeys': ['arxiv:2006.07137']}]

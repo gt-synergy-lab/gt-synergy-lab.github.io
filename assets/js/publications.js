@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261101d';
+  const VERSION_SUFFIX = '?v=publications-20261102-abstracts-c';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [
@@ -208,15 +208,17 @@
     wireControls(container);
 
     try {
-      const [elements, scholarOrder, faculty] = await Promise.all([
+      const [elements, scholarOrder, faculty, abstracts] = await Promise.all([
         loadBundledPapers().catch(loadPaperFiles),
         loadScholarOrder(),
-        loadFacultyMetadata()
+        loadFacultyMetadata(),
+        loadAbstracts()
       ]);
       state.scholarOrder = prepareScholarOrder(scholarOrder);
       state.facultyPapers = prepareFacultyMetadata(faculty.papers || []);
       state.venueNames = faculty.venueNames || {};
       state.papers = preparePapers(elements);
+      attachAbstracts(state.papers, abstracts);
       initializeFiltersFromUrl();
       renderTopicFilters();
       renderPublications();
@@ -280,6 +282,73 @@
     }
   }
 
+  async function loadAbstracts() {
+    try {
+      const response = await fetch(`../assets/scripts/pub_list/paper_abstracts.json${VERSION_SUFFIX}`);
+      if (!response.ok) throw new Error('Could not load abstracts');
+      const data = await response.json();
+      return Array.isArray(data.papers) ? data.papers : [];
+    } catch (error) {
+      console.warn('Verified abstracts unavailable; abstract buttons hidden.', error);
+      return [];
+    }
+  }
+
+  function attachAbstracts(papers, abstracts) {
+    const counts = new Map();
+    papers.forEach(paper => counts.set(paper.titleKey, (counts.get(paper.titleKey) || 0) + 1));
+    const lookup = new Map(abstracts.map(item => [normalizeTitleKey(item.title), item]));
+    papers.forEach((paper, index) => {
+      const item = lookup.get(paper.titleKey);
+      if (!item || counts.get(paper.titleKey) !== 1 || !item.text) return;
+      const isArxiv = /^https:\/\/arxiv\.org\/abs\/\d{4}\.\d{4,5}v\d+$/.test(item.source);
+      const isOpenAlex = /^https:\/\/openalex\.org\/W\d+$/.test(item.source)
+        && /^https:\/\/doi\.org\/10\.\d{4,9}\/[^\s]+$/i.test(item.publisher || '');
+      const isIEEE = /^https:\/\/ieeexplore\.ieee\.org\/document\/\d+$/.test(item.source);
+      const isMLSys = /^https:\/\/proceedings\.mlsys\.org\/paper_files\/paper\/\d{4}\/hash\/[a-f0-9]+-Abstract-Conference\.html$/.test(item.source);
+      const isAuthorPDF = item.source === 'https://anands09.github.io/papers/maeri_asplos2018.pdf';
+      if (!isArxiv && !isOpenAlex && !isIEEE && !isMLSys && !isAuthorPDF) return;
+      const links = paper.element.querySelector('.paper-links');
+      if (!links) return;
+      const id = `verified-abstract-${index}`;
+      const action = document.createElement('a');
+      action.href = '#';
+      action.className = 'paper-action';
+      action.textContent = 'Abstract';
+      action.addEventListener('click', event => { event.preventDefault(); window.expand_abstract(id); });
+      links.prepend(action);
+      decorateActionLinks(links);
+      const panel = document.createElement('div');
+      panel.id = id;
+      panel.className = 'abstract-section';
+      const close = document.createElement('button');
+      close.className = 'close-btn';
+      close.setAttribute('aria-label', 'Close abstract');
+      close.textContent = '×';
+      close.addEventListener('click', window.closeAbstract);
+      const heading = document.createElement('h2');
+      heading.textContent = 'Abstract';
+      const text = document.createElement('p');
+      text.className = 'abstract-text';
+      text.textContent = item.text;
+      const source = document.createElement('a');
+      source.href = item.source;
+      source.target = '_blank';
+      source.rel = 'noopener noreferrer';
+      source.textContent = isArxiv ? `Source: arXiv ${item.source.match(/v\d+$/)[0]}` : isIEEE ? 'Source: IEEE Xplore' : isMLSys ? 'Source: MLSys proceedings' : isAuthorPDF ? 'Source: author’s paper' : 'Source: OpenAlex';
+      panel.append(close, heading, text, source);
+      if (isOpenAlex) {
+        const publisher = document.createElement('a');
+        publisher.href = item.publisher;
+        publisher.target = '_blank';
+        publisher.rel = 'noopener noreferrer';
+        publisher.textContent = 'Publisher DOI';
+        panel.append(document.createTextNode(' · '), publisher);
+      }
+      links.after(panel);
+    });
+  }
+
   function prepareFacultyMetadata(papers) {
     return metadata.buildIndex(papers);
   }
@@ -339,6 +408,10 @@
     const conferenceElement = element.querySelector('.paper-conference');
     const rawVenue = conferenceElement ? cleanText(conferenceElement.textContent) : '';
     const links = element.querySelector('.paper-links');
+    if (links) links.querySelectorAll('a').forEach(link => {
+      if (/abstract|summary/i.test(link.textContent) || /expand_abstract/i.test(link.getAttribute('href') || '')) link.remove();
+    });
+    element.querySelectorAll('.abstract-section').forEach(section => section.remove());
     const paperLink = findPaperLink(links);
     const identityKeys = metadata.workIds([rawVenue, ...(links ? Array.from(links.querySelectorAll('a[href]'), link => link.href) : [])]);
     const hasPublishedVenue = Boolean(rawVenue && !/\barxiv\b|^corr\b|\bpreprint\b/i.test(rawVenue));
