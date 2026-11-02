@@ -55,7 +55,8 @@ the date this site reports the confirmed acceptances, not a claimed decision dat
 ### October 30, 2026 follow-up
 
 The lab requested chronological Google Scholar ordering, including its year
-groups, instead of reordering by conference month or acceptance status. The
+groups, instead of reordering by conference month or acceptance status. The year
+grouping policy was subsequently corrected on November 1 (below). The
 archive supports intersecting topic selections. At the lab's request, the
 publication-status controls were removed; published papers and preprints are
 both included, and old status-filter URLs no longer hide preprints.
@@ -71,6 +72,32 @@ adding: SmartPAF (MLSys 2024), Application Benchmarking (IRDS chapter, 2020), th
 SysML 2018 MAERI workshop variant, and On-Chip Networks, Second Edition (2017).
 `scripts/refresh_publications.py` reports these rather than conflating them with
 similarly titled records. The live archive still contains 248 deduplicated items.
+
+### November 1, 2026: publication years and preprint replacement
+
+Confirmed venue years now determine year groups as well as citations and badges.
+MIST (SC 2026) and Demystifying AI Platform Design (ICCAD 2026) therefore appear
+under 2026 instead of their earlier preprint years. Scholar ordering is retained
+within each year; unaccepted preprints still use their Scholar dates.
+
+Every run of `scripts/refresh_publications.py` preserves known title aliases and
+available arXiv/DOI identifiers. The archive uses them to replace a matching
+preprint with the published citation, retaining searchable old titles and
+supplemental links. Same-title conference and journal editions remain distinct;
+ambiguous identifier matches or unrecognized renames require review.
+
+Deduplication checks also identified two labels for the same 2024 Neuro-Symbolic
+Architecture paper. Its local ESWEEK label was corrected to CODES+ISSS, as listed
+in the [IEEE proceedings](https://ieeexplore.ieee.org/document/10740726/), so it
+continues to appear once. Fragment filenames may retain earlier years; the
+displayed publication year comes from the resolved citation metadata.
+
+The subsequent full-archive audit reconciled 19 redundant preprint records with
+18 published works and collapsed one duplicate SCALE-Sim preprint. The archive
+now displays 228 records, including 29 retained preprints. Reviewed mappings and
+source corrections are stored in `publication_versions.json` and survive refreshes.
+See [the full audit](publication-version-audit-2026-11-01.md) for the evidence,
+workshop/poster/keynote labels, and cases intentionally kept separate.
 
 ## Sponsor roster
 

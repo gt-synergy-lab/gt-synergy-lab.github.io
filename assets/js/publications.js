@@ -1,7 +1,8 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261030';
+  const VERSION_SUFFIX = '?v=publications-20261101d';
+  const metadata = window.PublicationMetadata;
 
   const TOPICS = [
     {
@@ -164,7 +165,7 @@
   const state = {
     papers: [],
     scholarOrder: new Map(),
-    facultyPapers: new Map(),
+    facultyPapers: metadata.buildIndex([]),
     venueNames: {},
     activeTopics: new Set(),
     query: ''
@@ -280,15 +281,7 @@
   }
 
   function prepareFacultyMetadata(papers) {
-    const metadata = new Map();
-    papers.forEach(paper => {
-      (paper.matchTitles || [paper.title]).forEach(title => {
-        const key = normalizeTitleKey(title);
-        if (!metadata.has(key)) metadata.set(key, []);
-        metadata.get(key).push(paper);
-      });
-    });
-    return metadata;
+    return metadata.buildIndex(papers);
   }
 
   function findScholarMetadata(title, aliases, faculty) {
@@ -314,19 +307,23 @@
   }
 
   function preparePapers(elements) {
-    const recordsByTitle = new Map();
-
-    elements.forEach((element, originalIndex) => {
-      const record = preparePaper(element, originalIndex);
-      if (!record || ARTIFACT_TITLES.has(record.titleKey)) return;
-
-      const existing = recordsByTitle.get(record.titleKey);
-      if (!existing || record.quality > existing.quality) {
-        recordsByTitle.set(record.titleKey, record);
+    const records = elements.map(preparePaper)
+      .filter(record => record && !ARTIFACT_TITLES.has(record.titleKey));
+    return metadata.deduplicate(records).map(record => {
+      // Preserve supplemental links from a preprint when the conference entry wins.
+      const links = record.element.querySelector('.paper-links');
+      if (links) {
+        const urls = new Set(Array.from(links.querySelectorAll('a[href]'), link => link.href));
+        record.versions.forEach(version => version.element.querySelectorAll('.paper-links a[href]').forEach(link => {
+          if (/^https?:/.test(link.href) && !/^(paper|pdf)$/i.test(cleanText(link.textContent)) && !urls.has(link.href)) {
+            links.appendChild(link.cloneNode(true));
+            urls.add(link.href);
+          }
+        }));
       }
+      delete record.versions;
+      return record;
     });
-
-    return Array.from(recordsByTitle.values());
   }
 
   function preparePaper(element, originalIndex) {
@@ -334,26 +331,28 @@
     const authorsElement = element.querySelector('.paper-authors');
     if (!titleElement || !authorsElement) return null;
 
-    const title = cleanText(titleElement.textContent);
+    const rawTitle = cleanText(titleElement.textContent);
     const rawAuthors = cleanText(authorsElement.textContent);
-    const titleKey = normalizeTitleKey(title);
-    if (!titleKey) return null;
+    if (!normalizeTitleKey(rawTitle)) return null;
 
     const date = getPaperDate(element);
-    const verified = VERIFIED_META.find(item => item.pattern.test(title));
     const conferenceElement = element.querySelector('.paper-conference');
     const rawVenue = conferenceElement ? cleanText(conferenceElement.textContent) : '';
-    const candidates = state.facultyPapers.get(titleKey) || [];
-    const faculty = candidates.find(paper => String(paper.year) === date.year
-      && normalizeVenueText(rawVenue, date.year, false, false).includes(paper.venue))
-      || candidates.find(paper => String(paper.year) === date.year)
-      || candidates[0];
-    const authors = faculty ? cleanText(faculty.authors) : rawAuthors;
-    const scholarMeta = findScholarMetadata(title, element.dataset.searchAliases, faculty);
     const links = element.querySelector('.paper-links');
     const paperLink = findPaperLink(links);
+    const identityKeys = metadata.workIds([rawVenue, ...(links ? Array.from(links.querySelectorAll('a[href]'), link => link.href) : [])]);
+    const hasPublishedVenue = Boolean(rawVenue && !/\barxiv\b|^corr\b|\bpreprint\b/i.test(rawVenue));
+    const faculty = metadata.findFaculty(state.facultyPapers, {
+      title: rawTitle, aliases: [element.dataset.searchAliases || ''], ids: identityKeys,
+      publishedVenue: hasPublishedVenue ? normalizeVenueText(rawVenue, date.year, false, false) : ''
+    });
+    const title = faculty ? cleanText(faculty.title) : rawTitle;
+    const titleKey = normalizeTitleKey(title);
+    const verified = VERIFIED_META.find(item => item.pattern.test(title));
+    const authors = faculty ? cleanText(faculty.authors) : rawAuthors;
+    const scholarMeta = findScholarMetadata(rawTitle, element.dataset.searchAliases, faculty);
     const hasArxivLink = Boolean(links && links.querySelector('a[href*="arxiv.org"]'));
-    const isPublished = Boolean(faculty || verified || (rawVenue && !/\barxiv\b|^corr\b|\bpreprint\b/i.test(rawVenue)));
+    const isPublished = Boolean(faculty || verified || hasPublishedVenue);
     const isArxiv = !isPublished && (hasArxivLink || /\barxiv\b|^corr\b/i.test(rawVenue));
     const isPreprint = !isPublished;
     const venue = faculty ? `${faculty.venue} ${faculty.year}` : verified
@@ -361,12 +360,14 @@
       : normalizeVenueText(rawVenue, date.year, isArxiv, isPreprint);
     const venueYearMatch = venue.match(/\b(20\d{2})\b/);
     const venueYear = venueYearMatch ? Number(venueYearMatch[1]) : 0;
-    // Group and order by Scholar's date; the citation retains the actual venue year.
-    const publicationYear = (scholarMeta && scholarMeta.year)
-      || ((faculty || verified) && venueYear >= 2015 ? String(venueYear) : '')
-      || date.year
-      || (venueYear >= 2015 ? String(venueYear) : '');
-    const publicationMonth = date.key ? date.key % 100 : 1;
+    const publicationYear = metadata.publicationYear({
+      facultyYear: faculty && faculty.year,
+      verifiedYear: verified && venueYear,
+      publishedYear: hasPublishedVenue && venueYear,
+      scholarYear: scholarMeta && scholarMeta.year,
+      localYear: date.year
+    });
+    const publicationMonth = faculty && faculty.month || (date.key ? date.key % 100 : 1);
     const publicationDateKey = publicationYear
       ? (Number(publicationYear) * 100) + publicationMonth
       : date.key;
@@ -429,8 +430,8 @@
       venueRow.insertAdjacentElement('afterend', tagRow);
     }
 
-    const searchText = normalizeSearchText(`${title} ${element.dataset.searchAliases || ''} ${authors} ${venue} ${citation} ${topics.map(topic => topic.label).join(' ')}`);
-    const quality = (isPreprint ? 0 : 4)
+    const searchText = normalizeSearchText(`${title} ${rawTitle} ${element.dataset.searchAliases || ''} ${(faculty && faculty.matchTitles || []).join(' ')} ${authors} ${venue} ${citation} ${topics.map(topic => topic.label).join(' ')}`);
+    const quality = (hasPublishedVenue ? 16 : 0) + (isPreprint ? 0 : 4)
       + (paperLink ? 2 : 0)
       + (element.querySelector('.abstract-text') ? 1 : 0)
       + (links && /code/i.test(links.textContent) ? 1 : 0);
@@ -439,6 +440,8 @@
       element,
       title,
       titleKey,
+      publicationKey: metadata.publicationKey(title, venue.replace(/\s+20\d{2}$/, ''), publicationYear, isPublished),
+      identityKeys,
       authors,
       authorsElement,
       venue,
@@ -492,7 +495,9 @@
     const full = state.venueNames[acronym];
     const raw = cleanText(rawVenue).replace(/\\&/g, '&').replace(/\\textendash/g, '–').replace(/\{([^{}]+)\}/g, '$1');
     // Preserve volume, issue, and page details when the local citation has them.
-    if (/\b(?:vol\.|pp\.|pages|volume)\b|\d+\s*\(\d+\)/i.test(raw)) return raw;
+    if (/\b(?:vol\.|pp\.|pages|volume)\b|\d+\s*\(\d+\)/i.test(raw)) {
+      return `${raw.replace(/[.,\s]+$/, '')}${year && !raw.includes(year) ? ', ' + year : ''}.`;
+    }
     if (full) return `${full}${full === acronym ? '' : ` (${acronym})`}${year ? ', ' + year : ''}.`;
     return `${raw.replace(/[.,\s]+$/, '')}${year && !raw.includes(year) ? ', ' + year : ''}.`;
   }
@@ -882,17 +887,7 @@
   }
 
   function normalizeTitleKey(value) {
-    return cleanText(value)
-      .toLowerCase()
-      .replace(/&/g, ' and ')
-      .replace(/[^a-z0-9]+/g, ' ')
-      .replace(/([a-z])(\d)/g, '$1 $2')
-      .replace(/(\d)([a-z])/g, '$1 $2')
-      .replace(/\btowards\b/g, 'toward')
-      .replace(/\btinyml\b/g, 'tiny machine learning')
-      .replace(/^special session\s+/, '')
-      .replace(/\s+/g, ' ')
-      .trim();
+    return metadata.titleKey(value);
   }
 
   function normalizeSearchText(value) {

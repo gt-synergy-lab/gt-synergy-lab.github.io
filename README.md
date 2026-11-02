@@ -81,11 +81,35 @@ The archive includes both published papers and preprints, with no publication
 status filter. Multiple topics are combined with AND. Topics and search can be
 combined and shared through the URL. Ordering is fixed to newest first.
 
-Year groups and ordering follow Google Scholar's newest-first list; citations
-retain the actual venue year. Papers not found on Scholar use their local dates.
-Full venue names and available authors/months come from the faculty metadata.
+Confirmed conference/journal years take priority over an earlier arXiv/Scholar
+year for both year groups and citations. Within each year, ordering follows
+Google Scholar; papers missing from Scholar use their publication dates.
+Unpublished preprints retain their Scholar year, falling back to the local date.
+Full titles, venue names, authors, and available months come from faculty metadata.
+
+Each refresh records exact title variants, reviewed aliases, and available
+arXiv/DOI identifiers. When a preprint matches a published work, the archive shows
+the published citation once and keeps old titles searchable and supplemental
+links accessible. Conference and journal editions remain separate. Unmatched
+renames are reported for review; similar wording alone is not a reliable match.
+The Paper link can still point to an accessible arXiv copy when a publisher URL
+is unavailable.
+
+`publication_versions.json` stores reviewed title/version relationships, source
+links, and publisher-confirmed corrections. The refresh script reapplies these
+on every run, including the IMS 2022 correction. Aliases are scoped to a venue so
+a conference preprint cannot silently relabel a separate journal edition.
+See [the November 1 version audit](docs/publication-version-audit-2026-11-01.md)
+for confirmed merges and the remaining preprints.
+
 Award labels remain locally reviewed: the lab's MLSys no-Oral correction must
 not be overwritten by a crawl.
 Venue names are bold in the citation, with a colored short venue/year badge
-beside the paper title. The badge uses the venue year, independently of Scholar's
-year grouping; preprints have neutral badges.
+beside the paper title; preprints have neutral badges.
+
+Run the publication reconciliation checks with:
+
+```bash
+node --test tests/publication-metadata.test.js
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py'
+```

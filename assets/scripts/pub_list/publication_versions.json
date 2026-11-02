@@ -1,0 +1,386 @@
+{
+  "checkedOn": "2026-11-01",
+  "reconciliations": [
+    {
+      "title": "GeneSys: Enabling Continuous Learning through Neural Network Evolution in Hardware",
+      "venue": "MICRO",
+      "matchTitles": [
+        "Enabling Continuous Learning through Neural Network Evolution in Hardware"
+      ],
+      "identityKeys": [
+        "arxiv:1808.01363"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/1808.01363"
+      ]
+    },
+    {
+      "title": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach",
+      "venue": "MICRO",
+      "matchTitles": [
+        "MAESTRO: an open-source infrastructure for modeling dataflows within deep learning accelerators",
+        "Understanding reuse, performance, and hardware cost of DNN dataflows: A data-centric approach using MAESTRO"
+      ],
+      "identityKeys": [
+        "arxiv:1805.02566"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/1805.02566"
+      ]
+    },
+    {
+      "title": "Heterogeneous Dataflow Accelerators for Multi-DNN Workloads",
+      "venue": "HPCA",
+      "matchTitles": [
+        "Herald: Optimizing heterogeneous dnn accelerators for edge devices"
+      ],
+      "identityKeys": [
+        "arxiv:1909.07437"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/1909.07437"
+      ]
+    },
+    {
+      "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Reconfigurable Interconnects",
+      "venue": "ASPLOS",
+      "matchTitles": [
+        "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerator via Reconfigurable Interconnects"
+      ],
+      "identityKeys": [],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/"
+      ]
+    },
+    {
+      "title": "Enabling Compute-Communication Overlap in Distributed Training Platforms",
+      "venue": "ISCA",
+      "matchTitles": [
+        "Efficient communication acceleration for next-gen scale-up deep learning training platforms"
+      ],
+      "identityKeys": [
+        "arxiv:2007.00156"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2007.00156"
+      ]
+    },
+    {
+      "title": "Marvel: A Data-Centric Approach for Mapping Deep Learning Operators on Spatial Accelerators",
+      "venue": "ACM TACO",
+      "matchTitles": [
+        "MARVEL: A decoupled model-driven approach for efficiently mapping convolutions on spatial DNN accelerators"
+      ],
+      "identityKeys": [
+        "arxiv:2002.07752"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2002.07752"
+      ]
+    },
+    {
+      "title": "STONNE: Enabling Cycle-Level Microarchitectural Simulation for DNN Inference Accelerators",
+      "venue": "IISWC",
+      "matchTitles": [
+        "Stonne: A detailed architectural simulator for flexible neural network accelerators"
+      ],
+      "identityKeys": [
+        "arxiv:2006.07137"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2006.07137"
+      ]
+    },
+    {
+      "title": "AIRCHITECT: Automating Hardware Architecture and Mapping Optimization",
+      "venue": "DATE",
+      "matchTitles": [
+        "Airchitect: Learning custom architecture design and mapping space"
+      ],
+      "identityKeys": [
+        "arxiv:2108.08295"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2108.08295"
+      ]
+    },
+    {
+      "title": "FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks",
+      "venue": "ASPLOS",
+      "matchTitles": [
+        "ATTACC the Quadratic Bottleneck of Attention Layers."
+      ],
+      "identityKeys": [
+        "arxiv:2107.06419"
+      ],
+      "sources": [
+        "https://tushar-krishna.github.io/publications.html",
+        "https://arxiv.org/abs/2107.06419v1",
+        "https://arxiv.org/abs/2107.06419"
+      ]
+    },
+    {
+      "title": "LIBRA: Enabling Workload-aware Multi-dimensional Network Topology Optimization for Distributed Training of Large AI Models",
+      "venue": "ISPASS",
+      "matchTitles": [
+        "Exploring multi-dimensional hierarchical network topologies for efficient distributed training of trillion parameter dl models"
+      ],
+      "identityKeys": [
+        "arxiv:2109.11762"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2109.11762"
+      ]
+    },
+    {
+      "title": "Self Adaptive Reconfigurable Arrays (SARA): Learning Flexible GEMM Accelerator Configuration and Mapping-space using ML",
+      "venue": "DAC",
+      "matchTitles": [
+        "Self-adaptive reconfigurable arrays (sara): Using ml to assist scaling gemm acceleration"
+      ],
+      "identityKeys": [
+        "arxiv:2101.04799"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2101.04799"
+      ]
+    },
+    {
+      "title": "CELLO: Co-designing Schedule and Hybrid Implicit/Explicit Buffer for Complex Tensor Reuse",
+      "venue": "IPDPS",
+      "matchTitles": [
+        "Exploiting Inter-Operation Data Reuse in Scientific Applications using GOGETA"
+      ],
+      "identityKeys": [
+        "arxiv:2303.11499"
+      ],
+      "sources": [
+        "https://tushar-krishna.github.io/publications.html",
+        "https://arxiv.org/abs/2303.11499v1",
+        "https://arxiv.org/abs/2303.11499"
+      ]
+    },
+    {
+      "title": "TACOS: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning",
+      "venue": "MICRO",
+      "matchTitles": [
+        "TACOS: Topology-aware collective algorithm synthesizer for distributed training"
+      ],
+      "identityKeys": [
+        "arxiv:2304.05301"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2304.05301"
+      ]
+    },
+    {
+      "title": "Enabling Unstructured Sparse Acceleration on Structured Sparse Accelerators",
+      "venue": "MLSys",
+      "matchTitles": [
+        "Abstracting sparse DNN acceleration via structured sparse tensor decomposition"
+      ],
+      "identityKeys": [
+        "arxiv:2403.07953"
+      ],
+      "sources": [
+        "https://tushar-krishna.github.io/publications.html",
+        "https://arxiv.org/abs/2403.07953v1",
+        "https://arxiv.org/abs/2403.07953"
+      ]
+    },
+    {
+      "title": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
+      "venue": "ICCAD",
+      "matchTitles": [
+        "Demystifying platform requirements for diverse llm inference use cases"
+      ],
+      "identityKeys": [
+        "arxiv:2406.01698"
+      ],
+      "sources": [
+        "https://tushar-krishna.github.io/publications.html",
+        "https://arxiv.org/abs/2406.01698"
+      ]
+    },
+    {
+      "title": "FRED: A Wafer-scale Fabric for 3D Parallel DNN Training",
+      "venue": "ISCA",
+      "matchTitles": [
+        "Fred: Flexible reduction-distribution interconnect and communication implementation for wafer-scale distributed training of DNN models"
+      ],
+      "identityKeys": [
+        "arxiv:2406.19580"
+      ],
+      "sources": [
+        "https://www.iscaconf.org/isca2025/program/index.php",
+        "https://arxiv.org/abs/2406.19580"
+      ]
+    },
+    {
+      "title": "GEAR: An Efficient Error Reduction Framework for KV Cache Compression in LLM Inference",
+      "venue": "ENLSP@NeurIPS",
+      "matchTitles": [
+        "Gear: An efficient kv cache compression recipe for near-lossless generative inference of llm"
+      ],
+      "identityKeys": [
+        "arxiv:2403.05527"
+      ],
+      "sources": [
+        "https://neurips2024-enlsp.github.io/papers/paper_3.pdf",
+        "https://arxiv.org/abs/2403.05527"
+      ]
+    },
+    {
+      "title": "SmartPAF: Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption",
+      "venue": "MLSys",
+      "matchTitles": [
+        "Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption"
+      ],
+      "identityKeys": [
+        "arxiv:2404.03216"
+      ],
+      "sources": [
+        "https://synergy.ece.gatech.edu/publications/",
+        "https://arxiv.org/abs/2404.03216"
+      ]
+    },
+    {
+      "title": "MLCommons Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces",
+      "venue": "MLSys",
+      "matchTitles": [],
+      "identityKeys": [
+        "arxiv:2605.11333"
+      ],
+      "sources": [
+        "https://github.com/mlcommons/chakra",
+        "https://arxiv.org/abs/2605.11333"
+      ]
+    },
+    {
+      "title": "A Configurable Architecture for Efficient Sparse FIR Computation in Real-time Radio Frequency Systems",
+      "venue": "IMS",
+      "matchTitles": [],
+      "identityKeys": [],
+      "sources": [
+        "https://ims-ieee.org/sites/ims2019/files/content_images/IMS2022_Program_Book_Web.pdf",
+        "https://doi.org/10.1109/IMS37962.2022.9865486"
+      ],
+      "year": 2022
+    },
+    {
+      "title": "MAESTRO: An Open-source Infrastructure for the Cost-Benefit Analysis of Dataflows within Deep Learning Accelerators",
+      "venue": "SRC@MICRO (poster)",
+      "matchTitles": [
+        "MAESTRO: An Open-source Infrastructure for the Cost-Benefit Analysis of Dataflows within Deep Learning Accelerators"
+      ],
+      "identityKeys": [],
+      "sources": [
+        "https://microarch.org/micro51/SRC/posters/22_kwon.pdf"
+      ]
+    },
+    {
+      "title": "Training Recipe for N:M Structured Sparsity with Decaying Pruning Mask",
+      "venue": "Sparsity@ICML",
+      "matchTitles": [
+        "Training Recipe for N: M Structured Sparsity with Decaying Pruning Mask"
+      ],
+      "identityKeys": [
+        "arxiv:2209.07617"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2209.07617"
+      ]
+    },
+    {
+      "title": "Towards Easy and Realistic Network Infrastructure Testing for Large-scale Machine Learning",
+      "venue": "NSDI (poster)",
+      "matchTitles": [
+        "Towards Easy and Realistic Network Infrastructure Testing for Large-scale Machine Learning"
+      ],
+      "identityKeys": [
+        "arxiv:2504.20854"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2504.20854"
+      ]
+    },
+    {
+      "title": "MAGMA: An Optimization Framework for Mapping Multiple DNNs on Multiple Accelerator Cores",
+      "venue": "HPCA",
+      "matchTitles": [
+        "Domain-specific genetic algorithm for multitenant dnnaccelerator scheduling"
+      ],
+      "identityKeys": [
+        "arxiv:2104.13997"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2104.13997v1",
+        "https://arxiv.org/abs/2104.13997",
+        "https://tushar-krishna.github.io/publications.html"
+      ]
+    }
+  ],
+  "additionalPublications": [
+    {
+      "title": "MAESTRO: An Open-source Infrastructure for the Cost-Benefit Analysis of Dataflows within Deep Learning Accelerators",
+      "v": "SRC@MICRO (poster)",
+      "y": 2018,
+      "t": "poster",
+      "m": 10,
+      "a": "Hyoukjun Kwon, Tushar Krishna",
+      "sources": [
+        "https://microarch.org/micro51/SRC/posters/22_kwon.pdf"
+      ]
+    },
+    {
+      "title": "Training Recipe for N:M Structured Sparsity with Decaying Pruning Mask",
+      "v": "Sparsity@ICML",
+      "y": 2022,
+      "t": "workshop",
+      "m": 7,
+      "a": "Sheng-Chun Kao, Amir Yazdanbakhsh, Suvinay Subramanian, Shivani Agrawal, Utku Evci, Tushar Krishna",
+      "sources": [
+        "https://arxiv.org/abs/2209.07617"
+      ]
+    },
+    {
+      "title": "Towards Easy and Realistic Network Infrastructure Testing for Large-scale Machine Learning",
+      "v": "NSDI (poster)",
+      "y": 2025,
+      "t": "poster",
+      "m": 4,
+      "a": "Jinsun Yoo, ChonLam Lao, Lianjie Cao, Bob Lantz, Minlan Yu, Tushar Krishna, Puneet Sharma",
+      "sources": [
+        "https://arxiv.org/abs/2504.20854"
+      ]
+    },
+    {
+      "title": "Rethinking Network Fabric Architectures for Distributed AI/ML Platforms",
+      "v": "NoCArc (keynote)",
+      "y": 2024,
+      "t": "keynote",
+      "m": 11,
+      "a": "Tushar Krishna",
+      "sources": [
+        "https://www.nocarc.org/keynote-i",
+        "https://www.proceedings.com/content/077/077368webtoc.pdf"
+      ]
+    }
+  ],
+  "venueNames": {
+    "SRC@MICRO (poster)": "ACM Student Research Competition at MICRO (poster)",
+    "Sparsity@ICML": "ICML Workshop on Sparsity in Neural Networks: Advancing Understanding and Practice",
+    "NSDI (poster)": "USENIX Symposium on Networked Systems Design and Implementation (poster)",
+    "NoCArc (keynote)": "IEEE/ACM International Workshop on Network on Chip Architectures (keynote)"
+  }
+}

@@ -24,11 +24,13 @@ SCHOLAR_URL = 'https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en&sort
 # https://www.glsvlsi.hosting.acm.org/archive/glsvlsi21/acm/tecs-cfp.pdf
 # https://www.isfpga.org/
 # https://jianmingtong.github.io/ (FastSwitch publication entry)
+# https://ieeexplore.ieee.org/document/10740726/ (CODES+ISSS proceedings)
 VENUE_NAMES = {
     'SIGCOMM': 'ACM SIGCOMM Conference',
     'ACM TECS': 'ACM Transactions on Embedded Computing Systems',
     'FPGA': 'ACM/SIGDA International Symposium on Field-Programmable Gate Arrays',
     'ACSMD@ISCA': 'Architecture, Compiler, and System Support for Multi-model DNN Workloads Workshop at ISCA',
+    'CODES+ISSS': 'International Conference on Hardware/Software Codesign and System Synthesis',
 }
 
 # Reviewed title variants of the same work; do not fuzzy-match different papers.
@@ -117,6 +119,64 @@ def title_key(text):
     return re.sub(r'\s+', ' ', re.sub(r'^special session\s+', '', text)).strip()
 
 
+def work_ids(values):
+    ids = set()
+    for value in values:
+        text = unescape(str(value or ''))
+        for identifier in re.findall(r'(?:arxiv\.org/(?:abs|pdf)/|arxiv\s*:\s*)(\d{4}\.\d{4,5})(?:v\d+)?', text, re.I):
+            ids.add('arxiv:' + identifier)
+        for identifier in re.findall(r'(?:doi\.org/|doi\s*:\s*)(10\.\d{4,9}/[^\s"<>?#]+)', text, re.I):
+            ids.add('doi:' + identifier.rstrip('.,;').lower())
+    return ids
+
+
+def read_local_papers(data_dir):
+    papers = []
+    for filename in json.loads((data_dir / 'papers.json').read_text()):
+        path = data_dir / 'htmls' / filename
+        source = path.read_text()
+        def field(name):
+            match = re.search(r'<span\b[^>]*class=[\'"]' + name + r'[\'"][^>]*>([\s\S]*?)</span>', source)
+            return re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]*>', '', match[1]))).strip() if match else ''
+        title = field('paper-title')
+        if not title:
+            continue
+        alias = re.search(r'data-search-aliases="([^"]*)"', source)
+        venue = field('paper-conference')
+        hrefs = re.findall(r'href=[\'"]([^\'"]+)', source)
+        papers.append({'filename': path.name, 'title': title,
+                       'alias': unescape(alias[1]) if alias else '',
+                       'ids': work_ids([venue, *hrefs]),
+                       'preprint': not venue or bool(re.search(r'\barxiv\b|^corr\b|\bpreprint\b', venue, re.I))})
+    return papers
+
+
+def match_publication(pub, local, previous, review=None):
+    """Link versions only through exact titles, reviewed aliases, or identifiers."""
+    titles = [pub['title'], *(review or {}).get('matchTitles', [])]
+    identities = work_ids([pub.get('url'), pub.get('pdf'), pub.get('doi'), pub.get('arxiv')])
+    identities.update((review or {}).get('identityKeys', []))
+    for old in previous:
+        if title_key(old['title']) == title_key(pub['title']) and old.get('venue') == pub.get('v'):
+            titles.extend(old.get('matchTitles', []))
+            identities.update(old.get('identityKeys', []))
+    for prefix, filename in ALIASES.items():
+        if pub['title'].startswith(prefix):
+            titles.extend(paper['title'] for paper in local if paper['filename'] == filename)
+    keys = {title_key(title) for title in titles}
+    matched = [paper for paper in local if title_key(paper['title']) in keys
+               or paper['alias'] and title_key(paper['alias']) in keys]
+    for paper in matched:
+        identities.update(paper['ids'])
+    # Do not absorb a distinct journal/workshop paper just because it reuses a PDF.
+    matched += [paper for paper in local if paper not in matched and paper['preprint']
+                and identities.intersection(paper['ids'])]
+    for paper in matched:
+        titles.extend([paper['title'], paper['alias']])
+        identities.update(paper['ids'])
+    return list(dict.fromkeys(title for title in titles if title)), sorted(identities), bool(matched)
+
+
 class ScholarRows(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -150,39 +210,42 @@ class ScholarRows(HTMLParser):
             self.field = None
 
 
-def refresh_faculty(source):
+def refresh_faculty(source, data_dir=DATA):
     pubs = literal(source, 'PUBS')
     names = literal(source, 'VENUE_FULL')
     months = literal(source, 'VENUE_MONTH')
     if len(pubs) < 100 or not isinstance(names, dict):
         raise ValueError('Incomplete faculty data; leaving existing metadata intact')
     names = {**VENUE_NAMES, **names}
-    local = {}
-    for filename in json.loads((DATA / 'papers.json').read_text()):
-        path = DATA / 'htmls' / filename
-        match = re.search(r'<span class="paper-title">([\s\S]*?)</span>', path.read_text())
-        if match:
-            local[path.name] = re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]*>', '', match[1]))).strip()
-    local_keys = {title_key(title) for title in local.values()}
+    local = read_local_papers(data_dir)
+    previous_path = data_dir / 'faculty_publications.json'
+    previous = json.loads(previous_path.read_text()).get('papers', []) if previous_path.exists() else []
+    review_path = data_dir / 'publication_versions.json'
+    reviews = json.loads(review_path.read_text()) if review_path.exists() else {}
+    names.update(reviews.get('venueNames', {}))
+    pubs.extend(reviews.get('additionalPublications', []))
     records = []
     unmatched = []
     for pub in pubs:
         if pub['y'] < 2015:
             continue
-        titles = [pub['title']]
-        for prefix, filename in ALIASES.items():
-            if pub['title'].startswith(prefix) and filename in local:
-                titles.append(local[filename])
+        review = next((item for item in reviews.get('reconciliations', [])
+                       if title_key(item['title']) == title_key(pub['title']) and item['venue'] == pub['v']), {})
+        # Reviewed publisher evidence wins over a typo in an upstream faculty list.
+        pub = {**pub, 'y': review.get('year', pub['y'])}
+        titles, identities, matched = match_publication(pub, local, previous, review)
         record = {
-            'title': pub['title'], 'matchTitles': list(dict.fromkeys(titles)),
+            'title': pub['title'], 'matchTitles': titles, 'identityKeys': identities,
             'authors': pub['a'], 'year': pub['y'], 'venue': pub['v'], 'type': pub['t'],
             'month': int(pub.get('m', months.get(pub['v'], 0))),
         }
         if pub.get('si'):
             record['specialIssue'] = pub['si']
+        if review.get('sources') or pub.get('sources'):
+            record['reviewSources'] = review.get('sources', pub.get('sources'))
         # Do not import award notes. The lab's MLSys no-Oral correction wins.
         records.append(record)
-        if not any(title_key(title) in local_keys for title in titles):
+        if not matched:
             unmatched.append(f"{pub['y']} · {pub['v']} · {pub['title']}")
     return {'source': FACULTY_URL, 'checkedOn': datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat(),
             'venueNames': names, 'papers': records}, unmatched
