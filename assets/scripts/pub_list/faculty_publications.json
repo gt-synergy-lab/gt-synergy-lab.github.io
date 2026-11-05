@@ -75,7 +75,8 @@
     "SRC@MICRO (poster)": "ACM Student Research Competition at MICRO (poster)",
     "Sparsity@ICML": "ICML Workshop on Sparsity in Neural Networks: Advancing Understanding and Practice",
     "NSDI (poster)": "USENIX Symposium on Networked Systems Design and Implementation (poster)",
-    "NoCArc (keynote)": "IEEE/ACM International Workshop on Network on Chip Architectures (keynote)"
+    "NoCArc (keynote)": "IEEE/ACM International Workshop on Network on Chip Architectures (keynote)",
+    "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR"
   },
   "papers": [
     {
@@ -350,7 +351,7 @@
       "year": 2026,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 4
     },
     {
       "title": "Scalable Synthesis of Distributed LLM Workloads Through Symbolic Tensor Graphs",
@@ -2564,6 +2565,46 @@
         "https://www.nocarc.org/keynote-i",
         "https://www.proceedings.com/content/077/077368webtoc.pdf"
       ]
+    },
+    {
+      "title": "Polestar-Cache: Reconciling Parallel Decoding and Accuracy in Diffusion LLMs via Token Drift-Aware KV Cache Recalibration",
+      "matchTitles": [
+        "Polestar-Cache: Reconciling Parallel Decoding and Accuracy in Diffusion LLMs via Token Drift-Aware KV Cache Recalibration",
+        "Polestar-cache: Reconciling parallel decoding and accuracy in diffusion LLMs via token drift-aware KV cache recalibration"
+      ],
+      "identityKeys": [],
+      "authors": "Mingyu Lee, Akshat Ramachandran, Souvik Kundu, Tushar Krishna",
+      "year": 2026,
+      "venue": "LIT@ICLR",
+      "type": "workshop",
+      "month": 4,
+      "reviewSources": [
+        "https://mlee864.github.io/",
+        "https://openreview.net/pdf?id=e3ITaLZ4ct",
+        "https://latent-implicit-thinking.github.io/callforpapers/"
+      ]
     }
-  ]
+  ],
+  "venueDates": {
+    "2026:ICCAD": {
+      "month": 11,
+      "day": 8,
+      "source": "https://iccad.com/2026"
+    },
+    "2026:SC": {
+      "month": 11,
+      "day": 15,
+      "source": "https://sc26.supercomputing.org/"
+    },
+    "2026:DATE": {
+      "month": 4,
+      "day": 20,
+      "source": "https://www.date-conference.com/DATE2026-Call-for-Papers.pdf"
+    },
+    "2026:LIT@ICLR": {
+      "month": 4,
+      "day": 27,
+      "source": "https://latent-implicit-thinking.github.io/callforpapers/"
+    }
+  }
 }

@@ -1097,5 +1097,459 @@
       "text": "Real-time multi-task multi-model (MTMM) workloads, a new form of deep learning inference workloads, are emerging for applications areas like extended reality (XR) to support metaverse use cases. These workloads combine user interactivity with computationally complex machine learning (ML) activities. Compared to standard ML applications, these ML workloads present unique difficulties and constraints. Real-time MTMM workloads impose heterogeneity and concurrency requirements on future ML systems and devices, necessitating the development of new capabilities. This paper begins with a discussion of the various characteristics of these real-time MTMM ML workloads and presents an ontology for evaluating the performance of future ML hardware for XR systems. Next, we present XRBENCH, a collection of MTMM ML tasks, models, and usage scenarios that execute these models in three representative ways: cascaded, concurrent, and cascaded-concurrent for XR use cases. Finally, we emphasize the need for new metrics that capture the requirements properly. We hope that our work will stimulate research and lead to the development of a new generation of ML systems for XR use cases. XRBench is available as an open-source project: https://github.com/XRBench",
       "source": "https://arxiv.org/abs/2211.08675v2"
     }
-  ]
+  ],
+  "arxivDates": {
+    "2008.08289": {
+      "title": "Restructuring, Pruning, and Adjustment of Deep Models for Parallel Distributed Inference",
+      "date": "2020-08-19"
+    },
+    "2012.12563": {
+      "title": "Architecture, Dataflow and Physical Design Implications of 3D-ICs for DNN-Accelerators",
+      "date": "2020-12-23"
+    },
+    "2101.04799": {
+      "title": "Self-Adaptive Reconfigurable Arrays (SARA): Using ML to Assist Scaling GEMM Acceleration",
+      "date": "2021-01-12"
+    },
+    "2201.11218": {
+      "title": "DNNFuser: Generative Pre-Trained Transformer as a Generalized Mapper for Layer Fusion in DNN Accelerators",
+      "date": "2022-01-26"
+    },
+    "2302.08687": {
+      "title": "VEGETA: Vertically-Integrated Extensions for Sparse/Dense GEMM Tile Acceleration on CPUs",
+      "date": "2023-02-17"
+    },
+    "1701.03499": {
+      "title": "VESPA: VIPT Enhancements for Superpage Accesses",
+      "date": "2017-01-12"
+    },
+    "2404.04173": {
+      "title": "H3DFact: Heterogeneous 3D Integrated CIM for Factorization with Holographic Perceptual Representations",
+      "date": "2024-04-05"
+    },
+    "2406.13868": {
+      "title": "SDQ: Sparse Decomposed Quantization for LLM Inference",
+      "date": "2024-06-19"
+    },
+    "2103.07977": {
+      "title": "Understanding the Design-Space of Sparse/Dense Multiphase GNN dataflows on Spatial Accelerators",
+      "date": "2021-03-14"
+    },
+    "2411.09473": {
+      "title": "Enhancing Scalability and Performance in Influence Maximization with Optimized Parallel Processing",
+      "date": "2024-11-14"
+    },
+    "2510.05077": {
+      "title": "Slm-mux: Orchestrating small language models for reasoning",
+      "date": "2025-10-06"
+    },
+    "2604.17808": {
+      "title": "Enabling AI ASICs for Zero Knowledge Proof",
+      "date": "2026-04-20"
+    },
+    "2606.07019": {
+      "title": "PCCL: Process Group-Aware Scalable and Generic Collective Algorithm Synthesizer",
+      "date": "2026-06-05"
+    },
+    "2504.15377": {
+      "title": "SCALE-Sim v3: A modular cycle-accurate systolic accelerator simulator for end-to-end system analysis",
+      "date": "2025-04-21"
+    },
+    "2504.09775": {
+      "title": "MIST: A Co-Design Framework for Heterogeneous, Multi-Stage LLM Inference",
+      "date": "2025-04-14"
+    },
+    "2608.12354": {
+      "title": "SCALE-Sim EVA: Design Principles for an Extensible, Visualizable, and Adaptable Accelerator Simulation Framework",
+      "date": "2026-07-03"
+    },
+    "2606.10440": {
+      "title": "ASTRA-sim 3.0: Next-Level Distributed Machine Learning Simulations via High-Fidelity GPU and Infrastructure Modeling",
+      "date": "2026-06-09"
+    },
+    "2605.28302": {
+      "title": "How Far Can Disaggregation Go? A Design-Space Exploration of Attention-FFN Disaggregation for Efficient MoE LLM Serving",
+      "date": "2026-05-27"
+    },
+    "2607.22465": {
+      "title": "ORACLE: Agentic AI Orchestrator Routing Via Adaptive Verifier Calibration Feedback",
+      "date": "2026-07-24"
+    },
+    "2008.06741": {
+      "title": "Breaking Barriers: Maximizing Array Utilization for Compute In-Memory Fabrics",
+      "date": "2020-08-15"
+    },
+    "1908.04484": {
+      "title": "Reinforcement Learning based Interconnection Routing for Adaptive Traffic Optimization",
+      "date": "2019-08-13"
+    },
+    "2006.03969": {
+      "title": "Conditional Neural Architecture Search",
+      "date": "2020-06-06"
+    },
+    "2103.10452": {
+      "title": "Extending Sparse Tensor Accelerators to Support Multiple Compression Formats",
+      "date": "2021-03-18"
+    },
+    "2104.13997": {
+      "title": "MAGMA: An Optimization Framework for Mapping Multiple DNNs on Multiple Accelerator Cores",
+      "date": "2021-04-28"
+    },
+    "2107.06419": {
+      "title": "FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks",
+      "date": "2021-07-13"
+    },
+    "2210.03731": {
+      "title": "Demystifying Map Space Exploration for NPUs",
+      "date": "2022-10-07"
+    },
+    "2211.16648": {
+      "title": "COMET: A Comprehensive Cluster Design Methodology for Distributed Deep Learning Training",
+      "date": "2022-11-30"
+    },
+    "2405.01736": {
+      "title": "PipeOrgan: Efficient Inter-operation Pipelining with Flexible Spatial Organization and Interconnects",
+      "date": "2024-05-02"
+    },
+    "2412.08585": {
+      "title": "TurboAttention: Efficient Attention Approximation For High Throughputs LLMs",
+      "date": "2024-12-11"
+    },
+    "2304.05301": {
+      "title": "TACOS: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning",
+      "date": "2023-04-11"
+    },
+    "2109.11762": {
+      "title": "LIBRA: Enabling Workload-aware Multi-dimensional Network Topology Optimization for Distributed Training of Large AI Models",
+      "date": "2021-09-24"
+    },
+    "2603.22535": {
+      "title": "SCALE-Sim TPU: Validating and Extending SCALE-Sim for TPUs",
+      "date": "2026-03-23"
+    },
+    "2508.14245": {
+      "title": "Cross-Layer Design of Vector-Symbolic Computing: Bridging Cognition and Brain-Inspired Hardware Acceleration",
+      "date": "2025-08-19"
+    },
+    "2403.07953": {
+      "title": "Enabling Unstructured Sparse Acceleration on Structured Sparse Accelerators",
+      "date": "2024-03-12"
+    },
+    "2505.00041": {
+      "title": "MCMComm: Hardware-Software Co-Optimization for End-to-End Communication in Multi-Chip-Modules",
+      "date": "2025-04-29"
+    },
+    "2504.19323": {
+      "title": "NSFlow: An End-to-End FPGA Framework with Scalable Dataflow Architecture for Neuro-Symbolic AI",
+      "date": "2025-04-27"
+    },
+    "2505.19481": {
+      "title": "Win Fast or Lose Slow: Balancing Speed and Accuracy in Latency-Sensitive Decisions of LLMs",
+      "date": "2025-05-26"
+    },
+    "2601.20784": {
+      "title": "REASON: Accelerating Probabilistic Logical Reasoning for Scalable Neuro-Symbolic Intelligence",
+      "date": "2026-01-28"
+    },
+    "2602.13692": {
+      "title": "ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System",
+      "date": "2026-02-14"
+    },
+    "2605.11333": {
+      "title": "MLCommons Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces",
+      "date": "2026-05-11"
+    },
+    "2604.17550": {
+      "title": "Flint: Compiler Enabled Cluster-Free Design Space Exploration for Distributed ML",
+      "date": "2026-04-19"
+    },
+    "2511.10480": {
+      "title": "Scalable Synthesis of distributed LLM workloads through Symbolic Tensor Graphs",
+      "date": "2025-11-13"
+    },
+    "2603.20623": {
+      "title": "MINISA: Minimal Instruction Set Architecture for Next-gen Reconfigurable Inference Accelerator",
+      "date": "2026-03-21"
+    },
+    "2405.13170": {
+      "title": "FEATHER: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching",
+      "date": "2024-05-21"
+    },
+    "2009.02010": {
+      "title": "ConfuciuX: Autonomous Hardware Resource Assignment for DNN Accelerators using Reinforcement Learning",
+      "date": "2020-09-04"
+    },
+    "2008.11881": {
+      "title": "CLAN: Continuous Learning using Asynchronous Neuroevolution on Commodity Edge Devices",
+      "date": "2020-08-27"
+    },
+    "1811.02883": {
+      "title": "SCALE-Sim: Systolic CNN Accelerator Simulator",
+      "date": "2018-10-16"
+    },
+    "2304.03748": {
+      "title": "Perspectives on AI Architectures and Co-design for Earth System Predictability",
+      "date": "2023-04-07"
+    },
+    "2207.10898": {
+      "title": "Impact of RoCE Congestion Control Policies on Distributed Training of DNNs",
+      "date": "2022-07-22"
+    },
+    "2206.02987": {
+      "title": "A Formalism of DNN Accelerator Flexibility",
+      "date": "2022-06-07"
+    },
+    "2007.00156": {
+      "title": "Enabling Compute-Communication Overlap in Distributed Deep Learning Training Platforms",
+      "date": "2020-06-30"
+    },
+    "2110.04478": {
+      "title": "Themis: A Network Bandwidth-Aware Collective Scheduling Policy for Distributed Training of DL Models",
+      "date": "2021-10-09"
+    },
+    "2002.07752": {
+      "title": "Marvel: A Data-centric Compiler for DNN Operators on Spatial Accelerators",
+      "date": "2020-02-18"
+    },
+    "2407.05266": {
+      "title": "CLAMP-ViT: Contrastive Data-Free Learning for Adaptive Post-Training Quantization of ViTs",
+      "date": "2024-07-07"
+    },
+    "2411.03519": {
+      "title": "AI Metropolis: Scaling Large Language Model-based Multi-Agent Simulation with Out-of-order Execution",
+      "date": "2024-11-05"
+    },
+    "2201.08916": {
+      "title": "Enabling Flexibility for Sparse Tensor Acceleration via Heterogeneity",
+      "date": "2022-01-21"
+    },
+    "1702.02313": {
+      "title": "FASHION: Fault-Aware Self-Healing Intelligent On-chip Network",
+      "date": "2017-02-08"
+    },
+    "1707.05399": {
+      "title": "Performance Implications of NoCs on 3D-Stacked Memories: Insights from the Hybrid Memory Cube",
+      "date": "2017-07-17"
+    },
+    "2305.14516": {
+      "title": "Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces",
+      "date": "2023-05-23"
+    },
+    "2604.12090": {
+      "title": "Evaluating Cross-Architecture Performance Modeling of Distributed ML Workloads Using StableHLO",
+      "date": "2026-04-13"
+    },
+    "2406.01698": {
+      "title": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM models",
+      "date": "2024-06-03"
+    },
+    "2511.00739": {
+      "title": "Towards Understanding, Analyzing, and Optimizing Agentic AI Execution: A CPU-Centric Perspective",
+      "date": "2025-11-01"
+    },
+    "2502.13113": {
+      "title": "HARP: A Taxonomy for Heterogeneous and Hierarchical Processors for Mixed-reuse Workloads",
+      "date": "2025-02-18"
+    },
+    "2504.18945": {
+      "title": "Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability",
+      "date": "2025-04-26"
+    },
+    "2505.15020": {
+      "title": "COSMIC: Enabling Full-Stack Co-Design and Optimization of Distributed Machine Learning Systems",
+      "date": "2025-05-21"
+    },
+    "2007.03152": {
+      "title": "The gem5 Simulator: Version 20.0+",
+      "date": "2020-07-07"
+    },
+    "2607.14107": {
+      "title": "Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs",
+      "date": "2026-05-07"
+    },
+    "2306.17266": {
+      "title": "Subgraph Stationary Hardware-Software Inference Co-Design",
+      "date": "2023-06-21"
+    },
+    "2209.07617": {
+      "title": "Training Recipe for N:M Structured Sparsity with Decaying Pruning Mask",
+      "date": "2022-09-15"
+    },
+    "2301.10852": {
+      "title": "Flexagon: A Multi-Dataflow Sparse-Sparse Matrix Multiplication Accelerator for Efficient DNN Processing",
+      "date": "2023-01-25"
+    },
+    "1909.07437": {
+      "title": "Heterogeneous Dataflow Accelerators for Multi-DNN Workloads",
+      "date": "2019-09-13"
+    },
+    "1912.01664": {
+      "title": "Understanding the Impact of On-chip Communication on DNN Accelerator Performance",
+      "date": "2019-12-03"
+    },
+    "2006.03968": {
+      "title": "Generative Design of Hardware-aware DNNs",
+      "date": "2020-06-06"
+    },
+    "2002.04116": {
+      "title": "Co-Exploration of Neural Architectures and Heterogeneous ASIC Accelerator Designs Targeting Multiple Tasks",
+      "date": "2020-02-10"
+    },
+    "2108.08295": {
+      "title": "AIRCHITECT: Learning Custom Architecture Design and Mapping Space",
+      "date": "2021-08-16"
+    },
+    "2411.05282": {
+      "title": "MicroScopiQ: Accelerating Foundational Models through Outlier-Aware Microscaling Quantization",
+      "date": "2024-11-08"
+    },
+    "2504.14365": {
+      "title": "Accelerating LLM Inference with Flexible N:M Sparsity via A Fully Digital Compute-in-Memory Accelerator",
+      "date": "2025-04-19"
+    },
+    "2404.03216": {
+      "title": "Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption",
+      "date": "2024-04-04"
+    },
+    "2409.13153": {
+      "title": "Towards Efficient Neuro-Symbolic AI: From Workload Characterization to Hardware Architecture",
+      "date": "2024-09-20"
+    },
+    "2406.19580": {
+      "title": "FRED: Flexible REduction-Distribution Interconnect and Communication Implementation for Wafer-Scale Distributed Training of DNN Models",
+      "date": "2024-06-28"
+    },
+    "2504.20854": {
+      "title": "Towards Easy and Realistic Network Infrastructure Testing for Large-scale Machine Learning",
+      "date": "2025-04-29"
+    },
+    "2604.23150": {
+      "title": "Scaling Multi-Node Mixture-of-Experts Inference Using Expert Activation Patterns",
+      "date": "2026-04-25"
+    },
+    "2604.17476": {
+      "title": "Privatar: Scalable Privacy-preserving Multi-user VR via Secure Offloading",
+      "date": "2026-04-19"
+    },
+    "2607.26491": {
+      "title": "LLMET: Enabling Cross-Layer Evaluation of Emerging M3D Memories for Energy-Efficient LLM Serving",
+      "date": "2026-07-29"
+    },
+    "2501.06043": {
+      "title": "Axon: A novel systolic array architecture for improved run time and energy efficient GeMM and Conv operation with on-chip im2col",
+      "date": "2025-01-10"
+    },
+    "2106.10499": {
+      "title": "Evaluating Spatial Accelerator Architectures with Tiled Matrix-Matrix Multiplication",
+      "date": "2021-06-19"
+    },
+    "2201.11220": {
+      "title": "DiGamma: Domain-aware Genetic Algorithm for HW-Mapping Co-optimization for DNN Accelerators",
+      "date": "2022-01-26"
+    },
+    "2211.08675": {
+      "title": "XRBench: An Extended Reality (XR) Machine Learning Benchmark Suite for the Metaverse",
+      "date": "2022-11-16"
+    },
+    "2402.04744": {
+      "title": "Progressive Gradient Flow for Robust N:M Sparsity Training in Transformers",
+      "date": "2024-02-07"
+    },
+    "2401.01040": {
+      "title": "Towards Cognitive AI Systems: a Survey and Prospective on Neuro-Symbolic AI",
+      "date": "2024-01-02"
+    },
+    "2403.05465": {
+      "title": "Algorithm-Hardware Co-Design of Distribution-Aware Logarithmic-Posit Encodings for Efficient DNN Inference",
+      "date": "2024-03-08"
+    },
+    "2011.14755": {
+      "title": "Dataflow-Architecture Co-Design for 2.5D DNN Accelerators using Wireless Network-on-Package",
+      "date": "2020-11-30"
+    },
+    "1808.01363": {
+      "title": "GeneSys: Enabling Continuous Learning through Neural Network Evolution in Hardware",
+      "date": "2018-08-03"
+    },
+    "2006.07137": {
+      "title": "STONNE: A Detailed Architectural Simulator for Flexible Neural Network Accelerators",
+      "date": "2020-06-10"
+    },
+    "2110.01752": {
+      "title": "RASA: Efficient Register-Aware Systolic Array Matrix Engine for CPU",
+      "date": "2021-10-05"
+    },
+    "2406.08714": {
+      "title": "Real-time Digital RF Emulation -- II: A Near Memory Custom Accelerator",
+      "date": "2024-06-13"
+    },
+    "2501.09954": {
+      "title": "AIRCHITECT v2: Learning the Hardware Accelerator Design Space through Unified Representations",
+      "date": "2025-01-17"
+    },
+    "2503.10959": {
+      "title": "OuroMamba: A Data-Free Quantization Framework for Vision Mamba",
+      "date": "2025-03-13"
+    },
+    "2509.10371": {
+      "title": "Characterizing the Efficiency of Distributed Training: A Power, Performance, and Thermal Perspective",
+      "date": "2025-09-12"
+    },
+    "2503.01162": {
+      "title": "CogSys: Efficient and Scalable Neurosymbolic Cognition System via Algorithm-Hardware Co-Design",
+      "date": "2025-03-03"
+    },
+    "2411.02322": {
+      "title": "LayerDAG: A Layerwise Autoregressive Diffusion Model for Directed Acyclic Graph Generation",
+      "date": "2024-11-04"
+    },
+    "2303.11499": {
+      "title": "CELLO: Co-designing Schedule and Hybrid Implicit/Explicit Buffer for Complex Tensor Reuse",
+      "date": "2023-03-20"
+    },
+    "2303.14006": {
+      "title": "ASTRA-sim2.0: Modeling Hierarchical Networks and Disaggregated Systems for Large-model Training at Scale",
+      "date": "2023-03-24"
+    },
+    "2403.05527": {
+      "title": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+      "date": "2024-03-08"
+    },
+    "2510.01290": {
+      "title": "ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models",
+      "date": "2025-10-01"
+    },
+    "2511.05722": {
+      "title": "OckBench: Measuring the Efficiency of LLM Reasoning",
+      "date": "2025-11-07"
+    },
+    "2501.07047": {
+      "title": "Leveraging ASIC AI Chips for Homomorphic Encryption",
+      "date": "2025-01-13"
+    },
+    "2109.07419": {
+      "title": "Union: A Unified HW-SW Co-Design Ecosystem in MLIR for Evaluating Tensor Operations on Spatial Accelerators",
+      "date": "2021-09-15"
+    },
+    "1805.02566": {
+      "title": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach Using MAESTRO",
+      "date": "2018-05-04"
+    },
+    "2408.11008": {
+      "title": "Towards a Standardized Representation for Deep Learning Collective Algorithms",
+      "date": "2024-08-20"
+    },
+    "2505.03771": {
+      "title": "OneDSE: Metric-Conditioned Inverse Modeling and Active Search for Sample-Efficient DSE",
+      "date": "2025-04-29"
+    },
+    "2607.02942": {
+      "title": "Serving Agentic Workflows with a Physical-Plan Compiler and Adaptive Runtime",
+      "date": "2026-07-03"
+    },
+    "2510.22087": {
+      "title": "QuArch: A Benchmark for Evaluating LLM Reasoning in Computer Architecture",
+      "date": "2025-10-24"
+    }
+  }
 }

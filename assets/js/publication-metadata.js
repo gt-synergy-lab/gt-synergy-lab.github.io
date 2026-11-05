@@ -61,10 +61,17 @@
     return candidates.sort((a, b) => b.year - a.year)[0];
   }
 
-  function publicationYear({ facultyYear, verifiedYear, publishedYear, scholarYear, localYear }) {
+  function publicationYear({ facultyYear, verifiedYear, publishedYear, arxivYear, scholarYear, localYear }) {
     // Acceptance/publication metadata wins over the earlier arXiv posting year.
-    return [facultyYear, verifiedYear, publishedYear, scholarYear, localYear]
+    return [facultyYear, verifiedYear, publishedYear, arxivYear, scholarYear, localYear]
       .map(value => String(value || '')).find(value => /^20\d{2}$/.test(value)) || '';
+  }
+
+  function comparePublicationDates(a, b) {
+    return (Number(b.year) || 0) - (Number(a.year) || 0)
+      || (Number(b.month) || 0) - (Number(a.month) || 0)
+      || (Number(b.day) || 0) - (Number(a.day) || 0)
+      || a.originalIndex - b.originalIndex;
   }
 
   function publicationKey(title, venue, year, isPublished) {
@@ -91,7 +98,7 @@
     });
   }
 
-  const api = { titleKey, workIds, buildIndex, findFaculty, publicationYear, publicationKey, deduplicate };
+  const api = { titleKey, workIds, buildIndex, findFaculty, publicationYear, publicationKey, deduplicate, comparePublicationDates };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.PublicationMetadata = api;
 })(typeof window !== 'undefined' ? window : globalThis);

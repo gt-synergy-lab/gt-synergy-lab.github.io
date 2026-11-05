@@ -233,7 +233,9 @@ def refresh_faculty(source, data_dir=DATA):
     review_path = data_dir / 'publication_versions.json'
     reviews = json.loads(review_path.read_text()) if review_path.exists() else {}
     names.update(reviews.get('venueNames', {}))
-    pubs.extend(reviews.get('additionalPublications', []))
+    for extra in reviews.get('additionalPublications', []):
+        if not any(title_key(pub['title']) == title_key(extra['title']) and pub['v'] == extra['v'] for pub in pubs):
+            pubs.append(extra)
     records = []
     unmatched = []
     for pub in pubs:
@@ -249,6 +251,9 @@ def refresh_faculty(source, data_dir=DATA):
             'authors': pub['a'], 'year': pub['y'], 'venue': pub['v'], 'type': pub['t'],
             'month': int(pub.get('m', months.get(pub['v'], 0))),
         }
+        event = reviews.get('venueDates', {}).get(f"{pub['y']}:{pub['v']}")
+        if event and pub['t'] in ('conf', 'workshop', 'poster', 'keynote'):
+            record['month'] = event['month']
         if pub.get('si'):
             record['specialIssue'] = pub['si']
         if review.get('sources') or pub.get('sources'):
@@ -258,7 +263,7 @@ def refresh_faculty(source, data_dir=DATA):
         if not matched:
             unmatched.append(f"{pub['y']} · {pub['v']} · {pub['title']}")
     return {'source': FACULTY_URL, 'checkedOn': datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat(),
-            'venueNames': names, 'papers': records}, unmatched
+            'venueNames': names, 'venueDates': reviews.get('venueDates', {}), 'papers': records}, unmatched
 
 
 def refresh_scholar(first_page=None):
@@ -321,14 +326,24 @@ def refresh_abstracts(faculty, data_dir=DATA, feeds=None):
             time.sleep(3)  # arXiv API request pacing
             feeds.append(fetch(ARXIV_API + urlencode({'id_list': ','.join(ids[offset:offset+100]), 'max_results': 100})))
     candidates = {}
+    dates = {}
     for feed in feeds:
+        root = ET.fromstring(feed)
+        for entry in root.findall('a:entry', ATOM):
+            identifier = entry.findtext('a:id', default='', namespaces=ATOM)
+            match = re.fullmatch(r'https?://arxiv\.org/abs/(\d{4}\.\d{4,5})(?:v\d+)?', identifier.strip())
+            published = entry.findtext('a:published', default='', namespaces=ATOM)[:10]
+            title = ' '.join(entry.findtext('a:title', default='', namespaces=ATOM).split())
+            if match and title and re.fullmatch(r'\d{4}-\d{2}-\d{2}', published):
+                dates[match.group(1)] = {'title': title, 'date': published}
         for record in parse_arxiv_feed(feed):
             key = title_key(record['title'])
             if key in titles:
                 candidates.setdefault(key, {})[record['source'].rsplit('v', 1)[0]] = record
     # Multiple distinct arXiv works with the same title are not safe to assign.
     records = [next(iter(items.values())) for items in candidates.values() if len(items) == 1]
-    return {'source': 'arXiv API', 'papers': sorted(records, key=lambda item: title_key(item['title']))}
+    return {'source': 'arXiv API', 'papers': sorted(records, key=lambda item: title_key(item['title'])),
+            'arxivDates': dates}
 
 
 def parse_openalex_abstract(inverted):
@@ -403,7 +418,8 @@ def refresh_openalex(faculty, arxiv, works, data_dir=DATA):
             if key in {title_key(t[0]) for t in targets} and item.get('text') and valid_source:
                 combined[key] = item
     return {'source': 'arXiv, OpenAlex and reviewed publisher pages',
-            'papers': sorted(combined.values(), key=lambda item: title_key(item['title']))}
+            'papers': sorted(combined.values(), key=lambda item: title_key(item['title'])),
+            'arxivDates': arxiv.get('arxivDates', {})}
 
 
 def fetch_openalex(data_dir=DATA):

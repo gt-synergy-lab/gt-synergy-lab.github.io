@@ -92,11 +92,16 @@ The archive includes both published papers and preprints, with no publication
 status filter. Multiple topics are combined with AND. Topics and search can be
 combined and shared through the URL. Ordering is fixed to newest first.
 
-Confirmed conference/journal years take priority over an earlier arXiv/Scholar
-year for both year groups and citations. Within each year, ordering follows
-Google Scholar; papers missing from Scholar use their publication dates.
-Unpublished preprints retain their Scholar year, falling back to the local date.
-Full titles, venue names, authors, and available months come from faculty metadata.
+Confirmed conference/journal dates take priority over an earlier arXiv/Scholar
+date for both year groups and ordering. Papers are sorted newest first by year
+and available presentation or publication month. Preprints use the first arXiv
+posting date where available; otherwise the local/Scholar year is used. Records
+without a reliable month appear after dated papers in the same year, with the
+original order breaking ties. Full titles, venue names, authors, and available
+months come from faculty metadata; venue month defaults can be approximate.
+Every refresh also records original arXiv submission dates (not revision dates).
+Verified event dates in `publication_versions.json` override recurring venue
+defaults; their start day is used to order conferences within the same month.
 
 Each refresh records exact title variants, reviewed aliases, and available
 arXiv/DOI identifiers. When a preprint matches a published work, the archive shows

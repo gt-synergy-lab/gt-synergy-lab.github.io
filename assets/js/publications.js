@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261102-abstracts-c';
+  const VERSION_SUFFIX = '?v=publications-20261104-dates-b';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [
@@ -165,8 +165,11 @@
   const state = {
     papers: [],
     scholarOrder: new Map(),
+    arxivDates: {},
+    arxivDatesByTitle: new Map(),
     facultyPapers: metadata.buildIndex([]),
     venueNames: {},
+    venueDates: {},
     activeTopics: new Set(),
     query: ''
   };
@@ -217,8 +220,15 @@
       state.scholarOrder = prepareScholarOrder(scholarOrder);
       state.facultyPapers = prepareFacultyMetadata(faculty.papers || []);
       state.venueNames = faculty.venueNames || {};
+      state.venueDates = faculty.venueDates || {};
+      state.arxivDates = abstracts.arxivDates || {};
+      Object.entries(state.arxivDates).forEach(([id, record]) => {
+        const key = normalizeTitleKey(record.title);
+        if (!state.arxivDatesByTitle.has(key)) state.arxivDatesByTitle.set(key, []);
+        state.arxivDatesByTitle.get(key).push({ id, ...record });
+      });
       state.papers = preparePapers(elements);
-      attachAbstracts(state.papers, abstracts);
+      attachAbstracts(state.papers, abstracts.papers || []);
       initializeFiltersFromUrl();
       renderTopicFilters();
       renderPublications();
@@ -287,10 +297,10 @@
       const response = await fetch(`../assets/scripts/pub_list/paper_abstracts.json${VERSION_SUFFIX}`);
       if (!response.ok) throw new Error('Could not load abstracts');
       const data = await response.json();
-      return Array.isArray(data.papers) ? data.papers : [];
+      return data && typeof data === 'object' ? data : {};
     } catch (error) {
       console.warn('Verified abstracts unavailable; abstract buttons hidden.', error);
-      return [];
+      return {};
     }
   }
 
@@ -428,6 +438,11 @@
     const isPublished = Boolean(faculty || verified || hasPublishedVenue);
     const isArxiv = !isPublished && (hasArxivLink || /\barxiv\b|^corr\b/i.test(rawVenue));
     const isPreprint = !isPublished;
+    const matchingArxiv = identityKeys.filter(id => id.startsWith('arxiv:'))
+      .map(id => state.arxivDates[id.slice(6)]).filter(Boolean);
+    const titleMatches = state.arxivDatesByTitle.get(normalizeTitleKey(rawTitle)) || [];
+    const arxiv = isPreprint && (matchingArxiv.length === 1 ? matchingArxiv[0]
+      : !matchingArxiv.length && titleMatches.length === 1 ? titleMatches[0] : null);
     const venue = faculty ? `${faculty.venue} ${faculty.year}` : verified
       ? verified.venue
       : normalizeVenueText(rawVenue, date.year, isArxiv, isPreprint);
@@ -437,13 +452,17 @@
       facultyYear: faculty && faculty.year,
       verifiedYear: verified && venueYear,
       publishedYear: hasPublishedVenue && venueYear,
+      arxivYear: arxiv && arxiv.date.slice(0, 4),
       scholarYear: scholarMeta && scholarMeta.year,
       localYear: date.year
     });
-    const publicationMonth = faculty && faculty.month || (date.key ? date.key % 100 : 1);
-    const publicationDateKey = publicationYear
-      ? (Number(publicationYear) * 100) + publicationMonth
-      : date.key;
+    const localMonth = date.year === publicationYear && date.key % 100 !== 1 ? date.key % 100 : 0;
+    const eventDate = faculty && state.venueDates[`${faculty.year}:${faculty.venue}`];
+    const publicationMonth = isPreprint && arxiv ? Number(arxiv.date.slice(5, 7))
+      : eventDate ? eventDate.month
+      : (faculty && faculty.month) || localMonth;
+    const publicationDay = isPreprint && arxiv ? Number(arxiv.date.slice(8, 10))
+      : eventDate ? eventDate.day : 0;
     const rawTagIds = Array.from(element.querySelectorAll('paper-link.anchor[id]'))
       .map(anchor => anchor.id.trim().toLowerCase())
       .filter(id => !/^\d{4}-\d{2}$/.test(id));
@@ -524,7 +543,8 @@
       topics,
       searchText,
       scholarRank: scholarMeta ? scholarMeta.rank : null,
-      dateKey: publicationDateKey,
+      month: publicationMonth,
+      day: publicationDay,
       year: publicationYear || 'Undated',
       originalIndex,
       quality
@@ -875,22 +895,7 @@
 
     const visible = state.papers.filter(paper => matchesBaseFilters(paper) && matchesTopics(paper));
 
-    visible.sort((a, b) => {
-      const yearA = Number(a.year) || 0;
-      const yearB = Number(b.year) || 0;
-      if (yearA !== yearB) {
-        return yearB - yearA;
-      }
-
-      const aHasScholarRank = Number.isInteger(a.scholarRank);
-      const bHasScholarRank = Number.isInteger(b.scholarRank);
-      if (aHasScholarRank && bHasScholarRank && a.scholarRank !== b.scholarRank) {
-        return a.scholarRank - b.scholarRank;
-      }
-      if (aHasScholarRank !== bHasScholarRank) return aHasScholarRank ? -1 : 1;
-
-      return b.dateKey - a.dateKey || a.originalIndex - b.originalIndex;
-    });
+    visible.sort(metadata.comparePublicationDates);
 
     const activeTopics = TOPICS.filter(topic => state.activeTopics.has(topic.id));
     visible.forEach(paper => {

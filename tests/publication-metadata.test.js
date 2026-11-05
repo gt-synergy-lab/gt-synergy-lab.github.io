@@ -59,6 +59,26 @@ test('unpublished papers keep Scholar dates and local published citations overri
   assert.equal(metadata.publicationYear({ verifiedYear: 2026, scholarYear: 2025 }), '2026');
 });
 
+test('presentation month takes precedence over Scholar rank within a year', () => {
+  const papers = [
+    { title: 'Early preprint', year: 2026, month: 7, day: 24, scholarRank: 1, originalIndex: 0 },
+    { title: 'MIST', year: 2026, month: 11, day: 0, scholarRank: 99, originalIndex: 1 },
+    { title: 'Polestar', year: 2026, month: 12, day: 0, scholarRank: 30, originalIndex: 2 },
+    { title: 'No month', year: 2026, month: 0, day: 0, scholarRank: 0, originalIndex: 3 },
+    { title: 'Older', year: 2025, month: 12, day: 31, originalIndex: 4 }
+  ];
+  assert.deepEqual(papers.sort(metadata.comparePublicationDates).map(p => p.title),
+    ['Polestar', 'MIST', 'Early preprint', 'No month', 'Older']);
+  assert.equal(metadata.publicationYear({arxivYear: 2025, scholarYear: 2026}), '2025');
+});
+
+test('Polestar-Cache is a separate ICLR 2026 workshop paper', () => {
+  const paper = snapshot.papers.find(p => p.title.startsWith('Polestar-Cache:'));
+  assert.equal(paper.venue, 'LIT@ICLR');
+  assert.equal(paper.year, 2026);
+  assert.equal(paper.month, 4);
+});
+
 function record(title, venue, year, quality, identityKeys = []) {
   const isPublished = venue !== 'arXiv';
   return { title, titleKey: metadata.titleKey(title), isPublished, quality, identityKeys,

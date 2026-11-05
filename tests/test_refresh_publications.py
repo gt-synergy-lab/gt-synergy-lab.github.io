@@ -11,6 +11,15 @@ spec.loader.exec_module(refresh)
 
 
 class PublicationRefreshTest(unittest.TestCase):
+    def test_preprint_uses_original_posting_date_not_revision_date(self):
+        xml = '''<feed xmlns="http://www.w3.org/2005/Atom"><entry>
+          <id>http://arxiv.org/abs/2504.09775v6</id><title>A Paper</title>
+          <published>2025-04-14T00:00:00Z</published><updated>2026-10-01T00:00:00Z</updated>
+          <summary>Original text.</summary></entry></feed>'''
+        with patch.object(refresh, 'read_local_papers', return_value=[]):
+            data = refresh.refresh_abstracts({'papers': []}, data_dir=Path('/nonexistent'), feeds=[xml])
+        self.assertEqual(data['arxivDates']['2504.09775']['date'], '2025-04-14')
+
     def test_reviewed_abstract_alias_requires_exact_source_and_survives_refresh(self):
         faculty = {'papers': [{'title': 'Conference name', 'year': 2025, 'authors': 'Alice Smith'}]}
         arxiv = {'papers': [{'title': 'Earlier name', 'text': 'Original text',
