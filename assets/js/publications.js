@@ -941,7 +941,10 @@
       heading.className = 'publication-year-heading';
       const yearElement = document.createElement('h3');
       yearElement.id = `publication-year-${year}`;
-      yearElement.textContent = year;
+      const calendarIcon = document.createElement('i');
+      calendarIcon.className = 'far fa-calendar publication-year-heading__icon';
+      calendarIcon.setAttribute('aria-hidden', 'true');
+      yearElement.append(calendarIcon, String(year));
       const line = document.createElement('span');
       line.className = 'publication-year-heading__line';
       line.setAttribute('aria-hidden', 'true');
