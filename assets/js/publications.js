@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261104-dates-b';
+  const VERSION_SUFFIX = '?v=publications-20261118-pccl-noc';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [
