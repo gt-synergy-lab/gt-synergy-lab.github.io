@@ -1,3 +1,32 @@
+.synergy-member-topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0 2px;
+  padding: 0;
+  list-style: none;
+}
+
+.synergy-member-topics a {
+  display: block;
+  padding: 3px 7px;
+  border: 1px solid var(--synergy-line);
+  border-radius: 4px;
+  background: var(--synergy-surface-soft);
+  color: var(--synergy-navy);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.synergy-member-topics a:hover,
+.synergy-member-topics a:focus-visible {
+  border-color: var(--synergy-navy);
+  color: var(--synergy-navy);
+  text-decoration: underline;
+}
+
 /* Alumni subgroups share the compact roster layout. */
 .synergy-alumni-group--postdocs { grid-column: 1 / -1; }
 #visiting-students { grid-column: 1 / -1; scroll-margin-top: 110px; }
