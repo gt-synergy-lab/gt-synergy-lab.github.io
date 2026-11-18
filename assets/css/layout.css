@@ -239,15 +239,16 @@ h1, h2, h3, h4, h5, h6,
 .publication-count { font-size: 0.875rem; }
 .publication-year-heading { margin-bottom: 8px; padding-bottom: 0; border-bottom: 0; }
 .publication-year-heading h3 {
-  padding: 8px 16px;
-  border-inline-start: 4px solid var(--synergy-gold);
-  border-radius: 3px;
-  background: var(--synergy-navy);
-  color: #fff;
-  font-family: var(--layout-serif);
-  font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  padding: 6px 13px;
+  border: 1px solid #e5d9bd;
+  border-radius: 999px;
+  background: #faf7ed;
+  color: var(--synergy-navy);
+  font-family: var(--layout-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.025em;
 }
 .publication-year-heading__count { font-size: 0.75rem; font-weight: 400; }
 .publication-year-heading__line { background: var(--synergy-line); }
