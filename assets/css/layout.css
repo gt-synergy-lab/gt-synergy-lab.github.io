@@ -228,8 +228,16 @@ h1, h2, h3, h4, h5, h6,
 .publication-results-header h2 { font-size: 1.25rem; font-weight: 600; line-height: 1.35; }
 .publication-filter-group h3 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; }
 .publication-sidebar-search input { min-height: 46px; font-size: 0.875rem; border-radius: 4px; }
-.publication-topic-filters .filter-button { min-height: 44px; padding: 9px 8px; font-size: 0.875rem; line-height: 1.4; }
-.publication-topic-filters .filter-button__label { font-weight: 500; }
+.publication-topic-filters .filter-button { min-height: 44px; padding: 9px 8px; row-gap: 3px; font-size: 0.875rem; line-height: 1.4; }
+.publication-topic-filters .filter-button__label { font-weight: 600; }
+.publication-topic-filters .filter-button__description {
+  grid-column: 2 / -1;
+  color: var(--synergy-muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+.publication-topic-filters .active-filter .filter-button__description { color: #dbe6ee; }
 .publication-topic-filters .filter-button__count { font-size: 0.75rem; }
 .publication-active-topics { max-width: 580px; margin: 8px 0 0; font-size: 0.8125rem; line-height: 1.5; color: var(--synergy-copy); }
 .publication-topic-filters .filter-button__swatch { position: relative; width: 13px; height: 13px; border-radius: 3px; }
@@ -281,6 +289,11 @@ h1, h2, h3, h4, h5, h6,
 .publication-year-group + .publication-year-group { margin-top: 40px; }
 .abstract-section { max-height: 80vh; overflow-y: auto; }
 .abstract-text { font-size: 1rem; line-height: 1.75; }
+
+@media (min-width: 901px) and (min-height: 841px) {
+  .publication-filter-card { max-height: calc(100dvh - 112px); overflow-y: auto; scrollbar-width: thin; }
+  .publication-topic-filters .filter-button:focus-visible { outline-offset: -2px; }
+}
 
 /* Team uses the original theme layout; only its typography is updated here. */
 .synergy-team-title {
@@ -489,6 +502,7 @@ h1, h2, h3, h4, h5, h6,
 @media (max-width: 900px) {
   .publication-topic-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; overflow: visible; }
   .publication-topic-filters .filter-button { width: 100%; min-width: 0; min-height: 44px; grid-template-columns: 13px minmax(0, 1fr) auto; font-size: 0.8125rem; }
+  .publication-topic-filters .filter-button:first-child { grid-column: 1 / -1; }
   .publication-results-header { align-items: flex-start; gap: 16px; }
   .publication-list .paper-authors { font-size: 0.8125rem; }
   .publication-list .paper-conference { font-size: 0.8125rem; }

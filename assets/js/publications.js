@@ -850,15 +850,27 @@
         button.className = 'filter-button';
         button.dataset.topic = topic.id;
         button.style.setProperty('--topic-color', topic.color);
+        const filterId = `publication-topic-${topic.id || 'all'}`;
         const swatch = document.createElement('span');
         swatch.className = 'filter-button__swatch';
         swatch.setAttribute('aria-hidden', 'true');
         const label = document.createElement('strong');
+        label.id = `${filterId}-label`;
         label.className = 'filter-button__label';
         label.textContent = topic.label;
         const count = document.createElement('span');
+        count.id = `${filterId}-count`;
         count.className = 'filter-button__count';
+        button.setAttribute('aria-labelledby', `${label.id} ${count.id}`);
         button.append(swatch, label, count);
+        if (topic.description) {
+          const description = document.createElement('span');
+          description.id = `${filterId}-description`;
+          description.className = 'filter-button__description';
+          description.textContent = topic.description;
+          button.setAttribute('aria-describedby', description.id);
+          button.append(description);
+        }
         filters.appendChild(button);
       });
     }
