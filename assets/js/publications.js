@@ -799,6 +799,17 @@
       const button = event.target.closest('.filter-button[data-topic]');
       if (button) toggleTopic(button.dataset.topic);
     });
+
+    const guide = document.querySelector('.publication-topic-guide');
+    guide.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && guide.open) {
+        guide.open = false;
+        guide.querySelector('summary').focus();
+      }
+    });
+    document.addEventListener('click', event => {
+      if (guide.open && !guide.contains(event.target)) guide.open = false;
+    });
   }
 
   function toggleTopic(id) {
@@ -812,6 +823,11 @@
     updateFiltersInUrl();
     renderTopicFilters();
     renderPublications();
+
+    const toolbar = document.querySelector('.publication-filters');
+    const resultsTop = document.querySelector('.publication-results').getBoundingClientRect().top;
+    const readableTop = toolbar.offsetHeight + parseFloat(getComputedStyle(toolbar).top);
+    if (resultsTop < readableTop) window.scrollBy(0, resultsTop - readableTop - 16);
   }
 
   function initializeFiltersFromUrl() {
@@ -845,6 +861,7 @@
     if (!filters) return;
     const options = [{ id: '', label: 'All topics', color: '#64748b' }, ...TOPICS];
     if (!filters.children.length) {
+      const guideList = document.getElementById('publication-topic-guide');
       options.forEach(topic => {
         const button = document.createElement('button');
         button.type = 'button';
@@ -858,19 +875,22 @@
         const label = document.createElement('strong');
         label.id = `${filterId}-label`;
         label.className = 'filter-button__label';
-        label.textContent = topic.label;
+        label.textContent = topic.shortLabel || topic.label;
         const count = document.createElement('span');
         count.id = `${filterId}-count`;
         count.className = 'filter-button__count';
         button.setAttribute('aria-labelledby', `${label.id} ${count.id}`);
         button.append(swatch, label, count);
         if (topic.description) {
-          const description = document.createElement('span');
+          const entry = document.createElement('div');
+          const name = document.createElement('dt');
+          name.textContent = topic.label;
+          const description = document.createElement('dd');
           description.id = `${filterId}-description`;
-          description.className = 'filter-button__description';
           description.textContent = topic.description;
           button.setAttribute('aria-describedby', description.id);
-          button.append(description);
+          entry.append(name, description);
+          guideList.appendChild(entry);
         }
         filters.appendChild(button);
       });
@@ -884,7 +904,8 @@
       const selected = new Set([...state.activeTopics, id]);
       const count = id ? base.filter(paper => matchesTopics(paper, selected)).length : base.length;
       button.querySelector('.filter-button__count').textContent = String(count);
-      button.title = id ? `${count} papers match this topic and all selected topics` : 'Clear topic selections';
+      const topic = TOPICS.find(item => item.id === id);
+      button.title = topic ? `${topic.label} · ${count} matching ${count === 1 ? 'paper' : 'papers'}` : 'Clear topic selections';
     });
   }
 

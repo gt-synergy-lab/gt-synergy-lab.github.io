@@ -13,7 +13,7 @@
   <link href="../assets/css/theme.css" rel="stylesheet">
   <link href="../assets/css/dropdownTheme.css" rel="stylesheet">
   <link href="../assets/css/mytheme.css?v=site-refresh-20260902e" rel="stylesheet">
-  <link href="../assets/css/layout.css?v=20261120-pinned-topics" rel="stylesheet">
+  <link href="../assets/css/layout.css?v=20261120-topic-toolbar" rel="stylesheet">
   <link rel="preload" href="../assets/scripts/pub_list/papers.bundle.html?v=publications-20261120-topic-sync" as="fetch">
 </head>
 <body class="publication-page">
@@ -29,26 +29,25 @@
   </section>
 
   <div class="publication-shell">
-    <aside class="publication-filters" aria-label="Publication filters">
+    <section class="publication-filters" aria-labelledby="publication-topics-title">
       <div class="publication-filter-card">
-        <div class="publication-filter-heading">
-          <p class="gt-eyebrow">Library</p>
-          <h2>Browse</h2>
+        <div class="publication-filter-bar">
+          <div class="publication-filter-title">
+            <h2 id="publication-topics-title">Topics</h2>
+            <details class="publication-topic-guide">
+              <summary>Topic descriptions <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+              <dl id="publication-topic-guide" class="publication-topic-guide__list"></dl>
+            </details>
+          </div>
+          <label class="publication-sidebar-search" for="publication-search-input">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search publications</span>
+            <input id="publication-search-input" type="search" placeholder="Title, venue, keyword, or author" autocomplete="off">
+          </label>
         </div>
-
-        <label class="publication-sidebar-search" for="publication-search-input">
-          <i class="fas fa-search" aria-hidden="true"></i>
-          <span class="sr-only">Search publications</span>
-          <input id="publication-search-input" type="search" placeholder="Title, venue, keyword, or author" autocomplete="off">
-        </label>
-
-        <div class="publication-filter-group">
-          <h3>Topics</h3>
-          <div id="publication-topic-filters" class="publication-topic-filters" role="group" aria-label="Research topics — select multiple to match all"></div>
-        </div>
-
+        <div id="publication-topic-filters" class="publication-topic-chips" role="group" aria-label="Research topics — select multiple to match all"></div>
       </div>
-    </aside>
+    </section>
 
     <section class="publication-results" aria-labelledby="publication-results-title">
       <header class="publication-results-header">
@@ -79,6 +78,6 @@
 <script src="../assets/vendor/rellax/rellax.min.js"></script>
 <script src="../assets/js/theme.js?v=site-refresh-20260902e"></script>
 <script src="../assets/js/publication-metadata.js?v=publications-20261118-pccl-noc"></script>
-<script src="../assets/js/publications.js?v=publications-20261120-topic-sync"></script>
+<script src="../assets/js/publications.js?v=publications-20261120-topic-toolbar"></script>
 </body>
 </html>
