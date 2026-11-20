@@ -800,6 +800,12 @@
       if (button) toggleTopic(button.dataset.topic);
     });
 
+    const topicToggle = document.querySelector('.publication-topic-toggle');
+    topicToggle.addEventListener('click', () => {
+      const isOpen = topicToggle.closest('.publication-filter-card').classList.toggle('topics-expanded');
+      topicToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
     const guide = document.querySelector('.publication-topic-guide');
     guide.addEventListener('keydown', event => {
       if (event.key === 'Escape' && guide.open) {
@@ -824,10 +830,12 @@
     renderTopicFilters();
     renderPublications();
 
-    const toolbar = document.querySelector('.publication-filters');
-    const resultsTop = document.querySelector('.publication-results').getBoundingClientRect().top;
-    const readableTop = toolbar.offsetHeight + parseFloat(getComputedStyle(toolbar).top);
-    if (resultsTop < readableTop) window.scrollBy(0, resultsTop - readableTop - 16);
+    const filters = document.querySelector('.publication-filters');
+    const results = document.querySelector('.publication-results').getBoundingClientRect();
+    const filterBounds = filters.getBoundingClientRect();
+    const readableTop = parseFloat(getComputedStyle(filters).top)
+      + (results.left < filterBounds.right ? filterBounds.height : 0);
+    if (results.top < readableTop) window.scrollBy(0, results.top - readableTop - 12);
   }
 
   function initializeFiltersFromUrl() {
