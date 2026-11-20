@@ -40,6 +40,20 @@ VENUE_NAMES = {
     'CODES+ISSS': 'International Conference on Hardware/Software Codesign and System Synthesis',
 }
 
+FACULTY_TOPIC_IDS = {
+    'accel': 'accelerators',
+    'compai': 'compositional',
+    'dist': 'distributed',
+    'llm': 'llm',
+    'mldesign': 'ai-design',
+    'noc': 'noc',
+    'sim': 'simulation',
+    'emerging': 'emerging',
+    'memory': 'memory',
+    'edge': 'edge',
+    'security': 'security',
+}
+
 # Reviewed title variants of the same work; do not fuzzy-match different papers.
 ALIASES = {
     'NSFlow:': 'paper_scholar2025_nsflow-an-end-to-end-fpga-framework-with-scalable-da.html',
@@ -251,6 +265,10 @@ def refresh_faculty(source, data_dir=DATA):
             'authors': pub['a'], 'year': pub['y'], 'venue': pub['v'], 'type': pub['t'],
             'month': int(pub.get('m', months.get(pub['v'], 0))),
         }
+        if isinstance(pub.get('tags'), list):
+            record['topicIds'] = list(dict.fromkeys(
+                FACULTY_TOPIC_IDS[tag] for tag in pub['tags'] if tag in FACULTY_TOPIC_IDS
+            ))
         event = reviews.get('venueDates', {}).get(f"{pub['y']}:{pub['v']}")
         if event and pub['t'] in ('conf', 'workshop', 'poster', 'keynote'):
             record['month'] = event['month']

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261118-pccl-noc';
+  const VERSION_SUFFIX = '?v=publications-20261120-topic-sync';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [
@@ -467,8 +467,9 @@
       .map(anchor => anchor.id.trim().toLowerCase())
       .filter(id => !/^\d{4}-\d{2}$/.test(id));
     const curatedTopicIds = (element.dataset.topicIds || '').split(/\s+/).filter(Boolean);
-    const topics = curatedTopicIds.length
-      ? TOPICS.filter(topic => curatedTopicIds.includes(topic.id))
+    const topicIds = curatedTopicIds.length ? curatedTopicIds : faculty?.topicIds;
+    const topics = Array.isArray(topicIds)
+      ? TOPICS.filter(topic => topicIds.includes(topic.id))
       : inferTopics(rawTagIds, `${title} ${authors} ${venue}`);
 
     titleElement.textContent = title;

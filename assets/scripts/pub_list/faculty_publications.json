@@ -1,6 +1,6 @@
 {
   "source": "https://tushar-krishna.github.io/publications.html",
-  "checkedOn": "2026-11-01",
+  "checkedOn": "2026-11-20",
   "venueNames": {
     "SIGCOMM": "ACM SIGCOMM Conference",
     "ACM TECS": "ACM Transactions on Embedded Computing Systems",
@@ -78,6 +78,28 @@
     "NoCArc (keynote)": "IEEE/ACM International Workshop on Network on Chip Architectures (keynote)",
     "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR"
   },
+  "venueDates": {
+    "2026:ICCAD": {
+      "month": 11,
+      "day": 8,
+      "source": "https://iccad.com/2026"
+    },
+    "2026:SC": {
+      "month": 11,
+      "day": 15,
+      "source": "https://sc26.supercomputing.org/"
+    },
+    "2026:DATE": {
+      "month": 4,
+      "day": 20,
+      "source": "https://www.date-conference.com/DATE2026-Call-for-Papers.pdf"
+    },
+    "2026:LIT@ICLR": {
+      "month": 4,
+      "day": 27,
+      "source": "https://latent-implicit-thinking.github.io/callforpapers/"
+    }
+  },
   "papers": [
     {
       "title": "Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs",
@@ -91,7 +113,10 @@
       "year": 2026,
       "venue": "NeurIPS",
       "type": "conf",
-      "month": 12
+      "month": 12,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
@@ -107,6 +132,11 @@
       "venue": "ICCAD",
       "type": "conf",
       "month": 11,
+      "topicIds": [
+        "distributed",
+        "llm",
+        "simulation"
+      ],
       "reviewSources": [
         "https://tushar-krishna.github.io/publications.html",
         "https://arxiv.org/abs/2406.01698"
@@ -125,7 +155,12 @@
       "year": 2026,
       "venue": "SC",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "distributed",
+        "llm",
+        "simulation"
+      ]
     },
     {
       "title": "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving",
@@ -137,7 +172,12 @@
       "year": 2026,
       "venue": "SIGCOMM",
       "type": "conf",
-      "month": 8
+      "month": 8,
+      "topicIds": [
+        "llm",
+        "memory",
+        "distributed"
+      ]
     },
     {
       "title": "Enabling AI ASICs for Zero Knowledge Proof",
@@ -149,7 +189,11 @@
       "year": 2026,
       "venue": "DAC",
       "type": "conf",
-      "month": 7
+      "month": 7,
+      "topicIds": [
+        "accelerators",
+        "security"
+      ]
     },
     {
       "title": "Closing the Efficiency Gap: AI Datacenter Co-design Roadmap for Scalable Training of LLMs",
@@ -161,7 +205,12 @@
       "year": 2026,
       "venue": "ICS",
       "type": "conf",
-      "month": 7
+      "month": 7,
+      "topicIds": [
+        "distributed",
+        "llm",
+        "simulation"
+      ]
     },
     {
       "title": "ThunderAgent: A Fast, Simple, and Program-Aware Agentic Inference System",
@@ -173,7 +222,11 @@
       "year": 2026,
       "venue": "ICML",
       "type": "conf",
-      "month": 7
+      "month": 7,
+      "topicIds": [
+        "compositional",
+        "llm"
+      ]
     },
     {
       "title": "QuArch: A Benchmark for Evaluating LLM Reasoning in Computer Architecture",
@@ -185,7 +238,11 @@
       "year": 2026,
       "venue": "ICML",
       "type": "conf",
-      "month": 7
+      "month": 7,
+      "topicIds": [
+        "simulation",
+        "llm"
+      ]
     },
     {
       "title": "MLCommons Chakra: Advancing Performance Benchmarking and Co-design using Standardized Execution Traces",
@@ -200,6 +257,10 @@
       "venue": "MLSys",
       "type": "conf",
       "month": 5,
+      "topicIds": [
+        "simulation",
+        "distributed"
+      ],
       "reviewSources": [
         "https://github.com/mlcommons/chakra",
         "https://arxiv.org/abs/2605.11333"
@@ -215,7 +276,12 @@
       "year": 2026,
       "venue": "MLSys",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "edge",
+        "llm",
+        "security"
+      ]
     },
     {
       "title": "SLM-MUX: Orchestrating Small Language Models for Reasoning",
@@ -229,7 +295,11 @@
       "year": 2026,
       "venue": "ICLR",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "compositional",
+        "llm"
+      ]
     },
     {
       "title": "ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models",
@@ -243,7 +313,10 @@
       "year": 2026,
       "venue": "ICLR",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "MINISA: Minimal Instruction Set Architecture for Next-gen Reconfigurable Inference Accelerator",
@@ -255,7 +328,10 @@
       "year": 2026,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures",
@@ -267,7 +343,12 @@
       "year": 2026,
       "venue": "ASPLOS",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "compositional",
+        "accelerators",
+        "simulation"
+      ]
     },
     {
       "title": "REASON: Accelerating Probabilistic Logical Reasoning for Scalable Neuro-Symbolic Intelligence",
@@ -279,7 +360,11 @@
       "year": 2026,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "compositional",
+        "accelerators"
+      ]
     },
     {
       "title": "Leveraging ASIC AI Chips for Homomorphic Encryption",
@@ -291,7 +376,12 @@
       "year": 2026,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "accelerators",
+        "llm",
+        "security"
+      ]
     },
     {
       "title": "SCALE: Tackling Communication Bottlenecks in Confidential Distributed Machine Learning",
@@ -303,7 +393,12 @@
       "year": 2026,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "distributed",
+        "llm",
+        "security"
+      ]
     },
     {
       "title": "Boosting Scalability and Performance: Macro Placement for Flexible 3D-Stacked ML Accelerators",
@@ -315,7 +410,11 @@
       "year": 2026,
       "venue": "ASP-DAC",
       "type": "conf",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "emerging",
+        "accelerators"
+      ]
     },
     {
       "title": "Evaluating Cross-Architecture Performance Modeling of Distributed ML Workloads Using StableHLO",
@@ -327,7 +426,11 @@
       "year": 2026,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "distributed",
+        "simulation"
+      ]
     },
     {
       "title": "Towards System-2 AI: Workloads and Characterizations of Energy-Based Models",
@@ -339,7 +442,11 @@
       "year": 2026,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "compositional",
+        "simulation"
+      ]
     },
     {
       "title": "FortiSky: Enhancing Adversarial and Bit-Error Robustness for Efficient and Secure Autonomous Systems",
@@ -351,7 +458,11 @@
       "year": 2026,
       "venue": "DATE",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "edge",
+        "security"
+      ]
     },
     {
       "title": "Scalable Synthesis of Distributed LLM Workloads Through Symbolic Tensor Graphs",
@@ -366,7 +477,11 @@
       "year": 2026,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "distributed",
+        "simulation"
+      ]
     },
     {
       "title": "SCALE-Sim TPU: Validating and Extending SCALE-Sim for TPUs",
@@ -378,7 +493,11 @@
       "year": 2026,
       "venue": "IEEE CAL",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "simulation",
+        "accelerators"
+      ]
     },
     {
       "title": "A 40-nm Programmable Heterogeneous SoC With 5.625/0.85 MB RRAM/SRAM for Accelerating Neuro-Symbolic AI Models",
@@ -390,7 +509,12 @@
       "year": 2026,
       "venue": "IEEE JSSC",
       "type": "journal",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "compositional",
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "Demystifying the Cost Versus Benefits of Sparse Large Language Model Acceleration",
@@ -402,7 +526,12 @@
       "year": 2026,
       "venue": "IEEE Micro",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "llm",
+        "simulation"
+      ]
     },
     {
       "title": "Algorithm-Hardware Co-Design of Digital Compute-in-Memory Architecture Supporting Flexible and Temporal N:M Sparsity",
@@ -414,7 +543,12 @@
       "year": 2026,
       "venue": "IEEE TVLSI",
       "type": "journal",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "accelerators",
+        "emerging",
+        "llm"
+      ]
     },
     {
       "title": "Cross-Layer Design of Vector-Symbolic Computing: Bridging Cognition and Brain-Inspired Hardware Acceleration",
@@ -428,7 +562,12 @@
       "year": 2026,
       "venue": "ACM TECS",
       "type": "journal",
-      "month": 0
+      "month": 0,
+      "topicIds": [
+        "compositional",
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "Win Fast or Lose Slow: Balancing Speed and Accuracy in Latency-Sensitive Decisions of LLMs",
@@ -441,7 +580,10 @@
       "year": 2025,
       "venue": "NeurIPS",
       "type": "conf",
-      "month": 12
+      "month": 12,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "Ouromamba: A Data-Free Quantization Framework for Vision Mamba",
@@ -454,7 +596,10 @@
       "year": 2025,
       "venue": "ICCV",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "Characterizing the Efficiency of Distributed Training: A Power, Performance, and Thermal Perspective",
@@ -466,7 +611,11 @@
       "year": 2025,
       "venue": "MICRO",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "distributed",
+        "simulation"
+      ]
     },
     {
       "title": "Progressive Gradient Flow for Robust N:M Sparsity Training in Transformers",
@@ -480,7 +629,11 @@
       "year": 2025,
       "venue": "CPAL",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "llm",
+        "accelerators"
+      ]
     },
     {
       "title": "SquareLoop: Explore Optimal Authentication Block Strategy for ML",
@@ -492,7 +645,11 @@
       "year": 2025,
       "venue": "HASP@MICRO",
       "type": "workshop",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "accelerators",
+        "security"
+      ]
     },
     {
       "title": "Efficient Processing of Neuro-Symbolic AI: A Tutorial and Cross-Layer Co-Design Case Study",
@@ -504,7 +661,11 @@
       "year": 2025,
       "venue": "NeuS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "compositional",
+        "accelerators"
+      ]
     },
     {
       "title": "Accelerating LLM Inference with Flexible N:M Sparsity via A Fully Digital Compute-in-Memory Accelerator",
@@ -519,7 +680,12 @@
       "year": 2025,
       "venue": "ISLPED",
       "type": "conf",
-      "month": 8
+      "month": 8,
+      "topicIds": [
+        "accelerators",
+        "llm",
+        "emerging"
+      ]
     },
     {
       "title": "NSFlow: An End-to-End FPGA Framework with Scalable Dataflow Architecture for NeuroSymbolic AI",
@@ -532,7 +698,11 @@
       "year": 2025,
       "venue": "DAC",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "compositional",
+        "accelerators"
+      ]
     },
     {
       "title": "FRED: A Wafer-scale Fabric for 3D Parallel DNN Training",
@@ -548,6 +718,11 @@
       "venue": "ISCA",
       "type": "conf",
       "month": 6,
+      "topicIds": [
+        "distributed",
+        "noc",
+        "emerging"
+      ],
       "reviewSources": [
         "https://www.iscaconf.org/isca2025/program/index.php",
         "https://arxiv.org/abs/2406.19580"
@@ -564,7 +739,11 @@
       "year": 2025,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "llm"
+      ]
     },
     {
       "title": "CELLO: Co-designing Schedule and Hybrid Implicit/Explicit Buffer for Complex Tensor Reuse",
@@ -581,6 +760,9 @@
       "venue": "IPDPS",
       "type": "conf",
       "month": 5,
+      "topicIds": [
+        "accelerators"
+      ],
       "reviewSources": [
         "https://tushar-krishna.github.io/publications.html",
         "https://arxiv.org/abs/2303.11499v1",
@@ -597,7 +779,11 @@
       "year": 2025,
       "venue": "ISCAS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators",
+        "llm"
+      ]
     },
     {
       "title": "Enabling Unstructured Sparse Acceleration on Structured Sparse Accelerators",
@@ -614,6 +800,9 @@
       "venue": "MLSys",
       "type": "conf",
       "month": 5,
+      "topicIds": [
+        "accelerators"
+      ],
       "reviewSources": [
         "https://tushar-krishna.github.io/publications.html",
         "https://arxiv.org/abs/2403.07953v1",
@@ -631,7 +820,10 @@
       "year": 2025,
       "venue": "MLSys",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "FlexInfer: Flexible LLM Inference with CPU Computations",
@@ -644,7 +836,10 @@
       "year": 2025,
       "venue": "MLSys",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "AI Metropolis: Scaling Large Language Model-based Multi-Agent Simulation with Out-of-order Execution",
@@ -657,7 +852,12 @@
       "year": 2025,
       "venue": "MLSys",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "compositional",
+        "llm",
+        "distributed"
+      ]
     },
     {
       "title": "SCALE-Sim V3: a Modular Cycle-Accurate Systolic Accelerator Simulator for End-To-End System Analysis",
@@ -670,7 +870,11 @@
       "year": 2025,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "simulation",
+        "accelerators"
+      ]
     },
     {
       "title": "Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability",
@@ -684,7 +888,12 @@
       "year": 2025,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "compositional",
+        "edge",
+        "simulation"
+      ]
     },
     {
       "title": "Exploring Constrained Dataflow Accelerators for Real-Time Multi-Task Multi-Model ML Workloads",
@@ -697,7 +906,11 @@
       "year": 2025,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators",
+        "compositional"
+      ]
     },
     {
       "title": "LayerDAG: A Layerwise Autoregressive Diffusion Model for Directed Acyclic Graph Generation",
@@ -709,7 +922,10 @@
       "year": 2025,
       "venue": "ICLR",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "ai-design"
+      ]
     },
     {
       "title": "ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents",
@@ -721,7 +937,12 @@
       "year": 2025,
       "venue": "ASPLOS",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "compositional",
+        "accelerators",
+        "edge"
+      ]
     },
     {
       "title": "AIrchitect v2: Learning the Hardware Accelerator Design Space through Unified Representations",
@@ -734,7 +955,10 @@
       "year": 2025,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "ai-design"
+      ]
     },
     {
       "title": "Axon: A Novel Systolic Array Architecture for Improved Energy-Efficient GeMM and Conv Operation with On-Chip im2col",
@@ -747,7 +971,10 @@
       "year": 2025,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "CogSys: Efficient and Scalable Neurosymbolic Cognition System via Algorithm-Hardware Co-Design",
@@ -760,7 +987,11 @@
       "year": 2025,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "compositional",
+        "accelerators"
+      ]
     },
     {
       "title": "Toward a Standardized Representation for Deep Learning Collective Algorithms",
@@ -775,7 +1006,10 @@
       "year": 2025,
       "venue": "IEEE Micro",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "distributed"
+      ]
     },
     {
       "title": "GEAR: An Efficient Error Reduction Framework for KV Cache Compression in LLM Inference",
@@ -792,6 +1026,9 @@
       "venue": "ENLSP@NeurIPS",
       "type": "workshop",
       "month": 12,
+      "topicIds": [
+        "llm"
+      ],
       "reviewSources": [
         "https://neurips2024-enlsp.github.io/papers/paper_3.pdf",
         "https://arxiv.org/abs/2403.05527"
@@ -808,7 +1045,11 @@
       "year": 2024,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "distributed",
+        "memory"
+      ]
     },
     {
       "title": "Thinking and Moving: An Efficient Computing Approach for Integrated Task and Motion Planning in Cooperative Embodied AI Systems",
@@ -821,7 +1062,11 @@
       "year": 2024,
       "venue": "ICCAD",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "compositional",
+        "edge"
+      ]
     },
     {
       "title": "Enhancing Scalability and Performance in Influence Maximization with Optimized Parallel Processing",
@@ -834,7 +1079,10 @@
       "year": 2024,
       "venue": "IA³ @ SC",
       "type": "workshop",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "distributed"
+      ]
     },
     {
       "title": "TACOS: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning",
@@ -851,6 +1099,9 @@
       "venue": "MICRO",
       "type": "conf",
       "month": 10,
+      "topicIds": [
+        "distributed"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2304.05301"
@@ -867,7 +1118,11 @@
       "year": 2024,
       "venue": "IISWC",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "llm",
+        "simulation"
+      ]
     },
     {
       "title": "CLAMP-ViT: Contrastive Data-Free Learning for Adaptive Post-Training Quantization of ViTs",
@@ -880,7 +1135,10 @@
       "year": 2024,
       "venue": "ECCV",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "llm"
+      ]
     },
     {
       "title": "Towards a Standardized Representation for Deep Learning Collective Algorithms",
@@ -895,7 +1153,10 @@
       "year": 2024,
       "venue": "HotI",
       "type": "conf",
-      "month": 8
+      "month": 8,
+      "topicIds": [
+        "distributed"
+      ]
     },
     {
       "title": "FEATHER: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching",
@@ -907,7 +1168,11 @@
       "year": 2024,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ]
     },
     {
       "title": "Algorithm-Hardware Co-Design of Distribution-Aware Logarithmic-Posit Encodings for Efficient DNN Inference",
@@ -920,7 +1185,11 @@
       "year": 2024,
       "venue": "DAC",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "llm"
+      ]
     },
     {
       "title": "SmartPAF: Accurate Low-Degree Polynomial Approximation of Non-polynomial Operators for Fast Private Inference in Homomorphic Encryption",
@@ -936,6 +1205,11 @@
       "venue": "MLSys",
       "type": "conf",
       "month": 5,
+      "topicIds": [
+        "llm",
+        "accelerators",
+        "security"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2404.03216"
@@ -956,6 +1230,10 @@
       "venue": "ISPASS",
       "type": "conf",
       "month": 5,
+      "topicIds": [
+        "distributed",
+        "noc"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2109.11762"
@@ -971,7 +1249,11 @@
       "year": 2024,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "compositional",
+        "simulation"
+      ]
     },
     {
       "title": "H3DFact: Heterogeneous 3D Integrated CIM for Factorization with Holographic Perceptual Representations",
@@ -986,7 +1268,11 @@
       "year": 2024,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "compositional",
+        "emerging"
+      ]
     },
     {
       "title": "Real-time Digital RF Emulation – II: A Near-Memory Custom Accelerator",
@@ -1001,7 +1287,11 @@
       "year": 2024,
       "venue": "IEEE T-Radar",
       "type": "journal",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "Towards Efficient Neuro-Symbolic AI: From Workload Characterization to Hardware Architecture",
@@ -1014,7 +1304,11 @@
       "year": 2024,
       "venue": "IEEE TCASAI",
       "type": "journal",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "compositional",
+        "simulation"
+      ]
     },
     {
       "title": "Mitigating Timing-Based NoC Side-Channel Attacks With LLC Remapping",
@@ -1027,7 +1321,12 @@
       "year": 2023,
       "venue": "IEEE CAL",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc",
+        "memory",
+        "security"
+      ]
     },
     {
       "title": "STIFT: A Spatio-Temporal Integrated Folding Tree for Efficient Reductions in Flexible DNN Accelerators",
@@ -1040,7 +1339,11 @@
       "year": 2023,
       "venue": "ACM JETC",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ]
     },
     {
       "title": "On Continuing DNN Accelerator Architecture Scaling Using Tightly Coupled Compute-on-Memory 3-D ICs",
@@ -1054,7 +1357,11 @@
       "year": 2023,
       "venue": "IEEE TVLSI",
       "type": "journal",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "SNATCH: Stealing Neural Network Architecture from ML Accelerator in Intelligent Sensors",
@@ -1067,7 +1374,12 @@
       "year": 2023,
       "venue": "IEEE SENSORS",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "accelerators",
+        "edge",
+        "security"
+      ]
     },
     {
       "title": "Characterization of Data Compression in Datacenters",
@@ -1080,7 +1392,10 @@
       "year": 2023,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "simulation"
+      ]
     },
     {
       "title": "ASTRA-sim2.0: Modeling Hierarchical Networks and Disaggregated Systems for Large-model Training at Scale",
@@ -1093,7 +1408,12 @@
       "year": 2023,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "distributed",
+        "simulation",
+        "noc"
+      ]
     },
     {
       "title": "SPOCK: Reverse Packet Traversal for Deadlock Recovery",
@@ -1106,7 +1426,10 @@
       "year": 2023,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "XRBench: An Extended Reality (XR) Machine Learning Benchmark Suite for the Metaverse",
@@ -1119,7 +1442,12 @@
       "year": 2023,
       "venue": "MLSys",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "simulation",
+        "edge",
+        "compositional"
+      ]
     },
     {
       "title": "Subgraph-Stationary Hardware-Software Inference Co-Design",
@@ -1134,7 +1462,11 @@
       "year": 2023,
       "venue": "MLSys",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators",
+        "edge"
+      ]
     },
     {
       "title": "FPGA-Based High-Performance Real-Time Emulation of Radar System using Direct Path Compute Model",
@@ -1147,7 +1479,11 @@
       "year": 2023,
       "venue": "IMS",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "A High Performance Computing Architecture for Real-Time Digital Emulation of RF Interactions",
@@ -1159,7 +1495,11 @@
       "year": 2023,
       "venue": "RadarConf",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "Proteus: HLS-based NoC Generator and Simulator",
@@ -1172,7 +1512,11 @@
       "year": 2023,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "noc",
+        "simulation"
+      ]
     },
     {
       "title": "AIRCHITECT: Automating Hardware Architecture and Mapping Optimization",
@@ -1189,6 +1533,9 @@
       "venue": "DATE",
       "type": "conf",
       "month": 3,
+      "topicIds": [
+        "ai-design"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2108.08295"
@@ -1205,7 +1552,10 @@
       "year": 2023,
       "venue": "ASPLOS",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks",
@@ -1222,6 +1572,10 @@
       "venue": "ASPLOS",
       "type": "conf",
       "month": 3,
+      "topicIds": [
+        "accelerators",
+        "llm"
+      ],
       "reviewSources": [
         "https://tushar-krishna.github.io/publications.html",
         "https://arxiv.org/abs/2107.06419v1",
@@ -1238,7 +1592,10 @@
       "year": 2023,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Efficient Distributed Inference of Deep Neural Networks via Restructuring and Pruning",
@@ -1251,7 +1608,11 @@
       "year": 2023,
       "venue": "AAAI",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "distributed",
+        "llm"
+      ]
     },
     {
       "title": "Hardware-Software Co-Design for Real-Time Latency-Accuracy Navigation in Tiny Machine Learning Applications",
@@ -1265,7 +1626,11 @@
       "year": 2023,
       "venue": "IEEE Micro",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "edge"
+      ]
     },
     {
       "title": "TNT: A Modular Approach to Traversing Physically Heterogeneous NoCs at Bare-wire Latency",
@@ -1278,7 +1643,10 @@
       "year": 2023,
       "venue": "ACM TACO",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Understanding Data Compression in Warehouse-Scale Datacenter Services",
@@ -1291,7 +1659,10 @@
       "year": 2022,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "simulation"
+      ]
     },
     {
       "title": "Demystifying Map Space Exploration for NPUs",
@@ -1304,7 +1675,12 @@
       "year": 2022,
       "venue": "IISWC",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "accelerators",
+        "simulation",
+        "ai-design"
+      ]
     },
     {
       "title": "MicroEdge: A Low-Cost Edge Cluster System Architecture for Scalable Camera Processing",
@@ -1317,7 +1693,10 @@
       "year": 2022,
       "venue": "Middleware",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "edge"
+      ]
     },
     {
       "title": "Impact of RoCE Congestion Control Policies on Distributed Training of DNNs",
@@ -1330,7 +1709,11 @@
       "year": 2022,
       "venue": "HotI",
       "type": "conf",
-      "month": 8
+      "month": 8,
+      "topicIds": [
+        "distributed",
+        "noc"
+      ]
     },
     {
       "title": "Self Adaptive Reconfigurable Arrays (SARA): Learning Flexible GEMM Accelerator Configuration and Mapping-space using ML",
@@ -1347,6 +1730,10 @@
       "venue": "DAC",
       "type": "conf",
       "month": 6,
+      "topicIds": [
+        "accelerators",
+        "ai-design"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2101.04799"
@@ -1363,7 +1750,10 @@
       "year": 2022,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "distributed"
+      ]
     },
     {
       "title": "A Formalism of DNN Accelerator Flexibility",
@@ -1376,7 +1766,11 @@
       "year": 2022,
       "venue": "SIGMETRICS",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "simulation"
+      ]
     },
     {
       "title": "Understanding the Design-Space of Sparse/Dense Multiphase GNN Dataflows on Spatial Accelerators",
@@ -1389,7 +1783,10 @@
       "year": 2022,
       "venue": "IPDPS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "DiGamma: A Domain-aware Genetic Algorithm for HW-Mapping Co-optimization for DNN Accelerators",
@@ -1402,7 +1799,11 @@
       "year": 2022,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "ai-design",
+        "accelerators"
+      ]
     },
     {
       "title": "MAGMA: An Optimization Framework for Mapping Multiple DNNs on Multiple Accelerator Cores",
@@ -1419,6 +1820,10 @@
       "venue": "HPCA",
       "type": "conf",
       "month": 2,
+      "topicIds": [
+        "ai-design",
+        "accelerators"
+      ],
       "reviewSources": [
         "https://arxiv.org/abs/2104.13997v1",
         "https://arxiv.org/abs/2104.13997",
@@ -1436,7 +1841,10 @@
       "year": 2022,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Efficiently Solving Partial Differential Equations in a Partially Reconfigurable Specialized Hardware",
@@ -1449,7 +1857,10 @@
       "year": 2021,
       "venue": "IEEE TC",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Technology-aware Router Architectures for On-Chip-Networks in Heterogeneous Technologies",
@@ -1461,7 +1872,11 @@
       "year": 2021,
       "venue": "NANOCOM",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
     },
     {
       "title": "RASA: Efficient Register-Aware Systolic Array Matrix Engine for CPU",
@@ -1474,7 +1889,10 @@
       "year": 2021,
       "venue": "DAC",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "STONNE: Enabling Cycle-Level Microarchitectural Simulation for DNN Inference Accelerators",
@@ -1491,6 +1909,10 @@
       "venue": "IISWC",
       "type": "conf",
       "month": 11,
+      "topicIds": [
+        "simulation",
+        "accelerators"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2006.07137"
@@ -1507,7 +1929,11 @@
       "year": 2021,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc",
+        "accelerators"
+      ]
     },
     {
       "title": "DUB: Dynamic Underclocking and Bypassing in Network-on-Chip for Heterogeneous GPU Workloads",
@@ -1520,7 +1946,10 @@
       "year": 2021,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "SEEC: Stochastic Escape Express Channel",
@@ -1533,7 +1962,10 @@
       "year": 2021,
       "venue": "SC",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Union: A Unified HW-SW Co-Design Ecosystem in MLIR for Evaluating Tensor Operators on Spatial Accelerators",
@@ -1546,7 +1978,11 @@
       "year": 2021,
       "venue": "PACT",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "accelerators",
+        "simulation"
+      ]
     },
     {
       "title": "A Configurable Architecture for Efficient Sparse FIR Computation in Real-time Radio Frequency Systems",
@@ -1560,6 +1996,10 @@
       "venue": "IMS",
       "type": "conf",
       "month": 6,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ],
       "reviewSources": [
         "https://ims-ieee.org/sites/ims2019/files/content_images/IMS2022_Program_Book_Web.pdf",
         "https://doi.org/10.1109/IMS37962.2022.9865486"
@@ -1580,6 +2020,9 @@
       "venue": "ISCA",
       "type": "conf",
       "month": 6,
+      "topicIds": [
+        "distributed"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2007.00156"
@@ -1596,7 +2039,10 @@
       "year": 2021,
       "venue": "IPDPS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Architecture, Dataflow and Physical Design Implications of 3D-ICs for DNN-Accelerators",
@@ -1609,7 +2055,11 @@
       "year": 2021,
       "venue": "ISQED",
       "type": "conf",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "E3: A HW/SW Co-design Neuroevolution Platform for Autonomous Learning in Edge Devices",
@@ -1622,7 +2072,10 @@
       "year": 2021,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "edge"
+      ]
     },
     {
       "title": "Pitstop: Enabling a Virtual Network Free Network-on-Chip",
@@ -1635,7 +2088,10 @@
       "year": 2021,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Heterogeneous Dataflow Accelerators for Multi-DNN Workloads",
@@ -1652,6 +2108,10 @@
       "venue": "HPCA",
       "type": "conf",
       "month": 2,
+      "topicIds": [
+        "accelerators",
+        "compositional"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/1909.07437"
@@ -1668,7 +2128,12 @@
       "year": 2021,
       "venue": "ASP-DAC",
       "type": "conf",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "accelerators",
+        "emerging",
+        "noc"
+      ]
     },
     {
       "title": "Bridging the Frequency Gap in Heterogeneous 3D SoCs through Technology-Specific NoC Router Architecture",
@@ -1681,7 +2146,11 @@
       "year": 2021,
       "venue": "ASP-DAC",
       "type": "conf",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
     },
     {
       "title": "Marvel: A Data-Centric Approach for Mapping Deep Learning Operators on Spatial Accelerators",
@@ -1698,6 +2167,10 @@
       "venue": "ACM TACO",
       "type": "journal",
       "month": 6,
+      "topicIds": [
+        "accelerators",
+        "ai-design"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/2002.07752"
@@ -1714,7 +2187,11 @@
       "year": 2021,
       "venue": "IEEE CAL",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "simulation",
+        "accelerators"
+      ]
     },
     {
       "title": "Evaluating Spatial Accelerator Architectures with Tiled Matrix-Matrix Multiplication",
@@ -1727,7 +2204,11 @@
       "year": 2021,
       "venue": "IEEE TPDS",
       "type": "journal",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "accelerators",
+        "simulation"
+      ]
     },
     {
       "title": "Clock Delivery Network Design and Analysis for Interposer-Based 2.5-D Heterogeneous Systems",
@@ -1740,7 +2221,10 @@
       "year": 2021,
       "venue": "IEEE TVLSI",
       "type": "journal",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "emerging"
+      ]
     },
     {
       "title": "Flexion: A Quantitative Metric for Flexibility in DNN Accelerators",
@@ -1753,7 +2237,11 @@
       "year": 2021,
       "venue": "IEEE CAL",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators",
+        "simulation"
+      ]
     },
     {
       "title": "Interconnect Modeling for Homogeneous and Heterogeneous Multiprocessors",
@@ -1765,7 +2253,11 @@
       "year": 2021,
       "venue": "Springer (chapter)",
       "type": "chapter",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
     },
     {
       "title": "Statistical Array Allocation and Partitioning for Compute In-Memory Fabrics",
@@ -1777,7 +2269,11 @@
       "year": 2020,
       "venue": "VLSI-SoC",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "emerging",
+        "accelerators"
+      ]
     },
     {
       "title": "GAMMA: Automating the HW Mapping of DNN Models on Accelerators via Genetic Algorithm",
@@ -1790,7 +2286,11 @@
       "year": 2020,
       "venue": "ICCAD",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "ai-design",
+        "accelerators"
+      ]
     },
     {
       "title": "ConfuciuX: Autonomous Hardware Resource Assignment for DNN Accelerators using Reinforcement Learning",
@@ -1803,7 +2303,11 @@
       "year": 2020,
       "venue": "MICRO",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "ai-design",
+        "accelerators"
+      ]
     },
     {
       "title": "Breaking Barriers: Maximizing Array Utilization for Compute In-Memory Fabrics",
@@ -1816,7 +2320,11 @@
       "year": 2020,
       "venue": "VLSI-SoC",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "emerging",
+        "accelerators"
+      ]
     },
     {
       "title": "Scalable Distributed Training of Recommendation Models: An ASTRA-SIM + NS3 case-study with TCP/IP transport",
@@ -1829,7 +2337,11 @@
       "year": 2020,
       "venue": "HotI",
       "type": "conf",
-      "month": 8
+      "month": 8,
+      "topicIds": [
+        "distributed",
+        "simulation"
+      ]
     },
     {
       "title": "ASTRA-SIM: Enabling SW/HW Co-Design Exploration for Distributed DL Training Platforms",
@@ -1842,7 +2354,11 @@
       "year": 2020,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "distributed",
+        "simulation"
+      ]
     },
     {
       "title": "A Systematic Methodology for Characterizing Scalability of DNN Accelerators using SCALE-Sim",
@@ -1855,7 +2371,11 @@
       "year": 2020,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "simulation",
+        "accelerators"
+      ]
     },
     {
       "title": "CLAN: Continuous Learning using Asynchronous NeuroEvolution on Commodity Edge Devices",
@@ -1868,7 +2388,10 @@
       "year": 2020,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "edge"
+      ]
     },
     {
       "title": "Kite: A Family of Heterogeneous Interposer Topologies Enabled via Accurate Interconnect Modeling",
@@ -1881,7 +2404,11 @@
       "year": 2020,
       "venue": "DAC",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
     },
     {
       "title": "Co-Exploration of Neural Architectures and Heterogeneous ASIC Accelerator Designs Targeting Multiple Tasks",
@@ -1894,7 +2421,11 @@
       "year": 2020,
       "venue": "DAC",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "ai-design",
+        "accelerators"
+      ]
     },
     {
       "title": "SIGMA: A Sparse and Irregular GEMM Accelerator with Flexible Interconnects for DNN Training",
@@ -1907,7 +2438,11 @@
       "year": 2020,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ]
     },
     {
       "title": "DRAIN: Deadlock Removal for Arbitrary Irregular Networks",
@@ -1920,7 +2455,10 @@
       "year": 2020,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "ALRESCHA: A Lightweight Reconfigurable Sparse-Computation Accelerator",
@@ -1933,7 +2471,10 @@
       "year": 2020,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Architecture, Chip, and Package Co-design Flow for 2.5D IC Design Enabling Heterogeneous IP Reuse",
@@ -1946,7 +2487,10 @@
       "year": 2020,
       "venue": "IEEE TVLSI",
       "type": "journal",
-      "month": 4
+      "month": 4,
+      "topicIds": [
+        "emerging"
+      ]
     },
     {
       "title": "EcoTLB: Eventually Consistent TLBs",
@@ -1959,7 +2503,10 @@
       "year": 2020,
       "venue": "ACM TACO",
       "type": "journal",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "memory"
+      ]
     },
     {
       "title": "MAESTRO: A Data-Centric Approach to Understand Reuse, Performance, and Hardware Cost of DNN Mappings",
@@ -1973,6 +2520,10 @@
       "venue": "IEEE Micro",
       "type": "journal",
       "month": 6,
+      "topicIds": [
+        "accelerators",
+        "simulation"
+      ],
       "specialIssue": "Special Issue: Top Picks from the Computer Architecture Conferences"
     },
     {
@@ -1986,7 +2537,10 @@
       "year": 2020,
       "venue": "Synthesis Lectures",
       "type": "book",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Application Benchmarking",
@@ -1998,7 +2552,10 @@
       "year": 2020,
       "venue": "IRDS (chapter)",
       "type": "chapter",
-      "month": 12
+      "month": 12,
+      "topicIds": [
+        "simulation"
+      ]
     },
     {
       "title": "Reinforcement Learning Based Interconnection Routing for Adaptive Traffic Optimization",
@@ -2011,7 +2568,11 @@
       "year": 2019,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc",
+        "ai-design"
+      ]
     },
     {
       "title": "Understanding the Impact of On-chip Communication on DNN Accelerator Performance",
@@ -2024,7 +2585,12 @@
       "year": 2019,
       "venue": "ICECS",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "noc",
+        "accelerators",
+        "simulation"
+      ]
     },
     {
       "title": "Characterizing the Deployment of Deep Neural Networks on Commercial Edge Devices",
@@ -2037,7 +2603,11 @@
       "year": 2019,
       "venue": "IISWC",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "edge",
+        "simulation"
+      ]
     },
     {
       "title": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach",
@@ -2055,6 +2625,10 @@
       "venue": "MICRO",
       "type": "conf",
       "month": 10,
+      "topicIds": [
+        "accelerators",
+        "simulation"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/1805.02566"
@@ -2071,7 +2645,10 @@
       "year": 2019,
       "venue": "MICRO",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "BINDU: Deadlock-Freedom with One Bubble in the Network",
@@ -2084,7 +2661,10 @@
       "year": 2019,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Scaling the Cascades: Interconnect-aware Mapping Strategies for FPGA Implementation of Machine Learning Problems",
@@ -2097,7 +2677,11 @@
       "year": 2019,
       "venue": "FPL",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ]
     },
     {
       "title": "Architecture, Chip, and Package Co-design Flow for 2.5D IC Design Enabling Heterogeneous IP Reuse",
@@ -2110,7 +2694,10 @@
       "year": 2019,
       "venue": "DAC",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "emerging"
+      ]
     },
     {
       "title": "mRNA: Enabling Efficient Mapping Space Exploration on a Reconfigurable Neural Accelerator",
@@ -2123,7 +2710,10 @@
       "year": 2019,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "McMahon: Minimum-cycle Maximum-hop Network",
@@ -2136,7 +2726,10 @@
       "year": 2019,
       "venue": "AISTECS",
       "type": "workshop",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom",
@@ -2150,6 +2743,9 @@
       "venue": "IEEE Micro",
       "type": "journal",
       "month": 6,
+      "topicIds": [
+        "noc"
+      ],
       "specialIssue": "Special Issue: Top Picks from the Computer Architecture Conferences"
     },
     {
@@ -2163,7 +2759,10 @@
       "year": 2018,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Architecting a Secure Wireless Network-on-Chip",
@@ -2176,7 +2775,12 @@
       "year": 2018,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc",
+        "emerging",
+        "security"
+      ]
     },
     {
       "title": "Merge Network for a Non-von Neumann Accumulate Accelerator in a 3D Chip",
@@ -2189,7 +2793,11 @@
       "year": 2018,
       "venue": "ICRC",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "accelerators",
+        "emerging"
+      ]
     },
     {
       "title": "GeneSys: Enabling Continuous Learning through Neural Network Evolution in Hardware",
@@ -2206,6 +2814,10 @@
       "venue": "MICRO",
       "type": "conf",
       "month": 10,
+      "topicIds": [
+        "accelerators",
+        "edge"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/",
         "https://arxiv.org/abs/1808.01363"
@@ -2222,7 +2834,11 @@
       "year": 2018,
       "venue": "MICRO",
       "type": "conf",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "memory",
+        "noc"
+      ]
     },
     {
       "title": "Brownian Bubble Router: Enabling Deadlock Freedom via Guaranteed Forward Progress",
@@ -2235,7 +2851,10 @@
       "year": 2018,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Synchronized Progress in Interconnection Networks (SPIN): A New Theory for Deadlock Freedom",
@@ -2248,7 +2867,10 @@
       "year": 2018,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "FastTrack: Leveraging Heterogeneous FPGA Wires to Design Low-cost High-performance Soft NoCs",
@@ -2261,7 +2883,10 @@
       "year": 2018,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "SEESAW: Using Superpages to Improve VIPT Caches",
@@ -2274,7 +2899,10 @@
       "year": 2018,
       "venue": "ISCA",
       "type": "conf",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "memory"
+      ]
     },
     {
       "title": "Performance Implications of NoCs on 3D-Stacked Memories: Insights from the Hybrid Memory Cube",
@@ -2287,7 +2915,12 @@
       "year": 2018,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "noc",
+        "memory",
+        "emerging"
+      ]
     },
     {
       "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Reconfigurable Interconnects",
@@ -2302,6 +2935,10 @@
       "venue": "ASPLOS",
       "type": "conf",
       "month": 3,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ],
       "reviewSources": [
         "https://synergy.ece.gatech.edu/publications/"
       ]
@@ -2317,7 +2954,10 @@
       "year": 2018,
       "venue": "ASPLOS",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "memory"
+      ]
     },
     {
       "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Programmable Interconnects",
@@ -2329,7 +2969,11 @@
       "year": 2018,
       "venue": "SysML",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ]
     },
     {
       "title": "Spoofing Prevention via RF Power Profiling in Wireless Network-on-Chip",
@@ -2342,7 +2986,12 @@
       "year": 2018,
       "venue": "AISTECS",
       "type": "workshop",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "noc",
+        "emerging",
+        "security"
+      ]
     },
     {
       "title": "A Communication-Centric Approach for Designing Flexible DNN Accelerators",
@@ -2356,6 +3005,10 @@
       "venue": "IEEE Micro",
       "type": "journal",
       "month": 6,
+      "topicIds": [
+        "accelerators",
+        "noc"
+      ],
       "specialIssue": "Special Issue on Hardware Acceleration"
     },
     {
@@ -2369,7 +3022,10 @@
       "year": 2017,
       "venue": "ICCAD",
       "type": "conf",
-      "month": 11
+      "month": 11,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Lightweight Emulation of Virtual Channels using Swaps",
@@ -2382,7 +3038,10 @@
       "year": 2017,
       "venue": "NocArc",
       "type": "workshop",
-      "month": 10
+      "month": 10,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Rethinking NoCs for Spatial Neural Network Accelerators",
@@ -2395,7 +3054,11 @@
       "year": 2017,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc",
+        "accelerators"
+      ]
     },
     {
       "title": "Adaptive Manycore Architectures for Big Data Computing",
@@ -2408,7 +3071,10 @@
       "year": 2017,
       "venue": "NOCS",
       "type": "conf",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "OpenSMART: Single-Cycle Multi-hop NoC Generator in BSV and Chisel",
@@ -2421,7 +3087,11 @@
       "year": 2017,
       "venue": "ISPASS",
       "type": "conf",
-      "month": 5
+      "month": 5,
+      "topicIds": [
+        "noc",
+        "simulation"
+      ]
     },
     {
       "title": "Automatic Place-and-Route of Emerging LED-driven Wires within a Monolithically-integrated CMOS+III-V Process",
@@ -2434,7 +3104,11 @@
       "year": 2017,
       "venue": "DATE",
       "type": "conf",
-      "month": 3
+      "month": 3,
+      "topicIds": [
+        "emerging",
+        "noc"
+      ]
     },
     {
       "title": "Static Bubble: A Framework for Deadlock-free Irregular On-chip Topologies",
@@ -2447,7 +3121,10 @@
       "year": 2017,
       "venue": "HPCA",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
@@ -2460,7 +3137,10 @@
       "year": 2017,
       "venue": "IEEE JSSC",
       "type": "journal",
-      "month": 1
+      "month": 1,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "On-Chip Networks, Second Edition",
@@ -2472,7 +3152,10 @@
       "year": 2017,
       "venue": "Synthesis Lectures",
       "type": "book",
-      "month": 6
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ]
     },
     {
       "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
@@ -2485,7 +3168,10 @@
       "year": 2016,
       "venue": "ISSCC",
       "type": "conf",
-      "month": 2
+      "month": 2,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "Efficient Control and Communication Paradigms for Coarse-Grained Spatial Architectures",
@@ -2498,7 +3184,10 @@
       "year": 2015,
       "venue": "ACM TOCS",
       "type": "journal",
-      "month": 9
+      "month": 9,
+      "topicIds": [
+        "accelerators"
+      ]
     },
     {
       "title": "MAESTRO: An Open-source Infrastructure for the Cost-Benefit Analysis of Dataflows within Deep Learning Accelerators",
@@ -2584,27 +3273,5 @@
         "https://latent-implicit-thinking.github.io/callforpapers/"
       ]
     }
-  ],
-  "venueDates": {
-    "2026:ICCAD": {
-      "month": 11,
-      "day": 8,
-      "source": "https://iccad.com/2026"
-    },
-    "2026:SC": {
-      "month": 11,
-      "day": 15,
-      "source": "https://sc26.supercomputing.org/"
-    },
-    "2026:DATE": {
-      "month": 4,
-      "day": 20,
-      "source": "https://www.date-conference.com/DATE2026-Call-for-Papers.pdf"
-    },
-    "2026:LIT@ICLR": {
-      "month": 4,
-      "day": 27,
-      "source": "https://latent-implicit-thinking.github.io/callforpapers/"
-    }
-  }
+  ]
 }

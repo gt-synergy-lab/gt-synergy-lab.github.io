@@ -92,6 +92,10 @@ The archive includes both published papers and preprints, with no publication
 status filter. Multiple topics are combined with AND. Topics and search can be
 combined and shared through the URL. Ordering is fixed to newest first.
 
+The refresh imports topic assignments for matching papers from the faculty
+publication page. Explicit lab assignments take precedence. Papers without
+either assignment use their existing tags and keyword matching.
+
 Confirmed conference/journal dates take priority over an earlier arXiv/Scholar
 date for both year groups and ordering. Papers are sorted newest first by year
 and available presentation or publication month. Preprints use the first arXiv
