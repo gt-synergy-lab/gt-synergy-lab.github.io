@@ -9,7 +9,7 @@
       id: 'accelerators',
       label: 'AI/ML Accelerators',
       shortLabel: 'Accelerators',
-      description: 'Microarchitecture, dataflows, mapping, sparsity, and quantization-aware hardware.',
+      description: 'Dataflows, sparsity, and quantization',
       color: '#0d7a6b',
       tags: ['accelerators', 'accelerator', 'fpga', 'sparsity', 'quantization', 'dataflow'],
       keywords: [/\baccelerator/, /\bdataflow\b/, /\bdata reuse\b/, /\bgemm\b/, /\bsystolic\b/, /\bcompute[- ]in[- ]memory\b/, /\bcim\b/, /\bsparsity\b/, /\bquantization\b/, /\bfpga\b/, /\bnpu(s)?\b/, /\bdnn\b/, /\bcnn\b/, /\bcgra\b/, /\btensor (processing unit|algebra)\b/, /\bneural processing unit\b/, /\bspatial architecture/, /\bai architectures?\b/, /\bartificial intelligence focused architectures\b/]
@@ -18,7 +18,7 @@
       id: 'compositional',
       label: 'Compositional & Cognitive AI',
       shortLabel: 'Compositional AI',
-      description: 'Neuro-symbolic, agentic, multi-model, and cognitive AI systems and hardware.',
+      description: 'Neuro-symbolic, agentic, multi-model AI',
       color: '#6d4ed6',
       tags: ['nsymbolic'],
       keywords: [/\bneuro[- ]symbolic\b/, /\bneurosymbolic\b/, /\bsymbolic\b/, /\bcognitive\b/, /\bcompositional\b/, /\bsystem[- ]2\b/, /\bvector[- ]symbolic\b/, /\bagentic\b/, /\bmulti[- ]agent\b/, /\bprobabilistic logical\b/, /\benergy[- ]based model/]
@@ -27,7 +27,7 @@
       id: 'distributed',
       label: 'Distributed AI Systems',
       shortLabel: 'Distributed AI',
-      description: 'Training and inference platforms, collective communication, scheduling, and networks.',
+      description: 'Training, serving, and collectives',
       color: '#2563c9',
       tags: ['distributed'],
       keywords: [/\bdistributed\b/, /\bdatacenter\b/, /\bdata center\b/, /\bcluster\b/, /\bcollective\b/, /\bmulti[- ]node\b/, /\bscale[- ]up\b/, /\bscale[- ]out\b/, /\ball[- ]reduce\b/]
@@ -36,7 +36,7 @@
       id: 'llm',
       label: 'Efficient LLM & Model Inference',
       shortLabel: 'LLM & Inference',
-      description: 'Model serving, attention optimization, quantization, and private inference.',
+      description: 'Serving, attention, and KV caches',
       color: '#c2410c',
       tags: ['llm'],
       keywords: [/\bllms?\b/, /\blanguage model/, /\btransformer\b/, /\battention\b/, /\bkv cache\b/, /\bvision transformer\b/, /\bvit\b/, /\bmamba\b/, /\bsmall language model/, /\blarge model inference/]
@@ -45,7 +45,7 @@
       id: 'ai-design',
       label: 'AI-Assisted Design',
       shortLabel: 'AI-Assisted Design',
-      description: 'Learning-guided mapping, architecture search, and design-space optimization.',
+      description: 'Learning-guided mapping and design',
       color: '#b3357a',
       tags: [],
       keywords: [/\bai[- ]assisted\b/, /\bml[- ]assisted\b/, /\breinforcement learning\b/, /\bevolutionary search\b/, /\bgenetic algorithm\b/, /\bdesign[- ]space (search|optimization|exploration)\b/, /\barchitecture search\b/, /\blearning[- ]based (mapping|design)\b/]
@@ -54,7 +54,7 @@
       id: 'noc',
       label: 'Interconnection & On-Chip Networks',
       shortLabel: 'Interconnects / NoC',
-      description: 'NoCs, deadlock freedom, routers, traversal, topology, and link design.',
+      description: 'Routing, topology, and deadlock freedom',
       color: '#3b4b8a',
       tags: ['noc'],
       keywords: [/\bnocs?\b/, /\bnetwork[- ]on[- ]chip\b/, /\bon[- ]chip network\b/, /\binterconnect/, /\bnetwork fabric\b/, /\brouting\b/, /\brouter\b/, /\btopolog/, /\bdeadlock\b/, /\bminimum[- ]cycle maximum[- ]hop network\b/, /\badaptive manycore\b/]
@@ -63,7 +63,7 @@
       id: 'simulation',
       label: 'Simulation & Benchmarking',
       shortLabel: 'Simulation',
-      description: 'Simulators, analytical models, workload characterization, and benchmarks.',
+      description: 'Simulators, models, and benchmarks',
       color: '#b08400',
       tags: ['simulation', 'mlhw'],
       keywords: [/\bsimulat/, /\bbenchmark/, /\bmodeling\b/, /\bmodelling\b/, /\bcharacteriz/, /\bworkload analysis\b/, /\bworkload trace/, /\banalytical model/, /\bdesign[- ]space exploration\b/, /\bdse\b/]
@@ -72,7 +72,7 @@
       id: 'emerging',
       label: 'Emerging Tech & Packaging',
       shortLabel: 'Emerging Tech',
-      description: 'Compute-in-memory, chiplets, 3D integration, and novel interconnects.',
+      description: 'Chiplets, 3D ICs, and compute-in-memory',
       color: '#2e8b57',
       tags: ['emerging'],
       keywords: [/\bcompute[- ]in[- ]memory\b/, /\b3d[- ]stack/, /\b3-d[- ]stack/, /\b2\.5d\b/, /\bchiplet/, /\binterposer\b/, /\bphotonic\b/, /\bwireless (network|interconnect)/, /\brf (network|interconnect)/, /\brram\b/, /\bmemrist/, /\bmonolithic/, /\badvanced packaging\b/]
@@ -81,7 +81,7 @@
       id: 'memory',
       label: 'Memory & Virtual-Memory Systems',
       shortLabel: 'Memory Systems',
-      description: 'TLBs, translation coherence, caches, and stacked memory systems.',
+      description: 'Caches, TLBs, and address translation',
       color: '#8a5a2b',
       tags: [],
       keywords: [/\btlb\b/, /\becotlb\b/, /\bvipt\b/, /\bvirtual memory\b/, /\bunified[- ]memory\b/, /\btranslation coherence\b/, /\bcache\b/, /\bcaches\b/, /\bmemory hierarchy\b/, /\bstacked memory\b/, /\bhybrid memory cube\b/, /\bhbm\b/]
@@ -90,7 +90,7 @@
       id: 'edge',
       label: 'Edge & Embodied Computing',
       shortLabel: 'Edge & Embodied',
-      description: 'On-device learning, edge platforms, neuroevolution, and autonomous systems.',
+      description: 'On-device AI and autonomous systems',
       color: '#c0392b',
       tags: [],
       keywords: [/\bedge computing\b/, /\bedge cluster\b/, /\bedge[- ]centric\b/, /\bon[- ]device\b/, /\bembodied\b/, /\bautonomous system/, /\brobot/, /\bvirtual reality\b/, /\bneuroevolution\b/, /\bneural network evolution\b/, /\bcontinuous learning\b/, /\btinyml\b/, /\btiny machine learning\b/, /\bmobile (graphics|platform|device)/]
@@ -99,7 +99,7 @@
       id: 'security',
       label: 'Privacy & Security',
       shortLabel: 'Privacy & Security',
-      description: 'Cryptographic acceleration, confidential computing, and secure computation.',
+      description: 'Cryptography and confidential computing',
       color: '#475569',
       tags: ['memoryauthentication'],
       keywords: [/\bprivacy\b/, /\bprivate inference\b/, /\bprivacy[- ]preserving\b/, /\bsecurity\b/, /\bsecure\b/, /\bcryptograph/, /\bhomomorphic\b/, /\bfhe\b/, /\bzero[- ]knowledge\b/, /\bzkp\b/, /\bconfidential\b/, /\bauthentication\b/, /\badversarial\b/, /\bside[- ]channel\b/]
@@ -805,23 +805,6 @@
       const isOpen = topicToggle.closest('.publication-filter-card').classList.toggle('topics-expanded');
       topicToggle.setAttribute('aria-expanded', String(isOpen));
     });
-
-    const guide = document.querySelector('.publication-topic-guide');
-    guide.addEventListener('toggle', () => {
-      if (!guide.open) return;
-      const panelBottom = guide.querySelector('dl').getBoundingClientRect().bottom;
-      const overflow = panelBottom + 8 - window.innerHeight;
-      if (overflow > 0) window.scrollBy(0, overflow);
-    });
-    guide.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && guide.open) {
-        guide.open = false;
-        guide.querySelector('summary').focus();
-      }
-    });
-    document.addEventListener('click', event => {
-      if (guide.open && !guide.contains(event.target)) guide.open = false;
-    });
   }
 
   function toggleTopic(id) {
@@ -875,7 +858,6 @@
     if (!filters) return;
     const options = [{ id: '', label: 'All topics', color: '#64748b' }, ...TOPICS];
     if (!filters.children.length) {
-      const guideList = document.getElementById('publication-topic-guide');
       options.forEach(topic => {
         const button = document.createElement('button');
         button.type = 'button';
@@ -896,15 +878,12 @@
         button.setAttribute('aria-labelledby', `${label.id} ${count.id}`);
         button.append(swatch, label, count);
         if (topic.description) {
-          const entry = document.createElement('div');
-          const name = document.createElement('dt');
-          name.textContent = topic.label;
-          const description = document.createElement('dd');
+          const description = document.createElement('span');
           description.id = `${filterId}-description`;
+          description.className = 'filter-button__description';
           description.textContent = topic.description;
           button.setAttribute('aria-describedby', description.id);
-          entry.append(name, description);
-          guideList.appendChild(entry);
+          button.append(description);
         }
         filters.appendChild(button);
       });
