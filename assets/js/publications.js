@@ -807,6 +807,12 @@
     });
 
     const guide = document.querySelector('.publication-topic-guide');
+    guide.addEventListener('toggle', () => {
+      if (!guide.open) return;
+      const panelBottom = guide.querySelector('dl').getBoundingClientRect().bottom;
+      const overflow = panelBottom + 8 - window.innerHeight;
+      if (overflow > 0) window.scrollBy(0, overflow);
+    });
     guide.addEventListener('keydown', event => {
       if (event.key === 'Escape' && guide.open) {
         guide.open = false;
