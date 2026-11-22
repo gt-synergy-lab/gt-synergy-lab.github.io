@@ -23,6 +23,31 @@
     return [...ids];
   }
 
+  function preferredPaperUrl(urls, fallback) {
+    const links = urls.flatMap(value => {
+      if (!/^https?:\/\//i.test(value || '')) return [];
+      try {
+        const url = new URL(value);
+        return url.username || url.password ? [] : [url];
+      } catch {
+        return [];
+      }
+    });
+    for (const url of links) {
+      const arxiv = url.hostname === 'arxiv.org'
+        ? url.pathname.match(/^\/(?:abs|pdf)\/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?$/)
+        : url.hostname === 'doi.org' && url.pathname.match(/^\/10\.48550\/arxiv\.(\d{4}\.\d{4,5})$/i);
+      if (arxiv) return `https://arxiv.org/abs/${arxiv[1]}`;
+    }
+    const publisher = links.find(url => (
+      url.hostname === 'doi.org' && /^\/10\.\d{4,9}\/.+/.test(url.pathname)
+      || /^(?:dl\.acm\.org|ieeexplore\.ieee\.org|proceedings\.mlsys\.org|proceedings\.neurips\.cc|papers\.nips\.cc|proceedings\.mlr\.press|openreview\.net|openaccess\.thecvf\.com|link\.springer\.com|www\.usenix\.org|aclanthology\.org|hotinfra23\.github\.io|www\.microarch\.org|repository\.gatech\.edu|par\.nsf\.gov|www\.osti\.gov|image-ppubs\.uspto\.gov)$/.test(url.hostname)
+    ));
+    if (publisher) return publisher.href;
+    const scholar = links.find(url => url.hostname === 'scholar.google.com');
+    return scholar ? scholar.href : fallback;
+  }
+
   function buildIndex(papers) {
     const titles = new Map();
     const ids = new Map();
@@ -98,7 +123,7 @@
     });
   }
 
-  const api = { titleKey, workIds, buildIndex, findFaculty, publicationYear, publicationKey, deduplicate, comparePublicationDates };
+  const api = { titleKey, workIds, preferredPaperUrl, buildIndex, findFaculty, publicationYear, publicationKey, deduplicate, comparePublicationDates };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.PublicationMetadata = api;
 })(typeof window !== 'undefined' ? window : globalThis);

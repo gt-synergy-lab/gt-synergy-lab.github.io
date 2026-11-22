@@ -66,6 +66,16 @@ After the lab website has been reviewed and Georgia Tech approves the hosting ch
 
 ## Refresh publication metadata
 
+Use the [lab website repository](https://github.com/gt-synergy-lab/gt-synergy-lab.github.io)
+for site changes. Open a pull request for Team, Research, Tools, and other
+content edits. GitHub Pages deploys after the changes reach `main`.
+
+The publication refresh is run by a maintainer. The repository's GitHub
+Actions workflow deploys the site and has no monthly refresh schedule.
+Send new citations to the maintainer for the next batch, or open a PR to
+add a missing paper before it appears in Scholar or to correct an existing
+entry.
+
 ```bash
 python3 scripts/refresh_publications.py
 ```
@@ -87,6 +97,13 @@ The script parses data literals without executing remote JavaScript.
 Incomplete fetches fail before replacing the data. Newly discovered faculty
 titles are reported for review; adding a paper still requires updating its HTML
 fragment, `papers.json`, and `papers.bundle.html` together.
+
+For each Paper button, prefer a verified arXiv record, then the official
+publisher or proceedings, and use Google Scholar when neither is available.
+The refresh collects publisher DOIs independently of abstract availability.
+Verify the venue and year when titles are shared by conference and journal
+editions. Keep a verified publisher URL in the fragment when the index match
+is ambiguous.
 
 The archive includes both published papers and preprints, with no publication
 status filter. Multiple topics are combined with AND. Topics and search can be
@@ -112,8 +129,6 @@ arXiv/DOI identifiers. When a preprint matches a published work, the archive sho
 the published citation once and keeps old titles searchable and supplemental
 links accessible. Conference and journal editions remain separate. Unmatched
 renames are reported for review; similar wording alone is not a reliable match.
-The Paper link can still point to an accessible arXiv copy when a publisher URL
-is unavailable.
 
 `publication_versions.json` stores reviewed title/version relationships, source
 links, and publisher-confirmed corrections. The refresh script reapplies these

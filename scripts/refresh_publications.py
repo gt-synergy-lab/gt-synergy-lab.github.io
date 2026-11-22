@@ -168,14 +168,14 @@ def read_local_papers(data_dir):
         date = re.search(r'id=[\'"]((?:19|20)\d{2})-\d{2}[\'"]', source)
         hrefs = re.findall(r'href=[\'"]([^\'"]+)', source)
         papers.append({'filename': path.name, 'title': title,
-                       'authors': authors, 'year': int(date[1]) if date else 0,
+                       'authors': authors, 'year': int(date[1]) if date else 0, 'venue': venue,
                        'alias': unescape(alias[1]) if alias else '',
                        'ids': work_ids([venue, *hrefs]),
                        'preprint': not venue or bool(re.search(r'\barxiv\b|^corr\b|\bpreprint\b', venue, re.I))})
     return papers
 
 
-def match_publication(pub, local, previous, review=None):
+def match_publication(pub, local, previous, review=None, shared_title=False):
     """Link versions only through exact titles, reviewed aliases, or identifiers."""
     titles = [pub['title'], *(review or {}).get('matchTitles', [])]
     identities = work_ids([pub.get('url'), pub.get('pdf'), pub.get('doi'), pub.get('arxiv')])
@@ -190,6 +190,10 @@ def match_publication(pub, local, previous, review=None):
     keys = {title_key(title) for title in titles}
     matched = [paper for paper in local if title_key(paper['title']) in keys
                or paper['alias'] and title_key(paper['alias']) in keys]
+    if shared_title:
+        venues = {title_key(pub['v']), title_key(f"{pub['v']} {pub['y']}")}
+        matched = [paper for paper in matched if title_key(paper.get('venue', '')) in venues
+                   or not paper['preprint'] and identities.intersection(paper['ids'])]
     for paper in matched:
         identities.update(paper['ids'])
     # Do not absorb a distinct journal/workshop paper just because it reuses a PDF.
@@ -253,13 +257,13 @@ def refresh_faculty(source, data_dir=DATA):
     records = []
     unmatched = []
     for pub in pubs:
-        if pub['y'] < 2015:
-            continue
         review = next((item for item in reviews.get('reconciliations', [])
                        if title_key(item['title']) == title_key(pub['title']) and item['venue'] == pub['v']), {})
         # Reviewed publisher evidence wins over a typo in an upstream faculty list.
         pub = {**pub, 'y': review.get('year', pub['y'])}
-        titles, identities, matched = match_publication(pub, local, previous, review)
+        shared_title = any(other['v'] != pub['v'] and title_key(other['title']) == title_key(pub['title'])
+                           for other in pubs)
+        titles, identities, matched = match_publication(pub, local, previous, review, shared_title)
         record = {
             'title': pub['title'], 'matchTitles': titles, 'identityKeys': identities,
             'authors': pub['a'], 'year': pub['y'], 'venue': pub['v'], 'type': pub['t'],
@@ -381,6 +385,40 @@ def parse_openalex_abstract(inverted):
     return ' '.join(positions[i] for i in range(len(positions)))
 
 
+def collect_publisher_links(faculty, local, works):
+    """Only link unambiguous publisher DOIs for the matching title and year."""
+    publication_types = {'conf': 'conference-paper', 'workshop': 'conference-paper',
+                         'journal': 'article', 'chapter': 'book-chapter'}
+    targets = {}
+    for paper in faculty['papers']:
+        key = (paper['year'], title_key(paper['title']))
+        targets.setdefault(key, set()).add((paper.get('venue'), publication_types.get(paper.get('type'))))
+    faculty_titles = {key[1] for key in targets}
+    for paper in local:
+        title = title_key(paper['title'])
+        if not paper['preprint'] and title not in faculty_titles:
+            targets.setdefault((paper['year'], title), set()).add((paper['venue'], None))
+    candidates = {}
+    for work in works:
+        if work.get('type') not in ('article', 'conference-paper', 'book-chapter'):
+            continue
+        doi = work.get('doi') or ''
+        if not re.fullmatch(r'https://doi\.org/10\.(?!48550/|21203/|20944/)\d{4,9}/[^\s]+', doi, re.I):
+            continue
+        if not any(row.get('author', {}).get('id') == f'https://openalex.org/{OPENALEX_AUTHOR}'
+                   for row in work.get('authorships', [])):
+            continue
+        key = (work.get('publication_year'), title_key(work.get('title') or ''))
+        matches = targets.get(key, ())
+        if len(matches) != 1:
+            continue
+        _, expected_type = next(iter(matches))
+        if not expected_type or expected_type == work['type']:
+            candidates.setdefault(key, set()).add(doi.lower())
+    return {f'{year} {title}': next(iter(urls)) for (year, title), urls in sorted(candidates.items())
+            if len(urls) == 1}
+
+
 def refresh_openalex(faculty, arxiv, works, data_dir=DATA):
     """Supplement arXiv with uniquely matched published works in OpenAlex."""
     local = read_local_papers(data_dir)
@@ -437,13 +475,14 @@ def refresh_openalex(faculty, arxiv, works, data_dir=DATA):
                 combined[key] = item
     return {'source': 'arXiv, OpenAlex and reviewed publisher pages',
             'papers': sorted(combined.values(), key=lambda item: title_key(item['title'])),
-            'arxivDates': arxiv.get('arxivDates', {})}
+            'arxivDates': arxiv.get('arxivDates', {}),
+            'publisherLinks': collect_publisher_links(faculty, local, works)}
 
 
 def fetch_openalex(data_dir=DATA):
     works = []
     for page in range(1, 11):
-        query = urlencode({'filter': f'authorships.author.id:{OPENALEX_AUTHOR},from_publication_date:2015-01-01',
+        query = urlencode({'filter': f'authorships.author.id:{OPENALEX_AUTHOR}',
                            'per-page': 100, 'page': page})
         payload = json.loads(fetch(OPENALEX_API + query))
         batch = payload['results']

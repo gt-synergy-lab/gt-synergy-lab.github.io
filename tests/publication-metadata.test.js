@@ -4,6 +4,29 @@ const metadata = require('../assets/js/publication-metadata.js');
 const snapshot = require('../assets/scripts/pub_list/faculty_publications.json');
 const versions = require('../assets/scripts/pub_list/publication_versions.json');
 
+test('Paper prefers arXiv, then official proceedings, then Scholar', () => {
+  const scholar = 'https://scholar.google.com/scholar?q=chakra';
+  const publisher = 'https://doi.org/10.1109/test';
+  const arxiv = 'https://arxiv.org/pdf/2605.11333v3.pdf';
+  assert.equal(metadata.preferredPaperUrl([scholar, publisher, arxiv], ''), 'https://arxiv.org/abs/2605.11333');
+  assert.equal(metadata.preferredPaperUrl([scholar, publisher], ''), publisher);
+  assert.equal(metadata.preferredPaperUrl([scholar, 'https://arxiv.org.example.com/abs/2605.11333'], ''), scholar);
+  assert.equal(metadata.preferredPaperUrl(['https://', 'javascript:alert(1)'], scholar), scholar);
+});
+
+test('same-title early publications retain their own venues and publisher links', () => {
+  const papers = snapshot.papers.filter(paper => paper.title.startsWith('SCORPIO:'));
+  const index = metadata.buildIndex(papers);
+  for (const [publishedVenue, doi] of [
+    ['Hot Chips 2014', 'doi:10.1109/hotchips.2014.7478827'],
+    ['ISCA 2014', 'doi:10.1109/isca.2014.6853232']
+  ]) {
+    const paper = metadata.findFaculty(index, { title: papers[0].title, publishedVenue });
+    assert.equal(`${paper.venue} ${paper.year}`, publishedVenue);
+    assert.deepEqual(paper.identityKeys, [doi]);
+  }
+});
+
 test('every reviewed old title resolves to its confirmed publication and year', () => {
   const index = metadata.buildIndex(snapshot.papers);
   for (const review of versions.reconciliations) {

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261120-topic-sync';
+  const VERSION_SUFFIX = '?v=publications-20261121-archive-links';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [
@@ -167,6 +167,8 @@
     scholarOrder: new Map(),
     arxivDates: {},
     arxivDatesByTitle: new Map(),
+    abstractSourcesByTitle: new Map(),
+    publisherLinks: {},
     facultyPapers: metadata.buildIndex([]),
     venueNames: {},
     venueDates: {},
@@ -222,6 +224,10 @@
       state.venueNames = faculty.venueNames || {};
       state.venueDates = faculty.venueDates || {};
       state.arxivDates = abstracts.arxivDates || {};
+      state.publisherLinks = abstracts.publisherLinks || {};
+      (abstracts.papers || []).forEach(item => {
+        state.abstractSourcesByTitle.set(normalizeTitleKey(item.title), item.publisher || item.source);
+      });
       Object.entries(state.arxivDates).forEach(([id, record]) => {
         const key = normalizeTitleKey(record.title);
         if (!state.arxivDatesByTitle.has(key)) state.arxivDatesByTitle.set(key, []);
@@ -390,16 +396,28 @@
       .filter(record => record && !ARTIFACT_TITLES.has(record.titleKey));
     return metadata.deduplicate(records).map(record => {
       // Preserve supplemental links from a preprint when the conference entry wins.
-      const links = record.element.querySelector('.paper-links');
-      if (links) {
-        const urls = new Set(Array.from(links.querySelectorAll('a[href]'), link => link.href));
-        record.versions.forEach(version => version.element.querySelectorAll('.paper-links a[href]').forEach(link => {
-          if (/^https?:/.test(link.href) && !/^(paper|pdf)$/i.test(cleanText(link.textContent)) && !urls.has(link.href)) {
-            links.appendChild(link.cloneNode(true));
-            urls.add(link.href);
-          }
-        }));
-      }
+      const links = record.element.querySelector('.paper-links') || document.createElement('div');
+      links.className = 'paper-links';
+      if (!links.parentNode) record.element.querySelector('.paper-entry .col-12').appendChild(links);
+      const urls = new Set(Array.from(links.querySelectorAll('a[href]'), link => link.href));
+      record.versions.forEach(version => version.element.querySelectorAll('.paper-links a[href]').forEach(link => {
+        if (/^https?:/.test(link.href) && !isPaperLink(link) && !urls.has(link.href)) {
+          links.appendChild(link.cloneNode(true));
+          urls.add(link.href);
+        }
+      }));
+      const paperLinks = [...links.querySelectorAll('a[href]')].filter(isPaperLink);
+      const paperLink = paperLinks.shift() || document.createElement('a');
+      paperLinks.forEach(link => link.remove());
+      const fallback = `https://scholar.google.com/scholar?q=${encodeURIComponent(record.title)}`;
+      paperLink.href = metadata.preferredPaperUrl([
+        ...record.paperUrls, ...record.versions.flatMap(version => version.paperUrls)
+      ], fallback);
+      paperLink.className = 'paper-action';
+      paperLink.textContent = 'Paper';
+      paperLink.target = '_blank';
+      if (!paperLink.parentNode) links.prepend(paperLink);
+      decorateActionLinks(links);
       delete record.versions;
       return record;
     });
@@ -422,7 +440,7 @@
       if (/abstract|summary/i.test(link.textContent) || /expand_abstract/i.test(link.getAttribute('href') || '')) link.remove();
     });
     element.querySelectorAll('.abstract-section').forEach(section => section.remove());
-    const paperLink = findPaperLink(links);
+    const fragmentPaperLinks = links ? [...links.querySelectorAll('a[href]')].filter(isPaperLink) : [];
     const identityKeys = metadata.workIds([rawVenue, ...(links ? Array.from(links.querySelectorAll('a[href]'), link => link.href) : [])]);
     const hasPublishedVenue = Boolean(rawVenue && !/\barxiv\b|^corr\b|\bpreprint\b/i.test(rawVenue));
     const faculty = metadata.findFaculty(state.facultyPapers, {
@@ -487,8 +505,6 @@
     if (titleBreak && titleBreak.tagName === 'BR') titleBreak.remove();
     element.querySelectorAll('.paper-visible-tags, .paper-year, .dropdown, .abstract-overlay').forEach(node => node.remove());
 
-    decorateActionLinks(links);
-
     const content = element.querySelector('.paper-entry .col-12');
     if (!content) return null;
 
@@ -525,9 +541,26 @@
 
     const searchText = normalizeSearchText(`${title} ${rawTitle} ${element.dataset.searchAliases || ''} ${(faculty && faculty.matchTitles || []).join(' ')} ${authors} ${venue} ${citation} ${topics.map(topic => topic.label).join(' ')}`);
     const quality = (hasPublishedVenue ? 16 : 0) + (isPreprint ? 0 : 4)
-      + (paperLink ? 2 : 0)
+      + (fragmentPaperLinks.some(link => /^https?:\/\//i.test(link.getAttribute('href'))) ? 2 : 0)
       + (element.querySelector('.abstract-text') ? 1 : 0)
       + (links && /code/i.test(links.textContent) ? 1 : 0);
+    const sameTitle = state.facultyPapers.titles.get(titleKey);
+    const unambiguousTitle = !sameTitle || sameTitle.size === 1;
+    const aliases = [title, rawTitle, ...(faculty?.matchTitles || [])];
+    const indexedArxiv = [...new Set(aliases.flatMap(alias => (
+      (state.arxivDatesByTitle.get(normalizeTitleKey(alias)) || []).map(item => item.id)
+    )))];
+    const ids = [...new Set([...identityKeys, ...(faculty?.identityKeys || [])])];
+    const arxivIds = ids.filter(id => id.startsWith('arxiv:'));
+    const doiIds = ids.filter(id => id.startsWith('doi:'));
+    const paperUrls = [
+      ...fragmentPaperLinks.map(link => link.getAttribute('href')),
+      arxivIds.length === 1 && `https://arxiv.org/abs/${arxivIds[0].slice(6)}`,
+      unambiguousTitle && indexedArxiv.length === 1 && `https://arxiv.org/abs/${indexedArxiv[0]}`,
+      state.publisherLinks[`${publicationYear} ${titleKey}`],
+      unambiguousTitle && state.abstractSourcesByTitle.get(titleKey),
+      doiIds.length === 1 && `https://doi.org/${doiIds[0].slice(4)}`
+    ];
 
     return {
       element,
@@ -535,6 +568,7 @@
       titleKey,
       publicationKey: metadata.publicationKey(title, venue.replace(/\s+20\d{2}$/, ''), publicationYear, isPublished),
       identityKeys,
+      paperUrls,
       authors,
       authorsElement,
       venue,
@@ -740,12 +774,8 @@
     element.appendChild(document.createTextNode(authors.slice(cursor)));
   }
 
-  function findPaperLink(links) {
-    if (!links) return null;
-    return Array.from(links.querySelectorAll('a[href]')).find(link => (
-      /^(paper|pdf)$/i.test(cleanText(link.textContent))
-      && !link.getAttribute('href').startsWith('javascript:')
-    )) || null;
+  function isPaperLink(link) {
+    return /^(paper|pdf)$/i.test(cleanText(link.textContent).replace(/^(?:📄|📑)\s*/u, ''));
   }
 
   function decorateActionLinks(links) {

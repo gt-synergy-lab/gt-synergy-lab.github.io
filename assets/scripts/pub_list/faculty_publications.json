@@ -1,6 +1,6 @@
 {
   "source": "https://tushar-krishna.github.io/publications.html",
-  "checkedOn": "2026-11-20",
+  "checkedOn": "2026-11-21",
   "venueNames": {
     "SIGCOMM": "ACM SIGCOMM Conference",
     "ACM TECS": "ACM Transactions on Embedded Computing Systems",
@@ -1941,7 +1941,9 @@
         "DUB: Dynamic Underclocking and Bypassing in Network-on-Chip for Heterogeneous GPU Workloads",
         "Dub: Dynamic underclocking and bypassing in nocs for heterogeneous gpu workloads"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1145/3479876.3481590"
+      ],
       "authors": "Srikant Bharadwaj, Shomit Das, Yasuko Eckert, Mark Oskin, Tushar Krishna",
       "year": 2021,
       "venue": "NOCS",
@@ -2067,7 +2069,9 @@
         "E3: A HW/SW Co-design Neuroevolution Platform for Autonomous Learning in Edge Devices",
         "E3: A hw/sw co-design neuroevolution platform for autonomous learning in edge device"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1109/ispass51385.2021.00051"
+      ],
       "authors": "Sheng-Chun Kao, Tushar Krishna",
       "year": 2021,
       "venue": "ISPASS",
@@ -2141,7 +2145,9 @@
         "Bridging the Frequency Gap in Heterogeneous 3D SoCs through Technology-Specific NoC Router Architecture",
         "Bridging the Frequency Gap in Heterogeneous 3D SoCs through Technology-Specific NoC Router Architectures"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1145/3394885.3431421"
+      ],
       "authors": "Jan Moritz Joseph, Lennart Bamberg, Geonhwa Jeong, Ruei-Ting Chien, Rainer Leupers, Alberto Garcia-Ortiz, Tushar Krishna, Thilo Pionteck",
       "year": 2021,
       "venue": "ASP-DAC",
@@ -2498,7 +2504,9 @@
         "EcoTLB: Eventually Consistent TLBs",
         "ECOTLB: Eventually Consistent TLBs"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1145/3409454"
+      ],
       "authors": "Steffen Maass, Mohan Kumar, Taesoo Kim, Tushar Krishna, Abhishek Bhattacharjee",
       "year": 2020,
       "venue": "ACM TACO",
@@ -2672,7 +2680,9 @@
         "Scaling the Cascades: Interconnect-aware Mapping Strategies for FPGA Implementation of Machine Learning Problems",
         "Scaling the cascades: Interconnect-aware FPGA implementation of machine learning problems"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1109/fpl.2019.00061"
+      ],
       "authors": "Ananda Samajdar, Tushar Garg, Tushar Krishna, Nachiket Kapre",
       "year": 2019,
       "venue": "FPL",
@@ -2705,7 +2715,9 @@
         "mRNA: Enabling Efficient Mapping Space Exploration on a Reconfigurable Neural Accelerator",
         "mrna: Enabling efficient mapping space exploration for a reconfiguration neural accelerator"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1109/ispass.2019.00040"
+      ],
       "authors": "Zhongyuan Zhao, Hyoukjun Kwon, Sachit Kuhar, Weiguang Sheng, Zhigang Mao, Tushar Krishna",
       "year": 2019,
       "venue": "ISPASS",
@@ -3132,7 +3144,9 @@
         "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
         "Eyeriss: An energy-efficient reconfigurable accelerator for deep convolutional neural networks"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1109/jssc.2016.2616357"
+      ],
       "authors": "Yu-Hsin Chen, Tushar Krishna, Joel Emer, Vivienne Sze",
       "year": 2017,
       "venue": "IEEE JSSC",
@@ -3163,7 +3177,9 @@
         "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
         "Eyeriss: An energy-efficient reconfigurable accelerator for deep convolutional neural networks"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1109/isscc.2016.7418007"
+      ],
       "authors": "Yu-Hsin Chen, Tushar Krishna, Joel Emer, Vivienne Sze",
       "year": 2016,
       "venue": "ISSCC",
@@ -3187,6 +3203,370 @@
       "month": 9,
       "topicIds": [
         "accelerators"
+      ]
+    },
+    {
+      "title": "Single-Cycle Collective Communication Over A Shared Network Fabric",
+      "matchTitles": [
+        "Single-Cycle Collective Communication Over A Shared Network Fabric"
+      ],
+      "identityKeys": [
+        "doi:10.1109/nocs.2014.7008755"
+      ],
+      "authors": "Tushar Krishna, Li-Shiuan Peh",
+      "year": 2014,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "SCORPIO: A 36-Core Research Chip Demonstrating Snoopy Coherence on a Scalable Mesh NoC with In-Network Ordering",
+      "matchTitles": [
+        "SCORPIO: A 36-Core Research Chip Demonstrating Snoopy Coherence on a Scalable Mesh NoC with In-Network Ordering"
+      ],
+      "identityKeys": [
+        "doi:10.1109/hotchips.2014.7478827"
+      ],
+      "authors": "Chia-Hsin Owen Chen, Sunghyun Park, Suvinay Subramanian, Tushar Krishna, Bhavya K. Daya, Woo-Cheol Kwon, Brett Wilkerson, John Arends, Anantha P. Chandrakasan, Li-Shiuan Peh",
+      "year": 2014,
+      "venue": "Hot Chips",
+      "type": "conf",
+      "month": 8,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "SCORPIO: A 36-Core Research Chip Demonstrating Snoopy Coherence on a Scalable Mesh NoC with In-Network Ordering",
+      "matchTitles": [
+        "SCORPIO: A 36-Core Research Chip Demonstrating Snoopy Coherence on a Scalable Mesh NoC with In-Network Ordering"
+      ],
+      "identityKeys": [
+        "doi:10.1109/isca.2014.6853232"
+      ],
+      "authors": "Bhavya K. Daya, Chia-Hsin Owen Chen, Suvinay Subramanian, Woo-Cheol Kwon, Sunghyun Park, Tushar Krishna, Jim Holt, Anantha P. Chandrakasan, Li-Shiuan Peh",
+      "year": 2014,
+      "venue": "ISCA",
+      "type": "conf",
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "Locality-Oblivious Cache Organization Leveraging Single-Cycle Multi-Hop NoCs",
+      "matchTitles": [
+        "Locality-Oblivious Cache Organization Leveraging Single-Cycle Multi-Hop NoCs"
+      ],
+      "identityKeys": [
+        "doi:10.1145/2541940.2541976"
+      ],
+      "authors": "Woo-Cheol Kwon, Tushar Krishna, Li-Shiuan Peh",
+      "year": 2014,
+      "venue": "ASPLOS",
+      "type": "conf",
+      "month": 3,
+      "topicIds": [
+        "noc",
+        "memory"
+      ]
+    },
+    {
+      "title": "SMART: Single-Cycle Multihop Traversals Over A Shared Network-on-Chip",
+      "matchTitles": [
+        "SMART: Single-Cycle Multihop Traversals Over A Shared Network-on-Chip"
+      ],
+      "identityKeys": [
+        "doi:10.1109/mm.2014.48"
+      ],
+      "authors": "Tushar Krishna, Chia-Hsin Owen Chen, Woo-Cheol Kwon, Li-Shiuan Peh",
+      "year": 2014,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ],
+      "specialIssue": "Special Issue: Top Picks from the Computer Architecture Conferences"
+    },
+    {
+      "title": "SMART: A Single-Cycle Reconfigurable NoC for SoC Applications",
+      "matchTitles": [
+        "SMART: A Single-Cycle Reconfigurable NoC for SoC Applications"
+      ],
+      "identityKeys": [
+        "doi:10.7873/date.2013.080"
+      ],
+      "authors": "Chia-Hsin Owen Chen, Sunghyun Park, Tushar Krishna, Suvinay Subramanian, Anantha P. Chandrakasan, Li-Shiuan Peh",
+      "year": 2013,
+      "venue": "DATE",
+      "type": "conf",
+      "month": 3,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "Breaking the On-Chip Latency Barrier Using SMART",
+      "matchTitles": [
+        "Breaking the On-Chip Latency Barrier Using SMART"
+      ],
+      "identityKeys": [
+        "doi:10.1109/hpca.2013.6522334"
+      ],
+      "authors": "Tushar Krishna, Chia-Hsin Owen Chen, Woo Cheol Kwon, Li-Shiuan Peh",
+      "year": 2013,
+      "venue": "HPCA",
+      "type": "conf",
+      "month": 2,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "Single-Cycle Multihop Asynchronous Repeated Traversal: A SMART Future for Reconfigurable On-Chip Networks",
+      "matchTitles": [
+        "Single-Cycle Multihop Asynchronous Repeated Traversal: A SMART Future for Reconfigurable On-Chip Networks"
+      ],
+      "identityKeys": [
+        "doi:10.1109/mc.2013.260"
+      ],
+      "authors": "Tushar Krishna, Chia-Hsin Owen Chen, Sunghyun Park, Woo-Cheol Kwon, Suvinay Subramanian, Anantha P. Chandrakasan, Li-Shiuan Peh",
+      "year": 2013,
+      "venue": "IEEE Computer",
+      "type": "journal",
+      "month": 10,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "Approaching the Theoretical Limits of a Mesh NoC with a 16-Node Chip Prototype in 45nm SOI",
+      "matchTitles": [
+        "Approaching the Theoretical Limits of a Mesh NoC with a 16-Node Chip Prototype in 45nm SOI"
+      ],
+      "identityKeys": [
+        "doi:10.1145/2228360.2228431"
+      ],
+      "authors": "Sunghyun Park, Tushar Krishna, Chia-Hsin Chen, Bhavya K. Daya, Anantha Chandrakasan, Li-Shiuan Peh",
+      "year": 2012,
+      "venue": "DAC",
+      "type": "conf",
+      "month": 6,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "SWIFT: A Low-Power Network-On-Chip Implementing the Token Flow Control Router Architecture With Swing-Reduced Interconnects",
+      "matchTitles": [
+        "SWIFT: A Low-Power Network-On-Chip Implementing the Token Flow Control Router Architecture With Swing-Reduced Interconnects"
+      ],
+      "identityKeys": [
+        "doi:10.1109/tvlsi.2012.2211904"
+      ],
+      "authors": "Jacob Postman, Tushar Krishna, Christopher Edmonds, Li-Shiuan Peh, Patrick Chiang",
+      "year": 2012,
+      "venue": "IEEE TVLSI",
+      "type": "journal",
+      "month": 4,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
+    },
+    {
+      "title": "Towards the Ideal On-chip Fabric for 1-to-Many and Many-to-1 Communication",
+      "matchTitles": [
+        "Towards the Ideal On-chip Fabric for 1-to-Many and Many-to-1 Communication"
+      ],
+      "identityKeys": [
+        "doi:10.1145/2155620.2155630"
+      ],
+      "authors": "Tushar Krishna, Li-Shiuan Peh, Bradford M. Beckmann, Steven K. Reinhardt",
+      "year": 2011,
+      "venue": "MICRO",
+      "type": "conf",
+      "month": 10,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "A Low-Swing Crossbar and Link Generator for Low-Power Networks-on-Chip",
+      "matchTitles": [
+        "A Low-Swing Crossbar and Link Generator for Low-Power Networks-on-Chip"
+      ],
+      "identityKeys": [
+        "doi:10.1109/iccad.2011.6105418"
+      ],
+      "authors": "Chia-Hsin Owen Chen, Sunghyun Park, Tushar Krishna, Li-Shiuan Peh",
+      "year": 2011,
+      "venue": "ICCAD",
+      "type": "conf",
+      "month": 11,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
+    },
+    {
+      "title": "The gem5 Simulator",
+      "matchTitles": [
+        "The gem5 Simulator"
+      ],
+      "identityKeys": [
+        "doi:10.1145/2024716.2024718"
+      ],
+      "authors": "N. Binkert, B. Beckmann, G. Black, S. K. Reinhardt, A. Saidi, A. Basu, J. Hestness, D. R. Hower, T. Krishna, S. Sardashti, R. Sen, K. Sewell, M. Shoaib, N. Vaish, M. D. Hill, D. A. Wood",
+      "year": 2011,
+      "venue": "ACM SIGARCH CAN",
+      "type": "journal",
+      "month": 5,
+      "topicIds": [
+        "simulation"
+      ]
+    },
+    {
+      "title": "Message Broadcast with Router Bypassing",
+      "matchTitles": [
+        "Message Broadcast with Router Bypassing"
+      ],
+      "identityKeys": [],
+      "authors": "Tushar Krishna, Bradford M. Beckmann, Steven K. Reinhardt",
+      "year": 2011,
+      "venue": "US Patent",
+      "type": "patent",
+      "month": 12,
+      "topicIds": [
+        "noc"
+      ]
+    },
+    {
+      "title": "SWIFT: A SWing-reduced Interconnect For a Token-based Network-on-Chip in 90nm CMOS",
+      "matchTitles": [
+        "SWIFT: A SWing-reduced Interconnect For a Token-based Network-on-Chip in 90nm CMOS"
+      ],
+      "identityKeys": [
+        "doi:10.1109/iccd.2010.5647666"
+      ],
+      "authors": "Tushar Krishna, Jacob Postman, Christopher Edmonds, Li-Shiuan Peh, Patrick Chiang",
+      "year": 2010,
+      "venue": "ICCD",
+      "type": "conf",
+      "month": 10,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
+    },
+    {
+      "title": "Physical vs Virtual Express Topologies with Low-Swing Links for Future Many-core NoCs",
+      "matchTitles": [
+        "Physical vs Virtual Express Topologies with Low-Swing Links for Future Many-core NoCs"
+      ],
+      "identityKeys": [
+        "doi:10.1109/nocs.2010.26"
+      ],
+      "authors": "Chia-Hsin Owen Chen, Niket Agarwal, Tushar Krishna, Kyung-Hoae Koo, Li-Shiuan Peh, Krishna Saraswat",
+      "year": 2010,
+      "venue": "NOCS",
+      "type": "conf",
+      "month": 9,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
+    },
+    {
+      "title": "GARNET: A Detailed On-Chip Network Model inside a Full-System Simulator",
+      "matchTitles": [
+        "GARNET: A Detailed On-Chip Network Model inside a Full-System Simulator"
+      ],
+      "identityKeys": [
+        "doi:10.1109/ispass.2009.4919636"
+      ],
+      "authors": "Niket Agarwal, Tushar Krishna, Li-Shiuan Peh, Niraj K. Jha",
+      "year": 2009,
+      "venue": "ISPASS",
+      "type": "conf",
+      "month": 5,
+      "topicIds": [
+        "noc",
+        "simulation"
+      ]
+    },
+    {
+      "title": "Express Virtual Channels with Capacitively-Driven Global Links",
+      "matchTitles": [
+        "Express Virtual Channels with Capacitively-Driven Global Links"
+      ],
+      "identityKeys": [
+        "doi:10.1109/mm.2009.64"
+      ],
+      "authors": "Tushar Krishna, Amit Kumar, Jacob Postman, Patrick Chiang, Mattan Erez, Li-Shiuan Peh",
+      "year": 2009,
+      "venue": "IEEE Micro",
+      "type": "journal",
+      "month": 6,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ],
+      "specialIssue": "Special Issue: Top Picks from Hot Interconnects"
+    },
+    {
+      "title": "Texture Filter Memory – A Power-efficient and Scalable Texture Memory Architecture for Mobile Graphics Processors",
+      "matchTitles": [
+        "Texture Filter Memory – A Power-efficient and Scalable Texture Memory Architecture for Mobile Graphics Processors"
+      ],
+      "identityKeys": [
+        "doi:10.1109/iccad.2008.4681631"
+      ],
+      "authors": "Silpa BVN, Anjul Patney, Tushar Krishna, Preeti R. Panda, G.S. Visweswaran",
+      "year": 2008,
+      "venue": "ICCAD",
+      "type": "conf",
+      "month": 11,
+      "topicIds": [
+        "memory",
+        "edge"
+      ]
+    },
+    {
+      "title": "NoC with Near-Ideal Express Virtual Channels Using Global-Line Communication",
+      "matchTitles": [
+        "NoC with Near-Ideal Express Virtual Channels Using Global-Line Communication"
+      ],
+      "identityKeys": [
+        "doi:10.1109/hoti.2008.22"
+      ],
+      "authors": "Tushar Krishna, Amit Kumar, Patrick Chiang, Mattan Erez, Li-Shiuan Peh",
+      "year": 2008,
+      "venue": "HotI",
+      "type": "conf",
+      "month": 8,
+      "topicIds": [
+        "noc",
+        "emerging"
+      ]
+    },
+    {
+      "title": "Modeling Electron Transport Mechanism in a Molecular Diode through ab initio Molecular Energy Calculations",
+      "matchTitles": [
+        "Modeling Electron Transport Mechanism in a Molecular Diode through ab initio Molecular Energy Calculations"
+      ],
+      "identityKeys": [],
+      "authors": "Tushar Krishna, C. Kiran, Dilip K. Maity, Swapan K. Ghosh",
+      "year": 2006,
+      "venue": "DAE-BRNS",
+      "type": "conf",
+      "month": 6,
+      "topicIds": [
+        "emerging"
       ]
     },
     {

@@ -41,6 +41,17 @@ class PublicationRefreshTest(unittest.TestCase):
         self.assertEqual(refresh.parse_openalex_abstract({'Original': [0], 'words': [2]}), '')
         self.assertEqual(refresh.parse_openalex_abstract({'Original': [0], 'words': [0]}), '')
 
+    def test_publisher_links_without_abstracts_respect_editions(self):
+        conf = {'title': 'A Paper', 'year': 2026, 'venue': 'SC', 'type': 'conf'}
+        work = {'title': 'A Paper', 'publication_year': 2026, 'type': 'conference-paper',
+                'doi': 'https://doi.org/10.1145/test',
+                'authorships': [{'author': {'id': f'https://openalex.org/{refresh.OPENALEX_AUTHOR}'}}]}
+        journal = {**work, 'type': 'article', 'doi': 'https://doi.org/10.1109/test'}
+        self.assertEqual(refresh.collect_publisher_links({'papers': [conf]}, [], [journal, work]),
+                         {'2026 a paper': work['doi']})
+        self.assertEqual(refresh.collect_publisher_links({'papers': [conf]}, [], [journal]), {})
+        self.assertEqual(refresh.collect_publisher_links({'papers': [conf, {**conf, 'venue': 'ISCA'}]}, [], [work]), {})
+
     def test_openalex_requires_matching_title_year_and_author(self):
         faculty = {'papers': [{'title': 'A Paper', 'year': 2024, 'authors': 'Alice Smith'}]}
         work = {'title': 'A Paper', 'publication_year': 2024, 'type': 'article',
