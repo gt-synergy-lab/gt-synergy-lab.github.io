@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261121-archive-links';
+  const VERSION_SUFFIX = '?v=publications-20261121-source-audit';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [

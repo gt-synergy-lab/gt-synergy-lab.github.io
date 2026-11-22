@@ -1,6 +1,15 @@
 (function (root) {
   'use strict';
 
+  const PUBLICATION_HOSTS = new Set([
+    'dl.acm.org', 'ieeexplore.ieee.org', 'link.springer.com',
+    'proceedings.mlsys.org', 'proceedings.neurips.cc', 'papers.nips.cc',
+    'proceedings.mlr.press', 'openreview.net', 'openaccess.thecvf.com',
+    'www.usenix.org', 'aclanthology.org', 'hotinfra23.github.io', 'www.microarch.org',
+    'mlsys.org', 'www.nocarc.org', 'old.gem5.org',
+    'repository.gatech.edu', 'par.nsf.gov', 'www.osti.gov', 'image-ppubs.uspto.gov'
+  ]);
+
   function titleKey(value) {
     return String(value || '').toLowerCase().replace(/&/g, ' and ')
       .replace(/[^a-z0-9]+/g, ' ').replace(/([a-z])(\d)/g, '$1 $2')
@@ -41,7 +50,7 @@
     }
     const publisher = links.find(url => (
       url.hostname === 'doi.org' && /^\/10\.\d{4,9}\/.+/.test(url.pathname)
-      || /^(?:dl\.acm\.org|ieeexplore\.ieee\.org|proceedings\.mlsys\.org|proceedings\.neurips\.cc|papers\.nips\.cc|proceedings\.mlr\.press|openreview\.net|openaccess\.thecvf\.com|link\.springer\.com|www\.usenix\.org|aclanthology\.org|hotinfra23\.github\.io|www\.microarch\.org|repository\.gatech\.edu|par\.nsf\.gov|www\.osti\.gov|image-ppubs\.uspto\.gov)$/.test(url.hostname)
+      || PUBLICATION_HOSTS.has(url.hostname)
     ));
     if (publisher) return publisher.href;
     const scholar = links.find(url => url.hostname === 'scholar.google.com');
