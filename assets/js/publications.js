@@ -144,6 +144,23 @@
     { pattern: /win fast or lose slow/i, venue: 'NeurIPS 2025', note: 'Spotlight' }
   ];
 
+  // Best paper honors (from the faculty publications page). Adds only the honor
+  // tag; venue, citation and sorting are unchanged. Best-paper tags show a star.
+  const AWARD_META = [
+    { pattern: /accelerating llm inference with flexible n:m sparsity/i, note: 'Best Paper Award' },
+    { pattern: /^microedge:/i, note: 'Best Paper Award' },
+    { pattern: /^breaking barriers: maximizing array utilization/i, note: 'Best Paper Award' },
+    { pattern: /^sigma: a sparse and irregular gemm accelerator/i, note: 'Best Paper Award' },
+    { pattern: /place-and-route of emerging led-driven wires/i, note: 'Best Paper Award' },
+    { pattern: /^single-cycle collective communication over a shared network fabric/i, note: 'Best Paper Award' },
+    { pattern: /^spock:/i, note: 'Best Paper Nominee' },
+    { pattern: /design-space of sparse.dense multiphase gnn dataflows/i, note: 'Best Paper Nominee' },
+    { pattern: /network fabric for efficient spatio-temporal reduction/i, note: 'Best Paper Nominee' },
+    { pattern: /^seec:/i, note: 'Best Paper Nominee' },
+    { pattern: /^bridging the frequency gap in heterogeneous 3d socs/i, note: 'Best Paper Nominee' },
+    { pattern: /^characterizing the deployment of deep neural networks on commercial edge devices/i, note: 'Best Paper Nominee' }
+  ];
+
   const ARTIFACT_TITLES = new Set([
     'Buffer Hierarchies',
     'Dataflow and Data Reuse',
@@ -523,11 +540,14 @@
     renderCitation(venueElement, citation, faculty, venue, isPreprint);
     titleRow.appendChild(createVenueBadge(venue, venueYear || publicationYear, isArxiv, isPreprint, citation));
     venueRow.appendChild(venueElement);
-    if (verified && verified.note) {
+    const award = (verified && verified.note) ? verified : AWARD_META.find(item => item.pattern.test(title));
+    if (award && award.note) {
       const note = document.createElement('span');
       note.className = 'paper-award-note';
-      note.innerHTML = '<i class="fas fa-award" aria-hidden="true"></i>';
-      note.appendChild(document.createTextNode(verified.note));
+      note.innerHTML = /best paper/i.test(award.note)
+        ? '<i class="fas fa-star" aria-hidden="true"></i>'
+        : '<i class="fas fa-award" aria-hidden="true"></i>';
+      note.appendChild(document.createTextNode(award.note));
       venueRow.appendChild(note);
     }
     authorsElement.insertAdjacentElement('afterend', venueRow);
