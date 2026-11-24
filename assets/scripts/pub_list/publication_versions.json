@@ -1,5 +1,5 @@
 {
-  "checkedOn": "2026-11-01",
+  "checkedOn": "2026-11-24",
   "reconciliations": [
     {
       "title": "GeneSys: Enabling Continuous Learning through Neural Network Evolution in Hardware",
@@ -199,20 +199,6 @@
       ]
     },
     {
-      "title": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
-      "venue": "ICCAD",
-      "matchTitles": [
-        "Demystifying platform requirements for diverse llm inference use cases"
-      ],
-      "identityKeys": [
-        "arxiv:2406.01698"
-      ],
-      "sources": [
-        "https://tushar-krishna.github.io/publications.html",
-        "https://arxiv.org/abs/2406.01698"
-      ]
-    },
-    {
       "title": "FRED: A Wafer-scale Fabric for 3D Parallel DNN Training",
       "venue": "ISCA",
       "matchTitles": [
@@ -328,6 +314,37 @@
         "https://arxiv.org/abs/2104.13997",
         "https://tushar-krishna.github.io/publications.html"
       ]
+    },
+    {
+      "title": "Analyzing the Impact of Emerging Technology on AI Datacenter Serving Distributed LLM Inference using ECHELON",
+      "venue": "ICCAD",
+      "matchTitles": [
+        "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
+        "Demystifying platform requirements for diverse llm inference use cases"
+      ],
+      "identityKeys": [
+        "arxiv:2406.01698",
+        "doi:10.1145/3831252.3834151"
+      ],
+      "sources": [
+        "https://tushar-krishna.github.io/publications.html",
+        "https://arxiv.org/abs/2406.01698",
+        "https://confcats-event-sessions.s3.us-east-1.amazonaws.com/iccad26/uploads/ICCAD_2026_Program_v19.pdf",
+        "https://github.com/astra-sim/GenZ-LLM-Analyzer",
+        "https://doi.org/10.1145/3831252.3834151"
+      ]
+    },
+    {
+      "title": "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving",
+      "venue": "MOSAIC@SIGCOMM",
+      "matchTitles": [],
+      "identityKeys": [
+        "doi:10.1145/3789240.3829347"
+      ],
+      "sources": [
+        "https://conferences.sigcomm.org/sigcomm/2026/mosaic/",
+        "https://doi.org/10.1145/3789240.3829347"
+      ]
     }
   ],
   "additionalPublications": [
@@ -400,6 +417,48 @@
         "https://openreview.net/pdf?id=e3ITaLZ4ct",
         "https://latent-implicit-thinking.github.io/callforpapers/"
       ]
+    },
+    {
+      "title": "Analyzing the Impact of Emerging Technology on AI Datacenter Serving Distributed LLM Inference using ECHELON",
+      "v": "ICCAD",
+      "y": 2026,
+      "t": "conf",
+      "m": 11,
+      "a": "Abhimanyu Rajeshkumar Bambhaniya, Ritik Raj, Geonhwa Jeong, Souvik Kundu, Sudarshan Srinivasan, Suvinay Subramanian, Midhilesh Elavazhagan, Madhu Kumar, Tushar Krishna",
+      "doi": "10.1145/3831252.3834151",
+      "sources": [
+        "https://tushar-krishna.github.io/publications.html",
+        "https://arxiv.org/abs/2406.01698",
+        "https://confcats-event-sessions.s3.us-east-1.amazonaws.com/iccad26/uploads/ICCAD_2026_Program_v19.pdf",
+        "https://github.com/astra-sim/GenZ-LLM-Analyzer",
+        "https://doi.org/10.1145/3831252.3834151"
+      ]
+    },
+    {
+      "title": "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving",
+      "v": "MOSAIC@SIGCOMM",
+      "y": 2026,
+      "t": "workshop",
+      "m": 8,
+      "a": "Diman Zad Tootaghaj, Khaled Diab, Bob Lantz, Hanjiang Wu, K. K. Ramakrishnan, Md Ashfaqur Rahaman, Ryan Stutsman, Puneet Sharma, Tushar Krishna",
+      "doi": "10.1145/3789240.3829347",
+      "sources": [
+        "https://conferences.sigcomm.org/sigcomm/2026/mosaic/",
+        "https://doi.org/10.1145/3789240.3829347"
+      ]
+    },
+    {
+      "title": "Dyserve: Dynamic Strategy Generation for Agent Serving",
+      "v": "SCALE@ICML",
+      "y": 2026,
+      "t": "workshop",
+      "m": 7,
+      "a": "Jiayi Qian, Zishen Wan, Hanchen Yang, Souvik Kundu, Tushar Krishna",
+      "sources": [
+        "https://scale-icml-2026.github.io/accepted_papers.html",
+        "https://openreview.net/forum?id=OsglQqiMQC",
+        "https://harvard-edge.github.io/isca-26-arch-2-workshop/"
+      ]
     }
   ],
   "venueNames": {
@@ -408,7 +467,9 @@
     "Sparsity@ICML": "ICML Workshop on Sparsity in Neural Networks: Advancing Understanding and Practice",
     "NSDI (poster)": "USENIX Symposium on Networked Systems Design and Implementation (poster)",
     "NoCArc (keynote)": "IEEE/ACM International Workshop on Network on Chip Architectures (keynote)",
-    "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR"
+    "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR",
+    "MOSAIC@SIGCOMM": "Workshop on Memory, Systems and Interconnect Co-design for AI at ACM SIGCOMM",
+    "SCALE@ICML": "Workshop on Scalable Learning and Optimization for Efficient Multimodal AI Agents at ICML"
   },
   "venueDates": {
     "2023:ASSYST@ISCA": {
@@ -435,6 +496,16 @@
       "month": 4,
       "day": 27,
       "source": "https://latent-implicit-thinking.github.io/callforpapers/"
+    },
+    "2026:MOSAIC@SIGCOMM": {
+      "month": 8,
+      "day": 17,
+      "source": "https://conferences.sigcomm.org/sigcomm/2026/mosaic/"
+    },
+    "2026:SCALE@ICML": {
+      "month": 7,
+      "day": 10,
+      "source": "https://scale-icml-2026.github.io/"
     }
   }
 }

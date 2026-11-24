@@ -1,6 +1,6 @@
 {
   "source": "https://tushar-krishna.github.io/publications.html",
-  "checkedOn": "2026-11-21",
+  "checkedOn": "2026-11-24",
   "venueNames": {
     "SIGCOMM": "ACM SIGCOMM Conference",
     "ACM TECS": "ACM Transactions on Embedded Computing Systems",
@@ -77,7 +77,9 @@
     "Sparsity@ICML": "ICML Workshop on Sparsity in Neural Networks: Advancing Understanding and Practice",
     "NSDI (poster)": "USENIX Symposium on Networked Systems Design and Implementation (poster)",
     "NoCArc (keynote)": "IEEE/ACM International Workshop on Network on Chip Architectures (keynote)",
-    "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR"
+    "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR",
+    "MOSAIC@SIGCOMM": "Workshop on Memory, Systems and Interconnect Co-design for AI at ACM SIGCOMM",
+    "SCALE@ICML": "Workshop on Scalable Learning and Optimization for Efficient Multimodal AI Agents at ICML"
   },
   "venueDates": {
     "2023:ASSYST@ISCA": {
@@ -104,6 +106,16 @@
       "month": 4,
       "day": 27,
       "source": "https://latent-implicit-thinking.github.io/callforpapers/"
+    },
+    "2026:MOSAIC@SIGCOMM": {
+      "month": 8,
+      "day": 17,
+      "source": "https://conferences.sigcomm.org/sigcomm/2026/mosaic/"
+    },
+    "2026:SCALE@ICML": {
+      "month": 7,
+      "day": 10,
+      "source": "https://scale-icml-2026.github.io/"
     }
   },
   "papers": [
@@ -125,15 +137,17 @@
       ]
     },
     {
-      "title": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
+      "title": "Analyzing the Impact of Emerging Technology on AI Datacenter Serving Distributed LLM Inference using ECHELON",
       "matchTitles": [
+        "Analyzing the Impact of Emerging Technology on AI Datacenter Serving Distributed LLM Inference using ECHELON",
         "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM Models",
         "Demystifying platform requirements for diverse llm inference use cases"
       ],
       "identityKeys": [
-        "arxiv:2406.01698"
+        "arxiv:2406.01698",
+        "doi:10.1145/3831252.3834151"
       ],
-      "authors": "Abhimanyu Bambhaniya, Ritik Raj, Geonhwa Jeong, Souvik Kundu, Sudarshan Srinivasan, Suvinay Subramanian, Midhilesh Elavazhagan, Madhu Kumar, Tushar Krishna",
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Ritik Raj, Geonhwa Jeong, Souvik Kundu, Sudarshan Srinivasan, Suvinay Subramanian, Midhilesh Elavazhagan, Madhu Kumar, Tushar Krishna",
       "year": 2026,
       "venue": "ICCAD",
       "type": "conf",
@@ -145,7 +159,10 @@
       ],
       "reviewSources": [
         "https://tushar-krishna.github.io/publications.html",
-        "https://arxiv.org/abs/2406.01698"
+        "https://arxiv.org/abs/2406.01698",
+        "https://confcats-event-sessions.s3.us-east-1.amazonaws.com/iccad26/uploads/ICCAD_2026_Program_v19.pdf",
+        "https://github.com/astra-sim/GenZ-LLM-Analyzer",
+        "https://doi.org/10.1145/3831252.3834151"
       ]
     },
     {
@@ -173,16 +190,22 @@
       "matchTitles": [
         "DynamoServe: A Distributed Tiered Memory System for Multi-tenant LLM Serving"
       ],
-      "identityKeys": [],
+      "identityKeys": [
+        "doi:10.1145/3789240.3829347"
+      ],
       "authors": "Diman Zad Tootaghaj, Khaled Diab, Bob Lantz, Hanjiang Wu, K. K. Ramakrishnan, Md Ashfaqur Rahaman, Ryan Stutsman, Puneet Sharma, Tushar Krishna",
       "year": 2026,
-      "venue": "SIGCOMM",
-      "type": "conf",
+      "venue": "MOSAIC@SIGCOMM",
+      "type": "workshop",
       "month": 8,
       "topicIds": [
         "llm",
         "memory",
         "distributed"
+      ],
+      "reviewSources": [
+        "https://conferences.sigcomm.org/sigcomm/2026/mosaic/",
+        "https://doi.org/10.1145/3789240.3829347"
       ]
     },
     {
@@ -3642,6 +3665,23 @@
       ]
     },
     {
+      "title": "Accelerating Attention Based Models via HW-SW Co-Design using Fine-Grained Sparsification",
+      "matchTitles": [
+        "Accelerating Attention Based Models via HW-SW Co-Design using Fine-Grained Sparsification",
+        "Accelerating attention based models via HW-SW co-design using fine-grained sparsification"
+      ],
+      "identityKeys": [],
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Amir Yazdanbakhsh, Suvinay Subramanian, Tushar Krishna",
+      "year": 2023,
+      "venue": "ASSYST@ISCA",
+      "type": "workshop",
+      "month": 6,
+      "reviewSources": [
+        "https://openreview.net/pdf?id=xd5qPRXLl7",
+        "https://www.iscaconf.org/isca2023/program/workshops.php"
+      ]
+    },
+    {
       "title": "Polestar-Cache: Reconciling Parallel Decoding and Accuracy in Diffusion LLMs via Token Drift-Aware KV Cache Recalibration",
       "matchTitles": [
         "Polestar-Cache: Reconciling Parallel Decoding and Accuracy in Diffusion LLMs via Token Drift-Aware KV Cache Recalibration",
@@ -3660,20 +3700,20 @@
       ]
     },
     {
-      "title": "Accelerating Attention Based Models via HW-SW Co-Design using Fine-Grained Sparsification",
+      "title": "Dyserve: Dynamic Strategy Generation for Agent Serving",
       "matchTitles": [
-        "Accelerating Attention Based Models via HW-SW Co-Design using Fine-Grained Sparsification",
-        "Accelerating attention based models via HW-SW co-design using fine-grained sparsification"
+        "Dyserve: Dynamic Strategy Generation for Agent Serving"
       ],
       "identityKeys": [],
-      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Amir Yazdanbakhsh, Suvinay Subramanian, Tushar Krishna",
-      "year": 2023,
-      "venue": "ASSYST@ISCA",
+      "authors": "Jiayi Qian, Zishen Wan, Hanchen Yang, Souvik Kundu, Tushar Krishna",
+      "year": 2026,
+      "venue": "SCALE@ICML",
       "type": "workshop",
-      "month": 6,
+      "month": 7,
       "reviewSources": [
-        "https://openreview.net/pdf?id=xd5qPRXLl7",
-        "https://www.iscaconf.org/isca2023/program/workshops.php"
+        "https://scale-icml-2026.github.io/accepted_papers.html",
+        "https://openreview.net/forum?id=OsglQqiMQC",
+        "https://harvard-edge.github.io/isca-26-arch-2-workshop/"
       ]
     }
   ]

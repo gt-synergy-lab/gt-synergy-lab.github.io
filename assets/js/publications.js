@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261124-assyst';
+  const VERSION_SUFFIX = '?v=publication-refresh-1795557780-1786389';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [

@@ -108,5 +108,11 @@
     "id": "W4238935249",
     "sourceTitle": "A case for low frequency single cycle multi hop NoCs for energy efficiency and high performance",
     "doi": "https://doi.org/10.1109/iccad.2017.8203851"
+  },
+  {
+    "title": "Analyzing the Impact of Emerging Technology on AI Datacenter Serving Distributed LLM Inference using ECHELON",
+    "sourceTitle": "Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM models",
+    "kind": "arxiv",
+    "id": "2406.01698"
   }
 ]

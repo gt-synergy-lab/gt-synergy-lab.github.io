@@ -1,5 +1,13 @@
 [
   {
+    "title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
+    "year": "2026"
+  },
+  {
+    "title": "AutoEMatic: Runtime-Adaptive Mixed-Precision LLM Inference via Automatic Exponent-Mantissa Refinement",
+    "year": "2026"
+  },
+  {
     "title": "CoCoSys: The Co-Design of Cognitive AI from Algorithms to Systems",
     "year": "2026"
   },
@@ -20,7 +28,7 @@
     "year": "2026"
   },
   {
-    "title": "TRACE-Router: Task-consistent and adaptive online routing for agentic AI",
+    "title": "ORACLE: Agentic AI Orchestrator Routing Via Adaptive Verifier Calibration Feedback",
     "year": "2026"
   },
   {
@@ -37,6 +45,10 @@
   },
   {
     "title": "A Workflow-Aware Serving Layer for Agentic Applications",
+    "year": "2026"
+  },
+  {
+    "title": "TRACE-Router: Task-consistent and adaptive online routing for agentic AI",
     "year": "2026"
   },
   {
@@ -1230,6 +1242,14 @@
   {
     "title": "NoC with near-ideal express virtual channels using global-line communication",
     "year": "2008"
+  },
+  {
+    "title": "Chiastra: A CHIA based agentic micro-architectural vulnerability exploration framework for RISC-V BOOM processors",
+    "year": ""
+  },
+  {
+    "title": "The gem5 simulator. SIGARCH Comput. Archit. News 39 (2), 1–7 (2011)",
+    "year": ""
   },
   {
     "title": "PRIVATAR: ENABLING PRIVACY-PRESERVING REAL-TIME MULTI-USER VR THROUGH SECURE OFFLOADING",
