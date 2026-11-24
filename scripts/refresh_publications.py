@@ -11,6 +11,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import sys
 import time
 import xml.etree.ElementTree as ET
 from urllib.parse import urlencode
@@ -509,22 +510,45 @@ def main():
     parser.add_argument('--skip-scholar', action='store_true')
     parser.add_argument('--arxiv-feed', type=Path, action='append', help='Use saved arXiv Atom feed(s) for a reproducible refresh')
     parser.add_argument('--openalex-json', type=Path, help='Use saved OpenAlex results for a reproducible refresh')
+    parser.add_argument('--best-effort', action='store_true',
+                        help='Keep the previous snapshot for each unavailable source')
     args = parser.parse_args()
-    source = args.faculty_html.read_text() if args.faculty_html else fetch(FACULTY_URL)
-    faculty, unmatched = refresh_faculty(source)
-    scholar = None if args.skip_scholar else refresh_scholar(args.scholar_html.read_text() if args.scholar_html else None)
-    abstracts = refresh_abstracts(faculty, feeds=[path.read_text() for path in args.arxiv_feed] if args.arxiv_feed else None)
-    works = json.loads(args.openalex_json.read_text()) if args.openalex_json else fetch_openalex()
-    abstracts = refresh_openalex(faculty, abstracts, works)
-    (DATA / 'faculty_publications.json').write_text(json.dumps(faculty, ensure_ascii=False, indent=2) + '\n')
-    (DATA / 'paper_abstracts.json').write_text(json.dumps(abstracts, ensure_ascii=False, indent=2) + '\n')
+
+    def attempt(label, refresh):
+        try:
+            return refresh()
+        except (OSError, ValueError, KeyError, ET.ParseError) as error:
+            if not args.best_effort:
+                raise
+            print(f'{label} refresh unavailable, retaining its snapshot: {error}', file=sys.stderr)
+            return None
+
+    def write_snapshot(filename, data):
+        (DATA / filename).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+
+    faculty_result = attempt('Faculty', lambda: refresh_faculty(
+        args.faculty_html.read_text() if args.faculty_html else fetch(FACULTY_URL)))
+    faculty, unmatched = faculty_result or (json.loads((DATA / 'faculty_publications.json').read_text()), [])
+    scholar = None if args.skip_scholar else attempt('Scholar', lambda: refresh_scholar(
+        args.scholar_html.read_text() if args.scholar_html else None))
+
+    def refresh_abstract_sources():
+        feeds = [path.read_text() for path in args.arxiv_feed] if args.arxiv_feed else None
+        abstracts = refresh_abstracts(faculty, feeds=feeds)
+        works = json.loads(args.openalex_json.read_text()) if args.openalex_json else fetch_openalex()
+        return refresh_openalex(faculty, abstracts, works)
+
+    abstracts = attempt('arXiv/OpenAlex', refresh_abstract_sources)
+    if faculty_result is not None:
+        write_snapshot('faculty_publications.json', faculty)
+        print(f"Faculty: {len(faculty['papers'])} records; {len(unmatched)} unmatched titles require review")
+        for title in unmatched:
+            print('Unmatched:', title)
+    if abstracts is not None:
+        write_snapshot('paper_abstracts.json', abstracts)
+        print(f"Verified matches: {len(abstracts['papers'])} abstracts from arXiv and OpenAlex")
     if scholar is not None:
-        (DATA / 'scholar_order.json').write_text(json.dumps(scholar, ensure_ascii=False, indent=2) + '\n')
-    print(f"Faculty: {len(faculty['papers'])} records; {len(unmatched)} unmatched titles require review")
-    print(f"Verified matches: {len(abstracts['papers'])} abstracts from arXiv and OpenAlex")
-    for title in unmatched:
-        print('Unmatched:', title)
-    if scholar is not None:
+        write_snapshot('scholar_order.json', scholar)
         print(f'Scholar: {len(scholar)} records in source order')
 
 

@@ -1,0 +1,128 @@
+name: Refresh Publications and Research News
+
+on:
+  schedule:
+    - cron: '15 9 1 * *'
+      timezone: America/Los_Angeles
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Check proposed changes without publishing them
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: monthly-publications
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'gt-synergy-lab/gt-synergy-lab.github.io' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    outputs:
+      changed: ${{ steps.patch.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check Codex API access
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [[ -z "$OPENAI_API_KEY" ]]; then
+            echo "::error::Set OPENAI_API_KEY in the repository's Actions secrets to enable the monthly refresh."
+            exit 1
+          fi
+
+      - name: Fetch publication sources
+        run: python3 -B scripts/refresh_publications.py --best-effort
+
+      - name: Run Codex publication refresh
+        uses: openai/codex-action@306c6a196a99dcc6582530c396a19d2672d5e9ec # v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/prompts/monthly-publications.md
+          permission-profile: ':workspace'
+          safety-strategy: drop-sudo
+          codex-args: '["-c", "web_search=\"live\""]'
+
+      - name: Validate publication and news changes
+        id: patch
+        run: |
+          python3 -B scripts/prepare_publication_update.py
+          node --test tests/publication-metadata.test.js
+          python3 -B -m unittest discover -s tests
+          git add -- index.html pages/news.html assets/scripts/pub_list
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No verified publication or news changes." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git diff --cached --check
+            git diff --cached --binary > "$RUNNER_TEMP/publication-update.patch"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Save proposed changes
+        if: steps.patch.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-update
+          path: ${{ runner.temp }}/publication-update.patch
+          if-no-files-found: error
+
+  publish:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true' && !inputs.dry_run
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: publication-update
+          path: ${{ runner.temp }}
+
+      - name: Apply the validated update
+        run: |
+          git show HEAD:scripts/prepare_publication_update.py > "$RUNNER_TEMP/prepare-publication-update.py"
+          git apply --index "$RUNNER_TEMP/publication-update.patch"
+          python3 -B "$RUNNER_TEMP/prepare-publication-update.py" \
+            --cache-key "publication-refresh-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git add -- index.html pages/news.html pages/publication.html assets/js/publications.js assets/scripts/pub_list
+          git diff --cached --check
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "Refresh Publications and Research News"
+          git push origin HEAD:refs/heads/main
+
+      - name: Deploy and verify the new version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          commit="$(git rev-parse HEAD)"
+          # A push with GITHUB_TOKEN does not trigger the Pages workflow.
+          gh workflow run deploy-pages.yml --ref main
+          for attempt in {1..60}; do
+            deployment="$(gh run list --workflow deploy-pages.yml --commit "$commit" \
+              --json status,conclusion,url --limit 1)"
+            if [[ "$(jq -r '.[0].status' <<< "$deployment")" == completed ]]; then
+              url="$(jq -r '.[0].url' <<< "$deployment")"
+              echo "Pages deployment: $url" >> "$GITHUB_STEP_SUMMARY"
+              [[ "$(jq -r '.[0].conclusion' <<< "$deployment")" == success ]]
+              exit
+            fi
+            sleep 10
+          done
+          echo "::error::Could not confirm Pages deployment for $commit."
+          exit 1

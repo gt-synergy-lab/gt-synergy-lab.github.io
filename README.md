@@ -70,11 +70,19 @@ Use the [lab website repository](https://github.com/gt-synergy-lab/gt-synergy-la
 for site changes. Open a pull request for Team, Research, Tools, and other
 content edits. GitHub Pages deploys after the changes reach `main`.
 
-The publication refresh is run by a maintainer. The repository's GitHub
-Actions workflow deploys the site and has no monthly refresh schedule.
-Send new citations to the maintainer for the next batch, or open a PR to
-add a missing paper before it appears in Scholar or to correct an existing
-entry.
+The production repository's **Refresh Publications and Research News**
+workflow runs Codex on GitHub Actions on the first of each month at
+9:15 a.m. Pacific time. It updates Publications and synchronizes paper
+announcements on the homepage and Research News page. Verified changes
+are published automatically. Routine additions can wait for the monthly
+refresh. Open a PR to add a missing paper sooner or correct an entry.
+
+The workflow requires an `OPENAI_API_KEY` repository Actions secret.
+Maintainers can use **Run workflow** to check proposed changes without
+publishing or to trigger an immediate update. The run summary shows the
+validation and deployment results when there are changes.
+
+To refresh the source snapshots manually:
 
 ```bash
 python3 scripts/refresh_publications.py
@@ -94,9 +102,11 @@ papers whose source title or online year differs are recorded in
 `reviewed_abstract_links.json` with their stable identifiers; the source title
 and identifier must still match on each refresh.
 The script parses data literals without executing remote JavaScript.
-Incomplete fetches fail before replacing the data. Newly discovered faculty
-titles are reported for review; adding a paper still requires updating its HTML
-fragment, `papers.json`, and `papers.bundle.html` together.
+Incomplete fetches leave previous data intact. The monthly run uses
+`--best-effort` to continue with available sources. Newly discovered faculty
+titles are reported for review. When adding a paper manually, update its HTML
+fragment, `papers.json`, and `papers.bundle.html` together. The monthly job
+rebuilds the bundle from the manifest.
 
 For each Paper button, prefer a verified arXiv record, then the official
 publisher or proceedings, and use Google Scholar when neither is available.
