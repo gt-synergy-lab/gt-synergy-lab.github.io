@@ -70,17 +70,18 @@ Use the [lab website repository](https://github.com/gt-synergy-lab/gt-synergy-la
 for site changes. Open a pull request for Team, Research, Tools, and other
 content edits. GitHub Pages deploys after the changes reach `main`.
 
-The production repository's **Refresh Publications and Research News**
-workflow runs Codex on GitHub Actions on the first of each month at
-9:15 a.m. Pacific time. It updates Publications and synchronizes paper
-announcements on the homepage and Research News page. Verified changes
-are published automatically. Routine additions can wait for the monthly
-refresh. Open a PR to add a missing paper sooner or correct an entry.
+The monthly refresh runs `scripts/run_publication_update.sh` under the lab
+server account with Codex CLI and Git access to the production repository.
+The launcher checks for a refresh every 30 days, validates changes to
+Publications and both Research News lists, and pushes verified updates.
+GitHub Pages deploys the result from `main`.
 
-The workflow requires an `OPENAI_API_KEY` repository Actions secret.
-Maintainers can use **Run workflow** to check proposed changes without
-publishing or to trigger an immediate update. The run summary shows the
-validation and deployment results when there are changes.
+The server account needs Codex CLI signed in, Git push access, Python 3.9
+or later, Node.js with `node --test` support, and `flock`. The timer invokes
+`bash scripts/run_publication_update.sh --due`. Use `--dry-run` to check
+proposed changes without publishing, or `--now` to run immediately.
+Set `SYNERGY_PUBLICATION_REMOTE` if the server uses a different Git remote URL.
+Open a PR to add a missing paper sooner or correct an existing entry.
 
 To refresh the source snapshots manually:
 

@@ -39,6 +39,6 @@ Review the changes made by the source refresh step before editing.
 Edit only publication data and fragments under `assets/scripts/pub_list/` and
 the Research News lists in `index.html` and `pages/news.html`. Use static HTML
 consistent with the existing markup. Update only verified records and leave
-uncertain candidates out of this update. The workflow validates, commits, and
+uncertain candidates out of this update. The launcher validates, commits, and
 deploys the result. Summarize new and updated papers, news entries, and any
 source gaps or uncertain candidates in your final response.
