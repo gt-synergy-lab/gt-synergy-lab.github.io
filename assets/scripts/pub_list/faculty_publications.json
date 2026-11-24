@@ -72,6 +72,7 @@
     "Springer (chapter)": "Network-on-Chip Security and Privacy (Springer)",
     "IRDS (chapter)": "IEEE International Roadmap for Devices and Systems",
     "US Patent": "US Patent",
+    "ASSYST@ISCA": "Workshop on Architecture and System Support for Transformer Models at ISCA",
     "SRC@MICRO (poster)": "ACM Student Research Competition at MICRO (poster)",
     "Sparsity@ICML": "ICML Workshop on Sparsity in Neural Networks: Advancing Understanding and Practice",
     "NSDI (poster)": "USENIX Symposium on Networked Systems Design and Implementation (poster)",
@@ -79,6 +80,11 @@
     "LIT@ICLR": "Latent & Implicit Thinking Workshop at ICLR"
   },
   "venueDates": {
+    "2023:ASSYST@ISCA": {
+      "month": 6,
+      "day": 17,
+      "source": "https://www.iscaconf.org/isca2023/program/workshops.php"
+    },
     "2026:ICCAD": {
       "month": 11,
       "day": 8,
@@ -3651,6 +3657,23 @@
         "https://mlee864.github.io/",
         "https://openreview.net/pdf?id=e3ITaLZ4ct",
         "https://latent-implicit-thinking.github.io/callforpapers/"
+      ]
+    },
+    {
+      "title": "Accelerating Attention Based Models via HW-SW Co-Design using Fine-Grained Sparsification",
+      "matchTitles": [
+        "Accelerating Attention Based Models via HW-SW Co-Design using Fine-Grained Sparsification",
+        "Accelerating attention based models via HW-SW co-design using fine-grained sparsification"
+      ],
+      "identityKeys": [],
+      "authors": "Abhimanyu Rajeshkumar Bambhaniya, Amir Yazdanbakhsh, Suvinay Subramanian, Tushar Krishna",
+      "year": 2023,
+      "venue": "ASSYST@ISCA",
+      "type": "workshop",
+      "month": 6,
+      "reviewSources": [
+        "https://openreview.net/pdf?id=xd5qPRXLl7",
+        "https://www.iscaconf.org/isca2023/program/workshops.php"
       ]
     }
   ]

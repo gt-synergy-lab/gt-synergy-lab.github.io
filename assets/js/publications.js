@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const VERSION_SUFFIX = '?v=publications-20261121-source-audit';
+  const VERSION_SUFFIX = '?v=publications-20261124-assyst';
   const metadata = window.PublicationMetadata;
 
   const TOPICS = [
@@ -717,6 +717,7 @@
 
     const venues = [
       ['ACSMD@ISCA', /architecture, compiler, and system support for multi-model dnn/i],
+      ['ASSYST@ISCA', /architecture and system support for transformer models|\bassyst\b/i],
       ['ASP-DAC', /\basp-?dac\b/i],
       ['CODES+ISSS', /codes\+?\s*isss|hardware\/software codesign/i],
       ['HotInfra', /hot topics in system infrastructure|\bhotinfra\b/i],
